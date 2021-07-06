@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { motion } from 'framer-motion'
+
 export default function Home() {
   return (
     <div className="container">
@@ -8,39 +9,32 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className="title">Welcome to davebeazer.dev!</h1>
-        <h3>Digital do-gooder 🤷</h3>
-        <motion.p layoutId="subtitle">
-          Channel for parodies and comedic sketches. Enjoy!
-        </motion.p>
-        <div className="grid">
-          <a href="/design" className="card">
-            <h3>Design 🎨 &rarr;</h3>
-            <p>See my past & present design work.</p>
-          </a>
+      <h3>Home 🤷</h3>
+      <motion.h1 className="title">Welcome to davebeazer.dev!</motion.h1>
+      <motion.h1
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        className="title has-text-weight-bold is-1 is-size-2-mobile is-spaced"
+        layoutId="title"
+      >
+        The only Todo App you'll ever need
+      </motion.h1>
+      <div className="grid">
+        <a href="/design" className="card">
+          <h3>Design 🎨 &rarr;</h3>
+          <p>See my past & present design work.</p>
+        </a>
 
-          <a href="/development" className="card">
-            <h3>Development 👨🏻‍💻 &rarr;</h3>
-            <p>
-              Find out how I build web apps and what tools and technologies I
-              use
-            </p>
-          </a>
+        <a href="/development" className="card">
+          <h3>Development! 🎬 &rarr;</h3>
+          <p>My showreel of various projects from websites to weddings!</p>
+        </a>
 
-          <a href="/showcase" className="card">
-            <h3>Showcase 🎬 &rarr;</h3>
-            <p>My showreel of various projects from websites to weddings!</p>
-          </a>
-
-          <a href="/my-skills" className="card">
-            <h3>My Skills 🎺 &rarr;</h3>
-            <p>
-              This is where I tell you how great I am at a bunch of acronyms.
-            </p>
-          </a>
-        </div>
-      </main>
+        <a href="/my-skills" className="card">
+          <h3>My Skills 🎺 &rarr;</h3>
+          <p>This is where I tell you how great I am at a bunch of acronyms.</p>
+        </a>
+      </div>
 
       <footer>
         <a

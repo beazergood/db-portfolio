@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { motion } from 'framer-motion'
 
-export default function Home() {
+export default function Design() {
   return (
     <div className="container">
       <Head>
@@ -11,9 +11,13 @@ export default function Home() {
 
       <main>
         <h1>Design</h1>
-        <motion.p layoutId="subtitle">
-          Channel for parodies and comedic sketches. Enjoy!
-        </motion.p>
+        <div className="grid">
+          <motion.p>Here's some designs</motion.p>
+          <motion.div>
+            <h3>Design 🎨 &rarr;</h3>
+            <p>See my past & present design work.</p>
+          </motion.div>
+        </div>
       </main>
 
       <a href="/">Home</a>
