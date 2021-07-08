@@ -1,9 +1,7 @@
-// import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { useRouter } from 'next/router'
 import { AnimateSharedLayout } from 'framer-motion'
 
-// import '../styles/tailwind.css'
+import 'tailwindcss/tailwind.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
