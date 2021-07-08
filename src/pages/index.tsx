@@ -41,15 +41,13 @@ export default function Home() {
             </div>
             <div className="bg-gray-2B2B2B mt-10 p-5 bg-opacity-60 rounded-3xl w-3/4">
               <p className="text-2xl mt-5 w-full">
-                I'm Dave, a full-stack designer & developer of the interwebs
+                I'm Dave, a full-stack designer &amp; developer of the interwebs
                 from the eternally sunny isle of England.
-                <span className="absolute">
-                  <Image
-                    src={emojiPic}
-                    placeholder={'blur'}
-                    alt="Picture of Dave Beazer, what a great guy!"
-                  />
-                </span>
+                <Image
+                  src={emojiPic}
+                  placeholder={'blur'}
+                  alt="Picture of Dave Beazer, what a great guy!"
+                />
               </p>
               <p className="text-2xl mt-10 w-full">
                 I strive to design and build web experiences that even my nan
