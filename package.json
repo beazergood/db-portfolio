@@ -1,11 +1,13 @@
 {
   "name": "dwjb-portfolio",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@mdx-js/loader": "^1.6.22",
@@ -13,10 +15,23 @@
     "framer-motion": "^4.1.17",
     "next": "^11.0.1",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "typewriter-effect": "^2.18.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@storybook/addon-actions": "^6.3.3",
+    "@storybook/addon-essentials": "^6.3.3",
+    "@storybook/addon-links": "^6.3.3",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/react": "^6.3.3",
+    "@svgr/webpack": "^5.5.0",
     "@types/react": "^17.0.11",
+    "autoprefixer": "^10.2.6",
+    "babel-loader": "^8.2.2",
+    "ignore-loader": "^0.1.2",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4",
     "typescript": "^4.3.4"
   }
 }

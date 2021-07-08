@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 export default function Development() {
   return (
@@ -10,29 +11,30 @@ export default function Development() {
       </Head>
 
       <p>
-        <a href="/">Home</a>
+        <Link href="/">&larr; Home</Link>
       </p>
+      <motion.h1 className="title text-4xl text-green-400 text-center">
+        Welcome to davebeazer.dev!
+      </motion.h1>
+      <motion.div layoutId="developmentCard" className="card mt-20">
+        <Link href="/development">
+          <a href="/development">
+            <h3>Development! 🎬 &rarr;</h3>
+            <p>My showreel of various projects from websites to weddings!</p>
+          </a>
+        </Link>
+      </motion.div>
       <div className="grid">
-        <a href="/development" className="card">
-          <h3>Development! 🎬 &rarr;</h3>
-          <p>My showreel of various projects from websites to weddings!</p>
-        </a>
         <a href="/design" className="card">
           <h3>Design 🎨 &rarr;</h3>
           <p>See my past & present design work.</p>
         </a>
-        <motion.h1 className="title">Welcome to davebeazer.dev!</motion.h1>
-        <motion.h1
-          className="title has-text-weight-bold is-1 is-size-2-mobile is-spaced"
-          layoutId="title"
-        >
-          The only Todo App you'll ever need
-        </motion.h1>
         <a href="/my-skills" className="card">
           <h3>My Skills 🎺 &rarr;</h3>
           <p>This is where I tell you how great I am at a bunch of acronyms.</p>
         </a>
       </div>
+
       <footer>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
