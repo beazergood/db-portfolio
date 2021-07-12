@@ -5,13 +5,14 @@ import Typewriter from 'typewriter-effect'
 import Image from 'next/image'
 import profilePic from '../../public/me.jpg'
 import emojiPic from '../../public/emoji.png'
+import { version } from '../../package.json'
 
 export default function Home() {
   return (
     <div className="image-container">
       <div className="container mx-auto my-40">
         <Head>
-          <title>Create Next App: Home</title>
+          <title>Create Next App: Home {version}</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
