@@ -41,7 +41,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="bg-gray-2B2B2B">
+        <body>
           <Main />
           <NextScript />
         </body>
