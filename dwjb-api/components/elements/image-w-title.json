@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_elements_image_w_titles",
+  "info": {
+    "name": "image w title",
+    "icon": "file-image"
+  },
+  "options": {},
+  "attributes": {
+    "img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

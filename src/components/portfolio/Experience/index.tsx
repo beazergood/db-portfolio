@@ -9,7 +9,7 @@ export const Experience: React.FC<HeroProps> = (
 ) => {
   return (
     <>
-      <div className="h-screen w-full border- border-purple-200 container">
+      <div className="w-full border-2  py-10 my-10  border-purple-200 container">
         <h3 className="font-semibold font-sans text-black">Experience</h3>
         <svg height="10" width="100" className="my-2">
           <line

@@ -23,7 +23,7 @@ export const Skills: React.FC<HeroProps> = (
 ) => {
   return (
     <>
-      <motion.div className="h-screen w-full border- border-green-200 container">
+      <motion.div className="w-full border-2  py-10 my-10  border-green-200 container">
         <h3 className="font-semibold font-sans text-black">Skills</h3>
         <svg height="10" width="100" className="my-2">
           <line

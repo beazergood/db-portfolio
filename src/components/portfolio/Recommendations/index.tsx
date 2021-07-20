@@ -1,10 +1,10 @@
 import React from 'react'
 
-export interface HeroProps {
+export interface RecommendationsProps {
   title?: string
 }
 
-export const Recommendations: React.FC<HeroProps> = (
+export const Recommendations: React.FC<RecommendationsProps> = (
   { title } = { title: 'A simple Tailiwind template' }
 ) => {
   return (

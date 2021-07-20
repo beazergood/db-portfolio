@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ArrowDown } from '@styled-icons/bootstrap/ArrowDown'
 
 export const Wave = () => {
   const svgVariants = {
@@ -14,14 +13,12 @@ export const Wave = () => {
   }
   const pathVariants = {
     hidden: {
-      opacity: 0,
       pathLength: 0,
     },
     visible: {
-      opacity: 1,
       pathLength: 1,
       transition: {
-        duration: 2,
+        duration: 3,
         ease: 'easeInOut',
       },
     },
@@ -29,14 +26,12 @@ export const Wave = () => {
 
   return (
     <>
-      <div className="-mt-20 text-center">
-        <ArrowDown width="20" height="20" />
-      </div>
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         variants={svgVariants}
         initial="hidden"
         animate="visible"
+        style={{ width: '100vw' }}
       >
         <clipPath id="shape">
           <motion.path
@@ -46,6 +41,7 @@ export const Wave = () => {
           ></motion.path>
         </clipPath>
       </motion.svg>
+
       <Image className="clipped" layout="fill" src={'/me-ont-coast.jpg'} />
     </>
   )

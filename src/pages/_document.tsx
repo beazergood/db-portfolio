@@ -10,7 +10,7 @@ class MyDocument extends Document {
     const meta = {
       title: 'The Wonderful World of Dave Beazer',
       description:
-        'User Experience enthusiast trying his hardest to not build shit software.',
+        'User Experience developer trying his hardest to not build shit software.',
       image:
         'https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png',
     }
