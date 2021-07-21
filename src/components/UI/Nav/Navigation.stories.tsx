@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
-import { Nav, NavigationProps } from '.'
+import { Nav, NavProps } from '.'
 
 export default {
   title: 'Component/Navigation',
@@ -10,7 +10,7 @@ export default {
   },
 } as Meta
 
-const Template: Story<NavigationProps> = (args) => <Nav {...args} />
+const Template: Story<NavProps> = (args) => <Nav {...args} />
 
 // Default scenario
 export const Default = Template.bind({})
