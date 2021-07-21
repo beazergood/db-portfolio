@@ -66,7 +66,7 @@ const Curve = ({ points, showGuides }) => {
       stroke="blue"
       strokeOpacity={0.5}
       fill="transparent"
-      d={curve(...points)}
+      // d={curve(...points)}
       variants={pathVariants}
     />
   )
