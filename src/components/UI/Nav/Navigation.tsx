@@ -11,6 +11,10 @@ const variants = {
   },
 }
 
+export interface NavigationProps {
+  props: Array<{}>
+}
+
 export const Navigation = ({ props }) => (
   <motion.ul variants={variants}>
     {props.map((i) => (
