@@ -1,23 +1,19 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
-import { Nav, NavProps } from '.'
+import { Nav } from '.'
 
 export default {
   title: 'Component/Navigation',
   component: Nav,
-  argTypes: {
-    title: { control: 'string' },
-  },
 } as Meta
 
-const Template: Story<NavProps> = (args) => <Nav {...args} />
+const Template: Story<any> = (args) => <Nav {...args} />
 
+const navProps = [
+  { id: 1, label: 'Minimal', selected: true },
+  { id: 2, label: 'Sporty', selected: false },
+  { id: 3, label: 'Photographic', selected: false },
+]
 // Default scenario
 export const Default = Template.bind({})
-Default.args = {}
-
-// Title = "Hello World"
-export const ButtonDefault = Template.bind({})
-ButtonDefault.args = {
-  label: 'Click me',
-}
+Default.args = navProps
