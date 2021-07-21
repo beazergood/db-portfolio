@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client'
 
 const client = new ApolloClient({
-  uri: 'https://secure-refuge-04009.herokuapp.com/graphql',
+  uri: process.env.STRAPI_API_URL,
   cache: new InMemoryCache(),
 })
 
