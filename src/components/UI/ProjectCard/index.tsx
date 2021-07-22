@@ -59,7 +59,7 @@ export const ProjectCard = ({ project }) => {
           </div>
         </div>
         <div className="w-1/2 border- border-yellow-200">
-          <Image src={project.coverImage.url} width="250" height="200" />
+          <Image src={project.coverImage?.url} width="250" height="200" />
         </div>
       </div>
     </>
