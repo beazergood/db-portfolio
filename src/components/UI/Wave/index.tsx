@@ -42,7 +42,11 @@ export const Wave = () => {
         </clipPath>
       </motion.svg>
 
-      <Image className="clipped" layout="fill" src={'/me-ont-coast.jpg'} />
+      <Image
+        className="clipped"
+        layout="fill"
+        src={'images/me-ont-coast.jpg'}
+      />
     </>
   )
 }

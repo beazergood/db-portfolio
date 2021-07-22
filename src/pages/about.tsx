@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Typewriter from 'typewriter-effect'
 import Image from 'next/image'
 import profilePic from '../../public/me.jpg'
-import emojiPic from '../../public/emoji.png'
+import emojiPic from '../../public/images/emoji.png'
 import { Button } from '../components/UI/Button'
 import { version } from '../../package.json'
 import { Nav } from '../components/UI/Nav'
@@ -85,7 +85,8 @@ export default function About() {
             height: 100vh;
             position: absolute;
             z-index: -1;
-            background: url('/me-ont-coast.JPG') top left / cover no-repeat;
+            background: url('/images/me-ont-coast.jpg') top left / cover
+              no-repeat;
           }
         `}</style>
       </div>
