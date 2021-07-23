@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import { InfiniteLoop } from '.'
 
 export default {
-  title: 'Component/InfiniteLoop',
+  title: 'Component/UI/InfiniteLoop',
   component: InfiniteLoop,
   argTypes: {},
 } as Meta

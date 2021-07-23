@@ -1,19 +1,17 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
-import { Pill, PillProps } from '.'
+import { Skills, SkillsProps } from '.'
 
 export default {
-  title: 'Component/UI/Pill',
-  component: Pill,
+  title: 'Component/Skills',
+  component: Skills,
   argTypes: {
     title: { control: 'string' },
   },
 } as Meta
 
-const Template: Story<PillProps> = (args) => <Pill {...args} />
+const Template: Story<SkillsProps> = (args) => <Skills {...args} />
 
 // Default scenario
 export const Default = Template.bind({})
-Default.args = {
-  title: 'Pill name',
-}
+Default.args = {}

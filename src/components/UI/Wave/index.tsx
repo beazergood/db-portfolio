@@ -5,9 +5,11 @@ export const Wave = () => {
   const svgVariants = {
     hidden: {
       rotate: -180,
+      y: -50,
     },
     visible: {
       rotate: 0,
+      y: 0,
       transition: { duration: 1 },
     },
   }
@@ -26,12 +28,20 @@ export const Wave = () => {
 
   return (
     <>
+      <Image
+        className="clipped"
+        layout="fill"
+        src={'/images/me-ont-coast.jpg'}
+      />
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         variants={svgVariants}
         initial="hidden"
         animate="visible"
-        style={{ width: '100vw' }}
+        width="100vw"
+        height="100%"
+        preserveAspectRatio="none"
+        className="border- border-purp-dark"
       >
         <clipPath id="shape">
           <motion.path
@@ -41,12 +51,11 @@ export const Wave = () => {
           ></motion.path>
         </clipPath>
       </motion.svg>
-
-      <Image
-        className="clipped"
-        layout="fill"
-        src={'images/me-ont-coast.jpg'}
-      />
+      <style jsx>{`
+        .clipped {
+          clip-path: url(#shape);
+        }
+      `}</style>
     </>
   )
 }

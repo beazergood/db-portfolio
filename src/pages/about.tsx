@@ -2,9 +2,6 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
 import Typewriter from 'typewriter-effect'
-import Image from 'next/image'
-import profilePic from '../../public/me.jpg'
-import emojiPic from '../../public/images/emoji.png'
 import { Button } from '../components/UI/Button'
 import { version } from '../../package.json'
 import { Nav } from '../components/UI/Nav'
@@ -56,7 +53,6 @@ export default function About() {
                     </strong>{' '}
                     of the interwebs from the eternally sunny isle of England.
                   </p>
-                  <Image src={emojiPic} alt="It never rains, it pours" />
                 </div>
                 <p className="text-2xl mt-10 w-full">
                   I strive to design and build modern web experiences that even

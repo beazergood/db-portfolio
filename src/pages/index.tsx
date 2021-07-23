@@ -19,6 +19,47 @@ import { Contact } from '../components/portfolio/Contact'
 import { gql } from '@apollo/client'
 import client from '../apollo-client'
 
+const experienceCards = [
+  {
+    company: 'Beazer Software',
+    role: 'UI/UX Designer & Developer',
+    pills: [
+      'UI/UX',
+      'Angular',
+      'Next',
+      'Framer',
+      'Basic Principles',
+      'Storybook',
+    ],
+    dates: 'Jan 2021 - Present',
+    img: '',
+    side: 'left',
+  },
+  {
+    company: 'High Performance Software Ltd',
+    role: 'Full Stack Web Developer',
+    pills: ['UI/UX Prototyping', 'Angular', 'MongoDB', 'Node', 'AWS'],
+    dates: 'Jan 2015 - Oct 2020',
+    img: '',
+    side: 'right',
+  },
+  {
+    company: 'High Performance Software Ltd',
+    role: 'Frontend Web Developer',
+    pills: ['HTML', 'CSS', 'Javascript', 'Sketch', 'Adobe'],
+    dates: 'Sep 2012 - Sep 2015',
+    img: '',
+    side: 'right',
+  },
+  {
+    company: 'Marketpoint Europe Ltd',
+    role: 'Web Designer',
+    pills: ['HTML', 'CSS', 'Mockups'],
+    dates: 'Aug 2011 - Sep 2012',
+    img: '',
+    side: 'left',
+  },
+]
 export default function Home({ projects }) {
   console.log('projects: ', projects)
 
@@ -46,7 +87,7 @@ export default function Home({ projects }) {
         <Hero />
         {/* <Interests /> */}
         <About />
-        <Experience />
+        <Experience cards={experienceCards} />
         <Projects data={projects} />
         <Skills />
         <Contact />

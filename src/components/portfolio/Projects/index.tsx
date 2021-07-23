@@ -11,7 +11,7 @@ export const Projects: React.FC<ProjectsProps> = ({ data }) => {
   console.log('projects prop data is', data)
   return (
     <>
-      <div className="w-full border-2  py-10 my-10  border-blue-200 container">
+      <div className="w-full border-  py-10 my-10  border-blue-200 container">
         <h3 className="font-semibold font-sans text-black">Projects</h3>
         <svg height="10" width="100" className="my-2">
           <line

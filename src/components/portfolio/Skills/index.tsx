@@ -14,16 +14,16 @@ import { Vuejs } from '@styled-icons/boxicons-logos/Vuejs'
 import { Graphql } from '@styled-icons/simple-icons/Graphql'
 import ReactTooltip from 'react-tooltip'
 
-export interface HeroProps {
+export interface SkillsProps {
   title?: string
 }
 
-export const Skills: React.FC<HeroProps> = (
+export const Skills: React.FC<SkillsProps> = (
   { title } = { title: 'A simple Tailiwind template' }
 ) => {
   return (
     <>
-      <motion.div className="w-full border-2  py-10 my-10  border-green-200 container">
+      <motion.div className="w-full border-  py-10 my-10  border-green-200 container">
         <h3 className="font-semibold font-sans text-black">Skills</h3>
         <svg height="10" width="100" className="my-2">
           <line
