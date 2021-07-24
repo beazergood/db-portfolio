@@ -22,7 +22,6 @@ export const Contact: React.FC<ContactProps> = (
             I am currently available for contract hire
           </h1>
           <div
-            href={'https://www.linkedin.com/in/dave-beazer/'}
             className="absolute right-10 cursor-pointer hover:shadow-sm"
             onClick={() => {
               document.location.href = 'https://www.linkedin.com/in/dave-beazer'
