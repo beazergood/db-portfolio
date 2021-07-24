@@ -2,7 +2,7 @@
 ### Added
 - venn diagram
 - headshot and intro blurb
-- better skills area and footer
+- better skills area and footer with link to linkedin and email address
 
 ## [0.0.4] - 24-07-21
 ### Added

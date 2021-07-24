@@ -23,7 +23,7 @@ export const Skills: React.FC<SkillsProps> = (
 ) => {
   return (
     <>
-      <div className="bg-purp">
+      <div className="bg-purp py-10 my-10">
         <motion.div className="w-full border- p-4 my-30 py-10  border-green-200 container ">
           <h1 className="text-2xl text-purp-dark payton-one">
             Technologies I Work With

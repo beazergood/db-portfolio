@@ -63,15 +63,15 @@ export const About: React.FC<AboutProps> = (
             </p>
           </motion.div>
           <motion.div
-            className="col-start-1 col-span-3 md:col-start-4 p-5 bg-mintee-dark flex-col rounded-2xl hover:shadow-lg"
+            className="col-start-1 col-span-3 md:col-start-4 p-5 bg-mintee flex-col rounded-2xl hover:shadow-lg"
             whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.3, ease: 'easeIn' }}
           >
             <p className="font-bold text-white">UX</p>
-            <p className="text-5xl py-3 text-mintee">
+            <p className="text-5xl py-3 text-mintee-dark">
               Intuitive &amp; Accessible
             </p>
-            <p className="text-2xl text-white">
+            <p className="text-2xl text-thyme">
               I strive to always be adding value to my work by ensuring the end
               user experience is both performant and accessible across the
               entire spectrum of users and devices.
