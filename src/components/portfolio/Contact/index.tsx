@@ -9,7 +9,7 @@ export const Contact: React.FC<ContactProps> = (
 ) => {
   return (
     <>
-      <div className="w-full border- py-10 my-10 border-grey-200 container">
+      <div className="w-full border- p-4 py-10 my-10 border-grey-200 container">
         <h3 className="font-semibold font-sans text-black">Contact</h3>
         <svg height="10" width="100" className="my-2">
           <line
