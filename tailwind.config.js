@@ -11,6 +11,7 @@ module.exports = {
         'purp-dark': '#77328B',
         mintee: '#C2F0CC',
         'mintee-dark': '#6FDC87',
+        thyme: '#23903A',
         'gray-2B2B2B': '#2B2B2B',
       },
     },

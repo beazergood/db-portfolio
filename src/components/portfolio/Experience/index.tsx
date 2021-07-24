@@ -14,7 +14,9 @@ export const Experience: React.FC<ExperienceProps> = (
     <>
       <div className="w-full border-  py-10 my-10  border-purple-200 container">
         <div>
-          <h3 className="font-semibold font-sans text-black">Experience</h3>
+          <h3 className="font-semibold font-sans text-gray-2B2B2B  payton-one text-3xl mt-10">
+            Experience
+          </h3>
           <svg height="10" width="100" className="my-2">
             <line
               x1="0"
@@ -27,8 +29,15 @@ export const Experience: React.FC<ExperienceProps> = (
           </svg>
           <h1 className="text-2xl text-black"></h1>
         </div>
-        <div className="container">
+        <div className="container mt-10">
           <div className="flex flex-col md:grid grid-cols-9 mx-auto p-2 text-blue-50">
+            <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+              <div className="h-full w-6 flex items-center justify-center">
+                <div className="h-full w-1 bg-mintee pointer-events-none">
+                  <div className="h-20"></div>
+                </div>
+              </div>
+            </div>
             {cards.length &&
               cards.map((card, i) => {
                 return (
@@ -43,6 +52,13 @@ export const Experience: React.FC<ExperienceProps> = (
                   />
                 )
               })}
+            <div className="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+              <div className="h-full w-6 flex items-center justify-center">
+                <div className="h-full w-1 bg-mintee pointer-events-none">
+                  <div className="h-40"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

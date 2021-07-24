@@ -12,14 +12,18 @@ const pathVariants = {
 export const VennDiagram = () => {
   return (
     <>
-      <motion.div className="w-full py-32 bg-gray-2B2B2B">
-        <motion.div
-          className="relative w-full"
-          initial={{ left: -200 }}
-          animate={{ left: 500 }}
-        >
-          <p className="font-mono" id="absoluteP">
+      <motion.div className="w-full py-32">
+        <motion.div className="relative w-full">
+          <motion.p
+            className="font-mono text-purp absolute -top-4 -left-4"
+            initial={{ right: 10 }}
+            animate={{ right: 0 }}
+            transition={{ duration: 1, delay: 3 }}
+          >
             I'm here
+          </motion.p>
+          <p className="font-mono text-gray-300 absolute right-20 -top-12">
+            Design
           </p>
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
@@ -46,21 +50,16 @@ export const VennDiagram = () => {
             <motion.path
               d="M 16 24 C 16 24 26.125 79.875 62 108.5 C 97.875 137.125 114.428 146.661 159 141"
               fill="transparent"
-              stroke-width="3"
+              stroke-width="4"
               stroke="rgb(111, 220, 135)"
               variants={pathVariants}
             />
           </motion.svg>
+          <p className="font-mono text-gray-300 absolute -left-0 sm:left-10 -bottom-8">
+            Development
+          </p>
         </motion.div>
       </motion.div>
-      <style jsx>{`
-        #absoluteP {
-          position: absolute;
-          top: -20px;
-          left: -20px;
-          color: white;
-        }
-      `}</style>
     </>
   )
 }
