@@ -1,12 +1,27 @@
-### 0.0.1 
-# 12/07/21
+## [0.0.4] - 24-07-21
+### Added
+- Timeline components
+- Image wave component to hero
+- Strapi to Heroku - deploy via git cli from dwjb-api folder
 
-## Added
+- Getting to grips more with react and adding framer-motion to components - FUN!
+
+## [0.0.3] - 18-07-21
+### Added
+- component for each section of home page
+- begun to flesh out content for each section 
+- need to finalise what content will be on homepage and dial it in
+
+## [0.0.2] - 12-07-21
+### Added
 - Robots.text
 - version number to home page title prop
-- 
-### 0.0.1
-# 08/07/21
-## Added
+  
+## [0.0.1] - 08-07-21
+### Added
 - Storybook
-- 
+- Tailwind
+- Next
+- Typewriter effect greeting
+- MDX support
+- Framer motion animations/transitions

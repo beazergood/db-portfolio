@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+/dwjb-api/node_modules
+/dwjb-api/.env
 # testing
 /coverage
 
@@ -28,3 +30,5 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+.vercel

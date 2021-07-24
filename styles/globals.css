@@ -1,0 +1,77 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: #c2f0cc;
+    /* background-color: white; */
+    z-index: 999;
+    mix-blend-mode: difference;
+    pointer-events: none;
+  }
+  /* * { */
+    /* cursor: none; */
+  /* } */
+  
+  .cursor-dot {
+    position:fixed;
+    left:0;
+    top:0;
+    /* mix-blend-mode: difference; */
+    width:8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #C285D3;
+    z-index: 999;
+  }
+  
+  .cursor-dot-outline {    
+    position:fixed;
+    left:0;
+    top:0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* background-color: rgba(194, 240, 204, .5); */
+    mix-blend-mode: difference;
+    z-index: 998;
+    
+  }
+  .cursor-dot-outline::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    background-color: rgba(194, 240, 204, .6);
+  border-radius: 50%;
+  /* opacity: .5; */
+  top: -0px;
+  left: -0px;
+  animation: cursorAnim2 2.5s infinite alternate;
+}
+@keyframes cursorAnim2 {
+  from {
+      transform: scale(.9);
+  }
+  to {
+      transform: scale(1.3);
+  }
+}
+
+.clipped {
+  clip-path: url(#shape);
+}
+
+.vast-shadow {
+  font-family: 'Vast Shadow', cursive;
+}
+
+.payton-one {
+  font-family: 'Paytone One', sans-serif;
+}
