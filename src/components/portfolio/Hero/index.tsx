@@ -56,12 +56,12 @@ export const Hero: React.FC<HeroProps> = (
 
   return (
     <>
-      <div className="h-screen w-full border-0 border-yellow-200">
+      <div className="lg:container min-h-screen w-screen border- border-yellow-200">
         <motion.div
           className="container mt-10"
-          initial={{ y: 0, x: -20 }}
+          initial={{ y: 0, x: 20 }}
           animate={{ y: 30 }}
-          style={{ y: y1, x: 20 }}
+          style={{ y: y1, x: 50 }}
           transition={{ type: 'spring', stiffness: 100, duration: 2 }}
         >
           <motion.h3 className="font-semibold font-sans text-black payton-one text-xl">
@@ -82,13 +82,14 @@ export const Hero: React.FC<HeroProps> = (
           </h1>
         </motion.div>
         <motion.div
-          className="absolute"
+          className="relative"
           style={{
             top: 0,
             bottom: 0,
             left: 0,
             right: 0,
             translateY: up,
+            height: '100vh',
           }}
         >
           <Wave />
