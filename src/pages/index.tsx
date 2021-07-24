@@ -39,7 +39,7 @@ const experienceCards = [
     company: 'High Performance Software Ltd',
     role: 'Full Stack Web Developer',
     pills: ['UI/UX Prototyping', 'Angular', 'MongoDB', 'Node', 'AWS'],
-    dates: 'Jan 2015 - Oct 2020',
+    dates: 'Oct 2014 - Oct 2020',
     img: '',
     side: 'right',
   },
@@ -47,14 +47,14 @@ const experienceCards = [
     company: 'High Performance Software Ltd',
     role: 'Frontend Web Developer',
     pills: ['HTML', 'CSS', 'Javascript', 'Sketch', 'Adobe'],
-    dates: 'Sep 2012 - Sep 2015',
+    dates: 'Sep 2012 - Sep 2014',
     img: '',
     side: 'right',
   },
   {
     company: 'Marketpoint Europe Ltd',
-    role: 'Web Designer',
-    pills: ['HTML', 'CSS', 'Mockups'],
+    role: 'Graphic & Web Designer',
+    pills: ['HTML', 'CSS', 'Adobe'],
     dates: 'Aug 2011 - Sep 2012',
     img: '',
     side: 'left',
@@ -88,7 +88,7 @@ export default function Home({ projects }) {
         {/* <Interests /> */}
         <About />
         <Experience cards={experienceCards} />
-        <Projects data={projects} />
+        {/* <Projects data={projects} /> */}
         <Skills />
         <Contact />
       </div>

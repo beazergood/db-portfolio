@@ -35,7 +35,7 @@ export const Skills: React.FC<SkillsProps> = (
             strokeWidth="6"
           />
         </svg>
-        <h1 className="text-2xl text-black">Skills Subheader</h1>
+        <h1 className="text-2xl text-black">Technologies I Work With</h1>
         <div className="flex flex-col mx-auto border- border-red-300">
           <div className="flex flex-row border- mt-20 border-red-200">
             <div className="w-1/3 text-center border- border-red-100">

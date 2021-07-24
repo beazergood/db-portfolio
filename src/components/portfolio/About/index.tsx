@@ -23,17 +23,24 @@ export const About: React.FC<AboutProps> = (
           />
         </svg>
 
-        <h1 className="text-2xl text-black">Areas of Expertise</h1>
-        <p className="mt-20 text-3xl">
-          I am passionate about bringing products with a strong visual identity
-          to life on the web. I find it helps digital brands and companies move
-          their web experiences to the next level and increase user engagement
-          and enjoyment.
-        </p>
-        <p className="text-3xl mt-10">
-          The end user is the most important aspect to all of my creations and I
-          endeavour to spark a little bit of joy into their day.
-        </p>
+        <h1 className="text-2xl text-black">Raison d'etre</h1>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div className="col-span-1">
+            <p className="mt-10 text-3xl">
+              I am passionate about bringing products with a strong visual
+              identity to life on the web. I find it helps digital brands and
+              companies move their web experiences to the next level and
+              increase user engagement and enjoyment.
+            </p>
+          </div>
+          <div className="col-span-1">
+            <p className="text-3xl mt-10">
+              The end user is the most important aspect to all of my creations
+              and I endeavour to spark a little bit of joy into their day.
+            </p>
+          </div>
+        </div>
 
         <div className="flex flex-row w-full border-0 border-purp mt-20">
           <div className="flex w-1/2 m-5 p-5 bg-mintee flex-col rounded-2xl">
@@ -47,12 +54,10 @@ export const About: React.FC<AboutProps> = (
           </div>
           <div className="flex w-1/2 m-5 p-10 bg-purp flex-col rounded-2xl">
             <p className="font-bold text-white">UX</p>
-            <p className="text-5xl py-3 text-purp-dark">
-              Polished & Considered
-            </p>
+            <p className="text-5xl py-3 text-purp-dark">Fun & Fast</p>
             <p className="text-3xl text-white">
-              I try to learn as much as I can about the problems I solve in
-              order to arrive at a solution that doesn't disappoint.
+              I try to inject a bit of fun into the experiences I build whilst
+              staying out of the users way.
             </p>
           </div>
         </div>

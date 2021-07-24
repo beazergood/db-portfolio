@@ -1,3 +1,11 @@
+## [0.0.4] - 24-07-21
+### Added
+- Timeline components
+- Image wave component to hero
+- Strapi to Heroku - deploy via git cli from dwjb-api folder
+
+- Getting to grips more with react and adding framer-motion to components - FUN!
+
 ## [0.0.3] - 18-07-21
 ### Added
 - component for each section of home page

@@ -21,7 +21,10 @@ export const Contact: React.FC<ContactProps> = (
             strokeWidth="6"
           />
         </svg>
-        <h1 className="text-2xl text-black">Contact Subheader</h1>
+        <h1 className="text-2xl text-black">Let's work together</h1>
+        <div className=" text-center mt-10 text-xl">
+          You can reach me via email at hi[at]davebeazer.dev
+        </div>
       </div>
     </>
   )
