@@ -1,3 +1,9 @@
+## [0.0.5] - 24-07-21
+### Added
+- venn diagram
+- headshot and intro blurb
+- better skills area and footer
+
 ## [0.0.4] - 24-07-21
 ### Added
 - Timeline components

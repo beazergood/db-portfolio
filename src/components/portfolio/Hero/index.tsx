@@ -44,7 +44,7 @@ export const Hero: React.FC<HeroProps> = (
   }, [x])
 
   const { scrollY } = useViewportScroll()
-  const y1 = useTransform(scrollY, [0, 300], [0, 200])
+  const y1 = useTransform(scrollY, [0, -300], [0, -200])
   const y2 = useTransform(scrollY, [0, 300], [0, -100])
 
   const [ref, inView, entry] = useInView({
@@ -56,19 +56,20 @@ export const Hero: React.FC<HeroProps> = (
 
   return (
     <>
-      <div className="lg:container min-h-screen w-screen border- border-yellow-200">
+      <div className="w-screen border- border-yellow-200  ">
         <motion.div
-          className="container mt-10"
-          initial={{ y: 0, x: 20 }}
+          layout
+          className="container mt-10 h-full"
+          initial={{ y: -100, x: 20 }}
           animate={{ y: 30 }}
           style={{ y: y1, x: 50 }}
           transition={{ type: 'spring', stiffness: 100, duration: 2 }}
         >
-          <motion.h3 className="font-semibold font-sans text-black payton-one text-xl">
+          <motion.h3 className="font-semibold font-sans text-gray-2B2B2B payton-one text-3xl">
             Dave Beazer
           </motion.h3>
           <motion.svg height="10" width="100" className="my-2">
-            <line
+            <motion.line
               x1="0"
               y1="0"
               x2="100"
@@ -77,27 +78,16 @@ export const Hero: React.FC<HeroProps> = (
               strokeWidth="6"
             />
           </motion.svg>
-          <h1 className="text-2xl text-black ">
+          <h1 className="text-2xl text-gray-2B2B2B ">
             UI/UX Designer &amp; Developer
           </h1>
         </motion.div>
-        <motion.div
-          className="relative"
-          style={{
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            translateY: up,
-            height: '100vh',
-          }}
-        >
-          <Wave />
-        </motion.div>
+
+        <Wave />
       </div>
       <motion.div
-        className="-mt-20 text-center"
-        initial={{ y: -10 }}
+        className="mt-20 text-center"
+        initial={{ y: 10 }}
         animate={{ y: -3 }}
         transition={{
           type: 'spring',
@@ -106,7 +96,7 @@ export const Hero: React.FC<HeroProps> = (
           repeatDelay: 0.4,
         }}
       >
-        <ArrowDown width="20" height="20" />
+        <ArrowDown width="20" height="20" fill="#eoeoeo" />
       </motion.div>
 
       {/* <motion.div
@@ -129,8 +119,6 @@ export const Hero: React.FC<HeroProps> = (
           style={{ width, translateY: down }}
         ></motion.div>
       </motion.div> */}
-      {/* {state.toString()} */}
-      {state && <VennDiagram />}
     </>
   )
 }
