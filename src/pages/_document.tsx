@@ -10,7 +10,7 @@ class MyDocument extends Document {
     const meta = {
       title: 'The Wonderful World of Dave Beazer',
       description:
-        'User Experience developer trying his hardest to not build shit software.',
+        'User experience designer & developer trying his hardest to not build shit software.',
       image:
         'https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png',
     }
@@ -52,6 +52,16 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap"
             rel="stylesheet"
           />
+
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','G-KP6Y99Y6G0');`,
+            }}
+          ></script>
         </Head>
         <body>
           <Main />

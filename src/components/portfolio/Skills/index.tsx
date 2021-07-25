@@ -26,7 +26,7 @@ export const Skills: React.FC<SkillsProps> = (
       <div className="bg-purp py-10 my-10">
         <motion.div className="w-full border- p-4 my-30 py-10  border-green-200 container ">
           <h1 className="text-2xl text-purp-dark payton-one">
-            Technologies I Work With
+            Technologies &amp; tools I like to work with 👾
           </h1>
           <div className="items-center justify-center w-full">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-20 mx-auto">

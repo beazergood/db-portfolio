@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { VennDiagram } from '../../UI/VennDiagram'
 import Image from 'next/image'
 import Typewriter from 'typewriter-effect'
-
+import ReactTooltip from 'react-tooltip'
 export interface AboutProps {
   title?: string
 }
@@ -13,24 +13,25 @@ export const About: React.FC<AboutProps> = (
 ) => {
   return (
     <>
-      <div className="w-full my-10 container p-4 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-8">
+      <div className="w-full my-10 container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-6  gap-8">
           <div className="col-span-1 col-start-1 md:col-span-3">
             <div className="flex flex-row mb-10">
               <Image
                 src={'/images/me.jpg'}
-                width="80px"
-                height="80px"
+                width="90px"
+                height="90px"
                 className="rounded-full m-10"
               />
 
               <div className="w-full md:w-3/5 ml-5 px-10 rounded-xl">
-                <h1 className="text-4xl pt-3">
+                <h1 className="text-6xl pt-3">
                   <Typewriter
                     options={{
                       strings: getGreeting(),
                       autoStart: true,
                       cursor: '<span class="text-3xl">|</span>',
+                      cursorClassName: 'text-4xl',
                       loop: true,
                     }}
                   />
@@ -38,15 +39,31 @@ export const About: React.FC<AboutProps> = (
               </div>
             </div>
           </div>
-          <div className="col-start-1 col-span-3">
+          <div className="col-start-1 col-span-3 ">
+            <ReactTooltip />
             <p className="text-xl">
-              I am passionate about bringing peoples products and ideas to life
-              on the web. I relish at the task of taking a concept and
-              transforming it into a digital experience others can use and
+              I'm Dave 👋 a <strong>Designer/Developer</strong> from{' '}
+              <span
+                className="text-yellow-400 font-medium"
+                data-tip="Sunny Everyday 😎"
+              >
+                SE England.
+              </span>
+              Welcome to my portfolio! I hate writing about myself but this site
+              must serve it's purpose! Alas, here goes...
+            </p>
+            <p className="text-xl mt-4">
+              {' '}
+              I'm passionate about bringing peoples products and ideas to life
+              on the web. I specialise in <strong>user interface</strong> design
+              and development using <strong>web technologies.</strong> I have an
+              educational background in business, photography and design. I
+              enjoy the tasks and challenges faced when taking a concept or idea
+              and transforming it into a digital experience others can use and
               enjoy.
             </p>
           </div>
-          <div className="col-span-1 col-start-1 md:col-end-7 md:col-span-2">
+          <div className="col-start-3 md:col-start-4 md:col-span-3">
             <VennDiagram />
           </div>
 
@@ -56,7 +73,7 @@ export const About: React.FC<AboutProps> = (
             transition={{ duration: 0.3, ease: 'easeIn' }}
           >
             <p className="font-bold text-white">UI</p>
-            <p className="text-5xl py-3 text-purp-dark">Design &amp; Build</p>
+            <p className="text-4xl py-3 text-purp-dark">Design &amp; Build</p>
             <p className="text-2xl text-white">
               The lines between designer and developer are definitely blurring
               when it comes to user interfaces, I welcome it with open arms!
@@ -68,7 +85,7 @@ export const About: React.FC<AboutProps> = (
             transition={{ duration: 0.3, ease: 'easeIn' }}
           >
             <p className="font-bold text-white">UX</p>
-            <p className="text-5xl py-3 text-mintee-dark">
+            <p className="text-4xl py-3 text-mintee-dark">
               Intuitive &amp; Accessible
             </p>
             <p className="text-2xl text-thyme">

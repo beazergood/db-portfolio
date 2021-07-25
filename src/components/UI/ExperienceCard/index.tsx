@@ -15,6 +15,7 @@ export interface ExperienceCardProps {
   pills: Array<any>
   side: string
   img: string
+  description: string
 }
 
 const variantsFromLeft = {
@@ -109,7 +110,9 @@ const Card = ({ props }) => {
       <h1 className="leading-tight text-justify text-2xl text-gray-600 mb-4">
         {props.role}
       </h1>
-
+      {props.description && (
+        <p className="text-justify text-gray-500">{props.description}</p>
+      )}
       <motion.ul
         className="py-2 flex flex-wrap p-x-2 my-2 w-full relative top-1"
         variants={pillsContainer}

@@ -22,7 +22,7 @@ export const Contact: React.FC<ContactProps> = (
             I am currently available for contract hire
           </h1>
           <div
-            className="absolute right-10 cursor-pointer hover:shadow-sm"
+            className="absolute right-10 cursor-pointer hover:shadow-sm z-10"
             onClick={() => {
               document.location.href = 'https://www.linkedin.com/in/dave-beazer'
             }}
@@ -30,7 +30,7 @@ export const Contact: React.FC<ContactProps> = (
             <Linkedin
               width="64"
               height="64"
-              data-tip="Typescript"
+              data-tip="See my profile 👉"
               fill="#C2F0CC"
             />
           </div>
@@ -45,7 +45,7 @@ export const Contact: React.FC<ContactProps> = (
           height="300px"
           preserveAspectRatio="none"
           className="border- border-purp-dark "
-          style={{ right: 0, position: 'absolute', zIndex: -1 }}
+          style={{ right: 0, position: 'absolute', zIndex: -2 }}
         >
           <motion.path
             id="myPath"
@@ -58,7 +58,7 @@ export const Contact: React.FC<ContactProps> = (
             </textPath>
           </motion.text>
           <motion.text x="200">
-            <textPath href="#myPath" fill="#C285D3">
+            <textPath href="#myPath" fill="#eaeaea">
               v {packageInfo.version}
             </textPath>
           </motion.text>
