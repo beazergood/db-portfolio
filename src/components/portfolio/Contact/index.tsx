@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Linkedin } from '@styled-icons/bootstrap/Linkedin'
+import { Github } from '@styled-icons/bootstrap/Github'
 import * as packageInfo from '../../../../package.json'
 export interface ContactProps {
   title?: string
@@ -21,18 +22,39 @@ export const Contact: React.FC<ContactProps> = (
           <h1 className="text-2xl text-mintee payton-one py-10">
             I am currently available for contract hire
           </h1>
-          <div
-            className="absolute right-10 cursor-pointer hover:shadow-sm z-10"
-            onClick={() => {
-              document.location.href = 'https://www.linkedin.com/in/dave-beazer'
-            }}
-          >
-            <Linkedin
-              width="64"
-              height="64"
-              data-tip="See my profile 👉"
-              fill="#C2F0CC"
-            />
+          <div className="absolute right-10 top-0 ">
+            <h1 className="text-xl text-mintee payton-one py-10 text-left invisible md:visible lg:visible">
+              ways to get in touch
+            </h1>
+            <div className="grid gap-3 grid-cols-2">
+              <div
+                className="cursor-pointer hover:shadow-sm z-10"
+                onClick={() => {
+                  document.location.href =
+                    'https://www.linkedin.com/in/dave-beazer'
+                }}
+              >
+                <Linkedin
+                  width="64"
+                  height="64"
+                  data-tip="See my profile 👉"
+                  fill="#C2F0CC"
+                />
+              </div>
+              <div
+                className="cursor-pointer hover:shadow-sm z-10"
+                onClick={() => {
+                  document.location.href = 'https://github.com/beazergood'
+                }}
+              >
+                <Github
+                  width="64"
+                  height="64"
+                  data-tip="See my profile 👉"
+                  fill="#C2F0CC"
+                />
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -53,13 +75,18 @@ export const Contact: React.FC<ContactProps> = (
             fill="#C2F0CC"
           ></motion.path>
           <motion.text x="800">
-            <textPath href="#myPath" fill="#23903A">
+            <textPath href="#myPath" fill="#23903A" fontSize="18">
               say hi[at]davebeazer.dev
             </textPath>
           </motion.text>
           <motion.text x="200">
             <textPath href="#myPath" fill="#eaeaea">
               v {packageInfo.version}
+            </textPath>
+          </motion.text>
+          <motion.text x="270">
+            <textPath href="#myPath" fill="#eaeaea" fontSize="14">
+              site built with Next, Storybook &amp; Tailwind
             </textPath>
           </motion.text>
         </motion.svg>
