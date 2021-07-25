@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import { AnimateSharedLayout } from 'framer-motion'
 import '../../styles/globals.css'
 import React, { useState, useEffect } from 'react'
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }: AppProps) {
   // const cursorX = useMotionValue(-100)
@@ -39,9 +40,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   // }, [])
 
   return (
-    <AnimateSharedLayout>
-      <Component {...pageProps} />
-    </AnimateSharedLayout>
+    <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+        />
+      </Head>
+      <AnimateSharedLayout>
+        <Component {...pageProps} />
+      </AnimateSharedLayout>
+    </>
   )
 }
 export default MyApp

@@ -28,28 +28,28 @@ export const Contact: React.FC<ContactProps> = (
             </h1>
             <div className="grid gap-3 grid-cols-2">
               <div
-                className="cursor-pointer hover:shadow-sm z-10"
                 onClick={() => {
                   document.location.href =
                     'https://www.linkedin.com/in/dave-beazer'
                 }}
               >
                 <Linkedin
-                  width="64"
-                  height="64"
+                  width="44"
+                  className="cursor-pointer hover:shadow-lg z-10 relative"
+                  height="44"
                   data-tip="See my profile 👉"
                   fill="#C2F0CC"
                 />
               </div>
               <div
-                className="cursor-pointer hover:shadow-sm z-10"
                 onClick={() => {
                   document.location.href = 'https://github.com/beazergood'
                 }}
               >
                 <Github
-                  width="64"
-                  height="64"
+                  width="44"
+                  height="44"
+                  className="cursor-pointer hover:shadow-lg z-10 relative"
                   data-tip="See my profile 👉"
                   fill="#C2F0CC"
                 />
@@ -74,7 +74,7 @@ export const Contact: React.FC<ContactProps> = (
             d="M 0.249 291.84 L 26.944 291.84 C 53.54 291.84 107.23 291.84 160.221 264.784 C 213.512 238.133 267.203 183.413 320.194 172.976 C 373.484 162.133 427.175 194.56 480.166 194.56 C 533.457 194.56 587.147 162.133 640.138 178.347 C 693.429 194.56 747.12 259.413 800.111 237.829 C 853.401 215.84 907.092 108.427 960.083 81.067 C 1013.374 53.707 1067.065 108.427 1120.055 145.92 C 1173.346 183.413 1227.037 205.707 1280.028 178.347 C 1333.319 150.987 1387.009 76 1413.005 37.797 L 1440 0 L 1440 292 L 0 292 Z"
             fill="#C2F0CC"
           ></motion.path>
-          <motion.text x="800">
+          <motion.text x="1200">
             <textPath href="#myPath" fill="#23903A" fontSize="18">
               say hi[at]davebeazer.dev
             </textPath>
