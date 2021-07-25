@@ -1,3 +1,12 @@
+## [0.0.6] - 25-07-21
+### Added
+- description to positions
+- more intro text
+- GA tag
+
+### Fixed
+- z-index on linkedin icon was behind the graphic
+
 ## [0.0.5] - 24-07-21
 ### Added
 - venn diagram

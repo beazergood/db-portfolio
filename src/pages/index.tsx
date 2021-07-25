@@ -25,23 +25,37 @@ const experienceCards = [
     role: 'UI/UX Designer & Developer',
     pills: [
       'UI/UX',
+      'Design/Dev Workflows',
       'Angular',
-      'Next',
+      'React',
       'Framer',
-      'Basic Principles',
       'Storybook',
+      'NX',
     ],
     dates: 'Jan 2021 - Present',
     img: '',
     side: 'left',
+    description: 'Upskilling on technologies and learning new stacks.',
+  },
+  {
+    company: 'High Performance Software Ltd',
+    role: 'Senior Full Stack Web Developer',
+    pills: ['Angular', 'MongoDB', 'Node', 'AWS'],
+    description:
+      'Responsible for building, maintaining and developing Cloud web applications with new features. Design Lead.',
+    dates: 'Oct 2017 - Oct 2020',
+    img: '',
+    side: 'right',
   },
   {
     company: 'High Performance Software Ltd',
     role: 'Full Stack Web Developer',
-    pills: ['UI/UX Prototyping', 'Angular', 'MongoDB', 'Node', 'AWS'],
-    dates: 'Oct 2014 - Oct 2020',
+    pills: ['UI/UX Prototyping', 'AngularJS', 'MongoDB', 'Node'],
+    dates: 'Oct 2014 - Sep 2017',
     img: '',
     side: 'right',
+    description:
+      'Built and maintained a new MEAN stack application to manage iOS app data. Designed the UI/UX for iOS and Web applications.',
   },
   {
     company: 'High Performance Software Ltd',
@@ -50,6 +64,8 @@ const experienceCards = [
     dates: 'Sep 2012 - Sep 2014',
     img: '',
     side: 'right',
+    description:
+      'Built and maintained vanilla js web application for managing HTML5 app.',
   },
   {
     company: 'Marketpoint Europe Ltd',
@@ -58,6 +74,8 @@ const experienceCards = [
     dates: 'Aug 2011 - Sep 2012',
     img: '',
     side: 'left',
+    description:
+      'Designed & built a marketing website for new software product. Designed print material for marketing materials.',
   },
 ]
 export default function Home({ projects }) {
@@ -73,7 +91,9 @@ export default function Home({ projects }) {
   return (
     <>
       <Head>
-        <title>Home {packageInfo.version}</title>
+        <title>
+          Dave Beazer | UX/UX Design &amp; Development {packageInfo.version}
+        </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav props={navProps} />
