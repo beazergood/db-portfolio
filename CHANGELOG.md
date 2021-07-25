@@ -1,3 +1,10 @@
+## [0.0.7] - 
+### Fixed
+- viewport issue on mobile
+
+### Changed
+- footer layout tweak
+
 ## [0.0.6] - 25-07-21
 ### Added
 - description to positions
