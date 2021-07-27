@@ -70,6 +70,10 @@ export const About: React.FC<AboutProps> = () => {
               challenges faced when taking a concept or idea and transforming it
               into a digital experience others can use and enjoy.
             </p>
+            <p className="text-xl my-4">
+              Recently I've been learning some new technologies and fully
+              embracing the JAMstack to build <em>lightning fast web apps.</em>
+            </p>
           </div>
           <div className="overflow-x-hiden md:w-1/4 mx-auto">
             <VennDiagram />{' '}
@@ -87,8 +91,8 @@ export const About: React.FC<AboutProps> = () => {
             </p>
             <p className="text-2xl text-purp-dark">
               There's a lot of different hats to wear when traversing design and
-              development. I am always working on improving my workflows and
-              between the two disciplines.
+              development. I am always working on improving my workflows between
+              the two disciplines.
             </p>
           </motion.div>
           <motion.div
