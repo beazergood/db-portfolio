@@ -75,7 +75,7 @@ export const Contact: React.FC<ContactProps> = (
             fill="#C2F0CC"
           ></motion.path>
           <motion.text x="1200">
-            <textPath href="#myPath" fill="#23903A" fontSize="18">
+            <textPath href="#myPath" fill="#C285D3" fontSize="18">
               say hi[at]davebeazer.dev
             </textPath>
           </motion.text>

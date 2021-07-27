@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { ArrowDown } from '@styled-icons/bootstrap/ArrowDown'
 import { Wave } from '../../UI/Wave'
-import { VennDiagram } from '../../UI/VennDiagram'
+import Image from 'next/image'
+import useResponsive from '../../../hooks/responsive'
+
 import {
   useViewportScroll,
   motion,
@@ -24,9 +26,7 @@ const variants = {
   },
 }
 
-export const Hero: React.FC<HeroProps> = (
-  { title } = { title: 'A simple Tailiwind template' }
-) => {
+export const Hero: React.FC<HeroProps> = () => {
   const x = useSpring(0, { stiffness: 300, damping: 200 })
   const width = useTransform(x, [-500, 200], [350, 0])
   const scale = useTransform(x, [-100, 0], [1.25, 1])
@@ -52,40 +52,67 @@ export const Hero: React.FC<HeroProps> = (
     threshold: 0.5,
     triggerOnce: false,
   })
-  console.log(entry)
+
+  const { isTabletOrMobile } = useResponsive()
+
+  // const Tablet = ({ children }) => {
+  //   const isTablet = useMediaQuery({ minWidth: 768 }, { deviceWidth: 1600 })
+  //   return isTablet ? children : null
+  // }
 
   return (
     <>
-      <div className="w-screen border- border-yellow-200  ">
+      <div className="border-0 border-green-500 ">
         <motion.div
           layout
-          className="container mt-10 h-full"
+          className="container mt-10 "
           initial={{ y: -100, x: 20 }}
           animate={{ y: 30 }}
           style={{ y: y1, x: 50 }}
           transition={{ type: 'spring', stiffness: 100, duration: 2 }}
         >
-          <motion.h3 className="font-semibold font-sans text-gray-2B2B2B payton-one text-3xl">
-            Dave Beazer
-          </motion.h3>
-          <motion.svg height="10" width="100" className="my-2">
-            <motion.line
-              x1="0"
-              y1="0"
-              x2="100"
-              y2="0"
-              stroke="hsl(287, 47%, 67%)"
-              strokeWidth="6"
-            />
-          </motion.svg>
-          <h1 className="text-2xl text-gray-2B2B2B ">
-            UI/UX Designer &amp; Developer
-          </h1>
+          <div className="flex flex-col md:flex-row text-center">
+            <div className="mb-5 mx-auto md:mx-1">
+              {isTabletOrMobile && (
+                <Image
+                  src={'/images/me.jpg'}
+                  width="90px"
+                  height="90px"
+                  className="rounded-full"
+                />
+              )}
+            </div>
+            <div className="md:ml-10">
+              <motion.h3 className="font-semibold font-sans text-gray-2B2B2B payton-one text-3xl md:text-left">
+                Dave Beazer
+              </motion.h3>
+              <motion.svg
+                height="10"
+                width="100"
+                className="my-3 md:mx-1 mx-auto"
+              >
+                <motion.line
+                  x1="0"
+                  y1="0"
+                  x2="100"
+                  y2="0"
+                  stroke="hsl(287, 47%, 67%)"
+                  strokeWidth="6"
+                />
+              </motion.svg>
+              <h1 className="text-2xl text-gray-2B2B2B md:text-left">
+                UI/UX Designer &amp; Developer
+              </h1>
+            </div>
+          </div>
         </motion.div>
 
+        {/* <!-- WAVE HERO GRAPHIC WITH IMAGE--> */}
+        {/* <Tablet> */}
         <Wave />
+        {/* </Tablet> */}
       </div>
-      <motion.div
+      {/* <motion.div
         className="mt-20 text-center"
         initial={{ y: 10 }}
         animate={{ y: -3 }}
@@ -97,7 +124,7 @@ export const Hero: React.FC<HeroProps> = (
         }}
       >
         <ArrowDown width="20" height="20" fill="#eoeoeo" />
-      </motion.div>
+      </motion.div> */}
 
       {/* <motion.div
         style={{ opacity: fadeIn }}

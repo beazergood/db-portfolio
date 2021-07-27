@@ -14,10 +14,10 @@ export const Experience: React.FC<ExperienceProps> = (
     <>
       <div className="w-full border-  py-10 my-10  border-purple-200 container">
         <div>
-          <h3 className="font-semibold font-sans text-gray-2B2B2B  payton-one text-2xl mt-10">
+          <h3 className="font-semibold font-sans text-gray-2B2B2B  payton-one text-2xl mx-5 mt-10">
             Experience
           </h3>
-          <svg height="10" width="100" className="my-2">
+          <svg height="10" width="100" className="my-2 mx-5">
             <line
               x1="0"
               y1="0"

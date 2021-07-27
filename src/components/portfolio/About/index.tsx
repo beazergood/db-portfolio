@@ -4,97 +4,109 @@ import { VennDiagram } from '../../UI/VennDiagram'
 import Image from 'next/image'
 import Typewriter from 'typewriter-effect'
 import ReactTooltip from 'react-tooltip'
+import useResponsive from '../../../hooks/responsive'
+
 export interface AboutProps {
   title?: string
 }
 
-export const About: React.FC<AboutProps> = (
-  { title } = { title: 'A simple Tailiwind template' }
-) => {
+export const About: React.FC<AboutProps> = () => {
+  const {
+    isDesktopOrLaptop,
+    isBigScreen,
+    isTabletOrMobile,
+    isPortrait,
+    isRetina,
+  } = useResponsive()
+
   return (
     <>
-      <div className="w-full my-10 container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-6  gap-8">
-          <div className="col-span-1 col-start-1 md:col-span-3">
-            <div className="flex flex-row mb-10">
-              <Image
-                src={'/images/me.jpg'}
-                width="90px"
-                height="90px"
-                className="rounded-full m-10"
+      <div className="my-10 px-4 container mx-auto flex-col">
+        <div className="flex flex-col md:flex-row my-10">
+          {isDesktopOrLaptop && (
+            <Image
+              src={'/images/me.jpg'}
+              width="90px"
+              height="90px"
+              className="rounded-full"
+            />
+          )}
+          <div className="md:ml-10">
+            <h1 className="text-6xl pt-3 text-left">
+              <Typewriter
+                options={{
+                  strings: getGreeting(),
+                  autoStart: true,
+                  cursor: '<span class="text-3xl">|</span>',
+                  cursorClassName: 'text-4xl',
+                  loop: true,
+                }}
               />
-
-              <div className="w-full md:w-3/5 ml-5 px-10 rounded-xl">
-                <h1 className="text-6xl pt-3">
-                  <Typewriter
-                    options={{
-                      strings: getGreeting(),
-                      autoStart: true,
-                      cursor: '<span class="text-3xl">|</span>',
-                      cursorClassName: 'text-4xl',
-                      loop: true,
-                    }}
-                  />
-                </h1>
-              </div>
-            </div>
+            </h1>
           </div>
-          <div className="col-start-1 col-span-3 ">
+        </div>
+        <div className="flex flex-col md:flex-row">
+          <div className="md:w-1/2">
             <ReactTooltip />
             <p className="text-xl">
-              I'm Dave 👋 a <strong>Designer/Developer</strong> from{' '}
+              I'm Dave 👋 a <strong>UI/UX Designer &amp; Developer</strong> from{' '}
               <span
                 className="text-yellow-400 font-medium"
-                data-tip="Sunny Everyday 😎"
+                data-tip="Land of eternal sunshine &amp; sarcasm 😎"
               >
-                SE England.
+                England.
               </span>
-              Welcome to my portfolio! I hate writing about myself but this site
-              must serve it's purpose! Alas, here goes...
+              Welcome to my portfolio! This is something I've always wanted to
+              build to showcase my work.
             </p>
-            <p className="text-xl mt-4">
+            <p className="text-xl my-4">
               {' '}
               I'm passionate about bringing peoples products and ideas to life
-              on the web. I specialise in <strong>user interface</strong> design
-              and development using <strong>web technologies.</strong> I have an
-              educational background in business, photography and design. I
-              enjoy the tasks and challenges faced when taking a concept or idea
-              and transforming it into a digital experience others can use and
-              enjoy.
+              on the web and crafting well-rounded{' '}
+              <strong>user experiences</strong>. I specialise in{' '}
+              <strong>user interface</strong> design and development using{' '}
+              <strong>web technologies</strong> I have an educational background
+              in business, photography and design. I enjoy the tasks and
+              challenges faced when taking a concept or idea and transforming it
+              into a digital experience others can use and enjoy.
             </p>
           </div>
-          <div className="col-start-3 md:col-start-4 md:col-span-3">
-            <VennDiagram />
+          <div className="overflow-x-hiden md:w-1/4 mx-auto">
+            <VennDiagram />{' '}
           </div>
-
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <motion.div
-            className="col-start-1 col-span-3 p-5 bg-purp flex-col rounded-2xl hover:shadow-lg"
+            className="p-5 bg-purp flex-col rounded-2xl hover:shadow-lg col-span-1"
             whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.3, ease: 'easeIn' }}
           >
-            <p className="font-bold text-white">UI</p>
-            <p className="text-4xl py-3 text-purp-dark">Design &amp; Build</p>
-            <p className="text-2xl text-white">
-              The lines between designer and developer are definitely blurring
-              when it comes to user interfaces, I welcome it with open arms!
+            <p className="font-bold text-purp-dark">UI</p>
+            <p className="text-4xl py-3" style={{ color: '#EEC2FA' }}>
+              Design &amp; Build
+            </p>
+            <p className="text-2xl text-purp-dark">
+              There's a lot of different hats to wear when traversing design and
+              development. I am always working on improving my workflows and
+              between the two disciplines.
             </p>
           </motion.div>
           <motion.div
-            className="col-start-1 col-span-3 md:col-start-4 p-5 bg-mintee flex-col rounded-2xl hover:shadow-lg"
+            className="p-5 bg-mintee flex-col rounded-2xl hover:shadow-lg col-span-1"
             whileHover={{ scale: 1.01 }}
             transition={{ duration: 0.3, ease: 'easeIn' }}
           >
-            <p className="font-bold text-white">UX</p>
+            <p className="font-bold text-thyme">UX</p>
             <p className="text-4xl py-3 text-mintee-dark">
               Intuitive &amp; Accessible
             </p>
             <p className="text-2xl text-thyme">
               I strive to always be adding value to my work by ensuring the end
               user experience is both performant and accessible across the
-              entire spectrum of users and devices.
+              spectrum of users and devices.
             </p>
           </motion.div>
-        </div>
+        </div>{' '}
       </div>
     </>
   )

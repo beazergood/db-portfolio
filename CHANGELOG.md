@@ -1,4 +1,7 @@
 ## [0.0.7] - 
+### Added
+- responsive hooks to conditionally include components based off of media queries. see src/hooks/responsive
+
 ### Fixed
 - viewport issue on mobile
 
