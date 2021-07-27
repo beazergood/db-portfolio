@@ -32,3 +32,9 @@ yarn-error.log*
 .env.production.local
 
 .vercel
+public/images/contact-3.png
+public/images/contact-509x203.png
+public/images/contact-531x238.png
+public/images/contact.png
+public/images/me-ont-coast-sq.jpg
+public/svg/venn-thick.svg
