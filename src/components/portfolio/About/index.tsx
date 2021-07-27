@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { VennDiagram } from '../../UI/VennDiagram'
-import Image from 'next/image'
 import Typewriter from 'typewriter-effect'
 import ReactTooltip from 'react-tooltip'
 import useResponsive from '../../../hooks/responsive'
@@ -56,19 +55,18 @@ export const About: React.FC<AboutProps> = () => {
               >
                 England.
               </span>
-              Welcome to my portfolio! This is something I've always wanted to
-              build to showcase my work.
+              Welcome to my portfolio!
             </p>
             <p className="text-xl my-4">
               {' '}
-              I'm passionate about bringing peoples products and ideas to life
-              on the web and crafting well-rounded{' '}
-              <strong>user experiences</strong>. I specialise in{' '}
-              <strong>user interface</strong> design and development using{' '}
-              <strong>web technologies</strong> I have an educational background
-              in business, photography and design. I enjoy the tasks and
-              challenges faced when taking a concept or idea and transforming it
-              into a digital experience others can use and enjoy.
+              I'm passionate about bringing products and ideas to life on the
+              web and crafting well-rounded <strong>user experiences</strong>. I
+              specialise in <strong>user interface</strong> design and
+              development using <strong>web technologies.</strong> I have an
+              educational background in business, photography and design. I
+              enjoy the tasks and challenges faced when taking a concept or idea
+              and transforming it into a digital experience others can use and
+              enjoy.
             </p>
             <p className="text-xl my-4">
               Recently I've been learning some new technologies and fully
@@ -118,10 +116,10 @@ export const About: React.FC<AboutProps> = () => {
 
 function getGreeting() {
   return [
-    // '<span class="text-3xl">Oi oi!</span>',
+    // '<span class="text-3xl">Oi</span>',
     '<span class="text-3xl">Hello!</span>',
     // '<span class="text-3xl">Worrrrrd</span>',
-    // '<span class="text-3xl">G\'day!</span>',
+    '<span class="text-3xl">G\'day!</span>',
     '<span class="text-3xl">Hi!</span>',
     '<span class="text-3xl">Bonjour!</span>',
     // '<span class="text-3xl">Wagwan</span>',
