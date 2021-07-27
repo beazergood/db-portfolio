@@ -48,14 +48,14 @@ export const About: React.FC<AboutProps> = () => {
           <div className="md:w-1/2">
             <ReactTooltip />
             <p className="text-xl">
-              I'm Dave 👋 a <strong>UI/UX Designer &amp; Developer</strong> from{' '}
+              I'm Dave 👋 a full-stack{' '}
+              <strong>UI/UX Designer &amp; Developer</strong> from{' '}
               <span
                 className="text-yellow-400 font-medium"
                 data-tip="Land of eternal sunshine &amp; sarcasm 😎"
               >
                 England.
               </span>
-              Welcome to my portfolio!
             </p>
             <p className="text-xl my-4">
               {' '}
