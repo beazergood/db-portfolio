@@ -55,11 +55,6 @@ export const Hero: React.FC<HeroProps> = () => {
 
   const { isTabletOrMobile } = useResponsive()
 
-  // const Tablet = ({ children }) => {
-  //   const isTablet = useMediaQuery({ minWidth: 768 }, { deviceWidth: 1600 })
-  //   return isTablet ? children : null
-  // }
-
   return (
     <>
       <div className="border-0 border-green-500 ">
@@ -74,12 +69,14 @@ export const Hero: React.FC<HeroProps> = () => {
           <div className="flex flex-col md:flex-row text-center">
             <div className="mb-5 mx-auto md:mx-1">
               {isTabletOrMobile && (
-                <Image
-                  src={'/images/me.jpg'}
-                  width="90px"
-                  height="90px"
-                  className="rounded-full"
-                />
+                <div>
+                  <img
+                    src={'/images/me.jpg'}
+                    width="90px"
+                    height="90px"
+                    className="rounded-full"
+                  />
+                </div>
               )}
             </div>
             <div className="md:ml-10">

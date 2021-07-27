@@ -24,7 +24,7 @@ export const About: React.FC<AboutProps> = () => {
       <div className="my-10 px-4 container mx-auto flex-col">
         <div className="flex flex-col md:flex-row my-10">
           {isDesktopOrLaptop && (
-            <Image
+            <img
               src={'/images/me.jpg'}
               width="90px"
               height="90px"
