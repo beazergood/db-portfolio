@@ -106,7 +106,7 @@ export const Hero: React.FC<HeroProps> = () => {
 
         {/* <!-- WAVE HERO GRAPHIC WITH IMAGE--> */}
         {/* <Tablet> */}
-        <Wave />
+        {!isTabletOrMobile && <Wave />}
         {/* </Tablet> */}
       </div>
       {/* <motion.div
