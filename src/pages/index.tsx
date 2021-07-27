@@ -8,10 +8,11 @@ import { Hero } from '../components/portfolio/Hero'
 import { Interests } from '../components/portfolio/Interests'
 // import { Recommendations } from '../components/portfolio/Recommendations'
 import { Experience } from '../components/portfolio/Experience'
+
 // import { Me } from '../components/portfolio/Me'
 // import { Eudaimonia } from '../components/portfolio/Eudaimonia'
-import { Projects } from '../components/portfolio/Projects'
 
+import { Projects } from '../components/portfolio/Projects'
 import { Skills } from '../components/portfolio/Skills'
 import { About } from '../components/portfolio/About'
 import { Contact } from '../components/portfolio/Contact'
@@ -96,7 +97,7 @@ export default function Home({ projects }) {
         </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Nav props={navProps} />
+      {/* <Nav props={navProps} /> */}
 
       <motion.path
         d="M 0, 20 a 20, 20 0 1,0 40,0 a 20, 20 0 1,0 -40,0"
@@ -114,20 +115,6 @@ export default function Home({ projects }) {
       </div>
     </>
   )
-}
-
-function getGreeting() {
-  return [
-    '<span class="text-3xl">Oi oi!</span>',
-    // '<span class="text-3xl">Hello!</span>',
-    // '<span class="text-3xl">Worrrrrd</span>',
-    // '<span class="text-3xl">G\'day!</span>',
-    // '<span class="text-3xl">Hi!</span>',
-    // '<span class="text-3xl">Bonjour!</span>',
-    // '<span class="text-3xl">Wagwan</span>',
-    // '<span class="text-3xl">Jambo!</span>',
-    '<span class="text-3xl">Ello ello...</span>',
-  ]
 }
 
 export async function getStaticProps() {
@@ -157,7 +144,7 @@ export async function getStaticProps() {
       }
     `,
   })
-  console.log('=====data ', data)
+
   return {
     props: {
       projects: data.projects,

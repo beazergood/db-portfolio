@@ -12,17 +12,17 @@ const pathVariants = {
 export const VennDiagram = () => {
   return (
     <>
-      <motion.div className="w-full py-32">
+      <motion.div className="py-32">
         <motion.div className="relative w-full">
           <motion.p
-            className="font-mono text-purp absolute -top-4 -left-4"
+            className="font-mono text-purp absolute -top-4 left-4"
             initial={{ right: 10 }}
             animate={{ right: 0 }}
             transition={{ duration: 1, delay: 3 }}
           >
             I'm here
           </motion.p>
-          <p className="font-mono text-gray-300 absolute right-40 -top-12">
+          <p className="font-mono text-gray-300 absolute sm:right-20  -top-12">
             Design
           </p>
           <motion.svg
@@ -32,6 +32,7 @@ export const VennDiagram = () => {
             variants={svgVariants}
             initial="initial"
             animate="animate"
+            className="overflow-x-hidden"
           >
             <motion.path
               d="M 152 17 C 152 83.826 97.826 138 31 138 C 20.54 138 10.39 136.673 0.709 134.177 C 0.241 129.849 0 125.453 0 121 C 0 54.174 54.174 0 121 0 C 131.46 0 141.61 1.327 151.291 3.823 C 151.759 8.151 152 12.547 152 17 Z"

@@ -11,16 +11,18 @@ import { ReactLogo } from '@styled-icons/boxicons-logos/ReactLogo'
 import { Mongodb } from '@styled-icons/simple-icons/Mongodb'
 import { Storybook } from '@styled-icons/simple-icons/Storybook'
 import { Vuejs } from '@styled-icons/boxicons-logos/Vuejs'
-import { Graphql } from '@styled-icons/simple-icons/Graphql'
+import { Sketch } from '@styled-icons/simple-icons/Sketch'
 import ReactTooltip from 'react-tooltip'
 
 export interface SkillsProps {
   title?: string
 }
 
-export const Skills: React.FC<SkillsProps> = (
-  { title } = { title: 'A simple Tailiwind template' }
-) => {
+export const Skills: React.FC<SkillsProps> = () => {
+  const dialogStyles = {
+    top: '50%',
+  }
+
   return (
     <>
       <div className="bg-purp py-10 my-10">
@@ -111,12 +113,7 @@ export const Skills: React.FC<SkillsProps> = (
                 <ReactTooltip />
               </div>
               <div className="mx-auto">
-                <Graphql
-                  width="64"
-                  height="64"
-                  data-tip="Graph QL"
-                  fill="white"
-                />
+                <Sketch width="64" height="64" data-tip="Sketch" fill="white" />
                 <ReactTooltip />
               </div>
             </div>
