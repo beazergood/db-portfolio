@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { VennDiagram } from '../../UI/VennDiagram'
-import Typewriter from 'typewriter-effect'
+import { Typewriter2000 } from '../../UI/Typewriter'
 import ReactTooltip from 'react-tooltip'
 import useResponsive from '../../../hooks/responsive'
 
@@ -32,15 +32,7 @@ export const About: React.FC<AboutProps> = () => {
           )}
           <div className="md:ml-10">
             <h1 className="text-6xl pt-3 text-left">
-              <Typewriter
-                options={{
-                  strings: getGreeting(),
-                  autoStart: true,
-                  cursor: '<span class="text-3xl">|</span>',
-                  cursorClassName: 'text-4xl',
-                  loop: true,
-                }}
-              />
+              <Typewriter2000 />
             </h1>
           </div>
         </div>
@@ -112,18 +104,4 @@ export const About: React.FC<AboutProps> = () => {
       </div>
     </>
   )
-}
-
-function getGreeting() {
-  return [
-    // '<span class="text-3xl">Oi</span>',
-    '<span class="text-3xl">Hello!</span>',
-    // '<span class="text-3xl">Worrrrrd</span>',
-    '<span class="text-3xl">G\'day!</span>',
-    '<span class="text-3xl">Hi!</span>',
-    '<span class="text-3xl">Bonjour!</span>',
-    // '<span class="text-3xl">Wagwan</span>',
-    // '<span class="text-3xl">Jambo!</span>',
-    '<span class="text-3xl">Ello ello...</span>',
-  ]
 }
