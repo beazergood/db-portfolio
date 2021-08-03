@@ -1,4 +1,7 @@
-## [0.0.8] - 
+## [0.0.8] - 03-08-21
+### Changed
+- put typewriter into a component
+
 
 
 ## [0.0.7] - 27-07-21
