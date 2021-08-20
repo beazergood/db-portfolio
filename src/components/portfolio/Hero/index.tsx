@@ -61,9 +61,9 @@ export const Hero: React.FC<HeroProps> = () => {
         <motion.div
           layout
           className="container mt-10 "
-          initial={{ y: -100, x: 20 }}
+          initial={{ y: -100, x: 0 }}
           animate={{ y: 30 }}
-          style={{ y: y1, x: 50 }}
+          style={{ y: y1, x: 0 }}
           transition={{ type: 'spring', stiffness: 100, duration: 2 }}
         >
           <div className="flex flex-col md:flex-row text-center">
@@ -79,7 +79,7 @@ export const Hero: React.FC<HeroProps> = () => {
                 </div>
               )}
             </div>
-            <div className="md:ml-10">
+            <div className="">
               <motion.h3 className="font-semibold font-sans text-gray-2B2B2B payton-one text-3xl md:text-left">
                 Dave Beazer
               </motion.h3>
