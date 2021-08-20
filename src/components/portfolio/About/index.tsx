@@ -76,9 +76,7 @@ export const About: React.FC<AboutProps> = () => {
             transition={{ duration: 0.3, ease: 'easeIn' }}
           >
             <p className="font-bold text-purp-dark">UI</p>
-            <p className="text-4xl py-3" style={{ color: '#EEC2FA' }}>
-              Design &amp; Build
-            </p>
+            <p className="text-4xl py-3 text-purp-dark">Design &amp; Build</p>
             <p className="text-2xl text-purp-dark">
               There's a lot of different hats to wear when traversing design and
               development. I am always working on improving my workflows between
@@ -91,7 +89,7 @@ export const About: React.FC<AboutProps> = () => {
             transition={{ duration: 0.3, ease: 'easeIn' }}
           >
             <p className="font-bold text-thyme">UX</p>
-            <p className="text-4xl py-3 text-mintee-dark">
+            <p className="text-4xl py-3 text-thyme">
               Intuitive &amp; Accessible
             </p>
             <p className="text-2xl text-thyme">

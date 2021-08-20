@@ -1,3 +1,9 @@
+## [0.0.10] - 20-08-21
+### Changes recommended by Gary Simon
+- contrast of text
+- wave svg (still not 100% responsive)
+
+
 ## [0.0.9] - 04-08-21
 ### Added
 - GTM

@@ -104,7 +104,7 @@ const Card = ({ props }) => {
   }
   return (
     <div className="bg-white p-4 rounded-xl my-4 ml-auto shadow-md block">
-      <h3 className="font-semibold mb-1 text-sm uppercase font-mono text-gray-300">
+      <h3 className="font-semibold mb-1 text-sm uppercase font-mono text-gray-400">
         {props.company}
       </h3>
       <h1 className="leading-tight text-justify text-2xl text-gray-600 mb-4">

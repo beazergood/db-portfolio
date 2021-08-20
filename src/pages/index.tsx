@@ -79,9 +79,7 @@ const experienceCards = [
       'Designed & built a marketing website for new software product. Designed print material for marketing materials.',
   },
 ]
-export default function Home({ projects }) {
-  console.log('projects: ', projects)
-
+export default function Home() {
   const { scrollYProgress } = useViewportScroll()
   const navProps = [
     { id: 1, label: 'Minimal', selected: true },
@@ -115,39 +113,4 @@ export default function Home({ projects }) {
       </div>
     </>
   )
-}
-
-export async function getStaticProps() {
-  console.log('im on the server')
-  const { data } = await client.query({
-    query: gql`
-      query {
-        projects(sort: "date:desc") {
-          id
-          title
-          description
-          date
-          coverImage {
-            url
-          }
-          problem
-          solution
-          categories {
-            title
-          }
-          technologies {
-            title2
-          }
-          client
-          published_at
-        }
-      }
-    `,
-  })
-
-  return {
-    props: {
-      projects: data.projects,
-    },
-  }
 }
