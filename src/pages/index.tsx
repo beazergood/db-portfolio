@@ -6,17 +6,16 @@ import { Nav } from '../components/UI/Nav'
 
 import { Hero } from '../components/portfolio/Hero'
 import { Interests } from '../components/portfolio/Interests'
-import { Recommendations } from '../components/portfolio/Recommendations'
+// import { Recommendations } from '../components/portfolio/Recommendations'
 import { Experience } from '../components/portfolio/Experience'
+
 // import { Me } from '../components/portfolio/Me'
 // import { Eudaimonia } from '../components/portfolio/Eudaimonia'
 
+import { Projects } from '../components/portfolio/Projects'
 import { Skills } from '../components/portfolio/Skills'
 import { About } from '../components/portfolio/About'
 import { Contact } from '../components/portfolio/Contact'
-
-import { gql } from '@apollo/client'
-import client from '../apollo-client'
 
 const experienceCards = [
   {
@@ -79,7 +78,7 @@ const experienceCards = [
 ]
 export default function Home() {
   const { scrollYProgress } = useViewportScroll()
-  const props = [
+  const navProps = [
     { id: 1, label: 'Minimal', selected: true },
     { id: 2, label: 'Sporty', selected: false },
     { id: 3, label: 'Photographic', selected: false },
@@ -88,31 +87,27 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home {packageInfo.version}</title>
+        <title>
+          Dave Beazer | UX/UX Design &amp; Development {packageInfo.version}
+        </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Nav props={props} />
+      {/* <Nav props={navProps} /> */}
 
       {/* <motion.path
         d="M 0, 20 a 20, 20 0 1,0 40,0 a 20, 20 0 1,0 -40,0"
         style={{ pathLength: scrollYProgress }}
       /> */}
 
-      {/* <div> */}
-      <Hero />
-      {/* <Interests /> */}
-      <About />
-      <Experience cards={experienceCards} />
-      {/* <Projects data={projects} /> */}
-      <Skills />
-      <Contact />
-      {/* </div> */}
+      <div>
+        <Hero />
+        {/* <Interests /> */}
+        <About />
+        <Experience cards={experienceCards} />
+        {/* <Projects data={projects} /> */}
+        <Skills />
+        <Contact />
+      </div>
     </>
   )
-}
-
-export async function getStaticProps() {
-  return {
-    props: {},
-  }
 }

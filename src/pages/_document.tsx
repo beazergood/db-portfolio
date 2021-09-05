@@ -9,8 +9,7 @@ class MyDocument extends Document {
   render() {
     const meta = {
       title: 'The Wonderful World of Dave Beazer',
-      description:
-        'User Experience enthusiast trying his hardest to not build shit software.',
+      description: 'User experience designer & developer in Ascot, England.',
       image:
         'https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png',
     }
@@ -40,8 +39,37 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap"
             rel="stylesheet"
           />
+
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap"
+            rel="stylesheet"
+          ></link>
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap"
+            rel="stylesheet"
+          />
+
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NSXDVGG');`,
+            }}
+          ></script>
         </Head>
         <body>
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NSXDVGG"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+            }}
+          ></noscript>
+
           <Main />
           <NextScript />
         </body>

@@ -8,8 +8,9 @@ module.exports = {
     extend: {
       colors: {
         purp: '#C285D3',
+        'purp-dark': '#77328B',
         mintee: '#C2F0CC',
-        'mintee-dark': '#1F7A32',
+        'mintee-dark': '#6FDC87',
         thyme: '#23903A',
         'gray-2B2B2B': '#2B2B2B',
       },

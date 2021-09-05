@@ -8,11 +8,11 @@ import { UserGroup } from '@styled-icons/heroicons-solid/UserGroup'
 import { Build } from '@styled-icons/ionicons-outline/Build'
 import { Recycle } from '@styled-icons/remix-line/Recycle'
 
-export interface HeroProps {
+export interface InterestsProps {
   title?: string
 }
 
-export const Interests: React.FC<HeroProps> = (
+export const Interests: React.FC<InterestsProps> = (
   { title } = { title: 'A simple Tailiwind template' }
 ) => {
   const spring = {

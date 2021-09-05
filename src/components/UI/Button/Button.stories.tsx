@@ -3,10 +3,10 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import { Button, ButtonProps } from '.'
 
 export default {
-  title: 'Component/Button',
+  title: 'Component/UI/Button',
   component: Button,
   argTypes: {
-    title: { control: 'string' },
+    label: { control: 'string' },
   },
 } as Meta
 
@@ -14,10 +14,7 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />
 
 // Default scenario
 export const Default = Template.bind({})
-Default.args = {}
-
-// Title = "Hello World"
-export const ButtonDefault = Template.bind({})
-ButtonDefault.args = {
+Default.args = {
   label: 'Click me',
+  href: './about',
 }

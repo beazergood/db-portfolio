@@ -1,14 +1,18 @@
-import { Linkedin } from '@styled-icons/bootstrap/Linkedin'
-import { Github } from '@styled-icons/bootstrap/Github'
 import React from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import { Linkedin } from '@styled-icons/bootstrap/Linkedin'
+import { Github } from '@styled-icons/bootstrap/Github'
 import * as packageInfo from '../../../../package.json'
-
-export interface HeroProps {
+export interface ContactProps {
   title?: string
 }
 
-export const Contact: React.FC<HeroProps> = (
+const clickHandle = () => {
+  console.log('navving...')
+  document.location.href = 'https://www.linkedin.com/in/dave-beazer/'
+}
+export const Contact: React.FC<ContactProps> = (
   { title } = { title: 'A simple Tailiwind template' }
 ) => {
   return (

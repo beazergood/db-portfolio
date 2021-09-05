@@ -67,3 +67,11 @@
 .clipped {
   clip-path: url(#shape);
 }
+
+.vast-shadow {
+  font-family: 'Vast Shadow', cursive;
+}
+
+.payton-one {
+  font-family: 'Paytone One', sans-serif;
+}
