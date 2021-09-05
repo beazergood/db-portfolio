@@ -1,5 +1,9 @@
+import { Linkedin } from '@styled-icons/bootstrap/Linkedin'
+import { Github } from '@styled-icons/bootstrap/Github'
 import React from 'react'
 import { motion } from 'framer-motion'
+import * as packageInfo from '../../../../package.json'
+
 export interface HeroProps {
   title?: string
 }
