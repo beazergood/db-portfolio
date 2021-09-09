@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import { ExperienceCard, ExperienceCardProps } from '.'
 
 export default {
-  title: 'Component/UI/ExperienceCard',
+  title: 'Components/UI/ExperienceCard',
   component: ExperienceCard,
   argTypes: {},
 } as Meta

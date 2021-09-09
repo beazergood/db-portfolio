@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import { Experience, ExperienceProps } from '.'
 
 export default {
-  title: 'Component/Experience',
+  title: 'Components/Experience',
   component: Experience,
   argTypes: {
     title: { control: 'string' },

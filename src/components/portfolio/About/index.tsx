@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { VennDiagram } from '../../UI/VennDiagram'
-import { Typewriter2000 } from '../../UI/Typewriter'
+import { useInView } from 'react-intersection-observer'
 import ReactTooltip from 'react-tooltip'
 import useResponsive from '../../../hooks/responsive'
 
@@ -9,14 +9,46 @@ export interface AboutProps {
   title?: string
 }
 
+const WavingHand = () => {
+  const [ref, inView, entry] = useInView({
+    /* Optional options */
+    threshold: 0.5,
+    triggerOnce: true,
+    delay: 300,
+  })
+
+  const wave = {
+    visible: { rotate: 20 },
+    hidden: {
+      rotate: -20,
+    },
+  }
+  return (
+    <motion.div
+      ref={ref}
+      animate={inView ? 'visible' : 'hidden'}
+      variants={wave}
+      style={{
+        marginBottom: '-20px',
+        marginRight: '-45px',
+        paddingBottom: '20px',
+        paddingRight: '45px',
+        display: 'inline-block',
+      }}
+      transition={{
+        duration: 0.2,
+        yoyo: 3,
+        ease: 'easeInOut',
+        type: 'tween',
+      }}
+    >
+      👋
+    </motion.div>
+  )
+}
+
 export const About: React.FC<AboutProps> = () => {
-  const {
-    isDesktopOrLaptop,
-    isBigScreen,
-    isTabletOrMobile,
-    isPortrait,
-    isRetina,
-  } = useResponsive()
+  const { isDesktopOrLaptop } = useResponsive()
 
   return (
     <>
@@ -32,7 +64,7 @@ export const About: React.FC<AboutProps> = () => {
           )}
           <div className="md:ml-10">
             <h1 className="text-6xl pt-3 text-left">
-              <Typewriter2000 />
+              <WavingHand />
             </h1>
           </div>
         </div>
@@ -40,7 +72,7 @@ export const About: React.FC<AboutProps> = () => {
           <div className="md:w-1/2">
             <ReactTooltip />
             <p className="text-xl">
-              I'm Dave 👋 a full-stack{' '}
+              I'm Dave a full-stack{' '}
               <strong>UI/UX Designer &amp; Developer</strong> from{' '}
               <span
                 className="text-yellow-400 font-medium"
@@ -54,10 +86,9 @@ export const About: React.FC<AboutProps> = () => {
               I'm passionate about bringing products and ideas to life on the
               web and crafting well-rounded <strong>user experiences</strong>. I
               specialise in <strong>user interface</strong> design and
-              development using <strong>web technologies.</strong> I have an
-              educational background in business, photography and design. I
-              enjoy the tasks and challenges faced when taking a concept or idea
-              and transforming it into a digital experience others can use and
+              development using <strong>web technologies.</strong> I enjoy the
+              tasks and challenges faced when taking a concept or idea and
+              transforming it into a digital experience others can use and
               enjoy.
             </p>
             <p className="text-xl my-4">

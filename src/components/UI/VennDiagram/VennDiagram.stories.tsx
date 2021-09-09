@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import { VennDiagram } from '.'
 
 export default {
-  title: 'Component/UI/VennDiagram',
+  title: 'Components/UI/VennDiagram',
   component: VennDiagram,
 } as Meta
 

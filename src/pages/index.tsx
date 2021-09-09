@@ -2,7 +2,6 @@ import Head from 'next/head'
 import React from 'react'
 import packageInfo from '../../package.json'
 import { motion, useViewportScroll } from 'framer-motion'
-import { Nav } from '../components/UI/Nav'
 
 import { Hero } from '../components/portfolio/Hero'
 import { Interests } from '../components/portfolio/Interests'

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 const svgVariants = {
   initial: { opacity: 0 },
@@ -10,16 +11,21 @@ const pathVariants = {
   animate: { pathLength: 1, transition: { duration: 3, ease: 'easeInOut' } },
 }
 export const VennDiagram = () => {
+  const [ref, inView, entry] = useInView({
+    /* Optional options */
+    threshold: 0.5,
+    triggerOnce: true,
+    delay: 300,
+  })
+  const vennVariants = {
+    visible: {},
+    hidden: {},
+  }
   return (
     <>
       <motion.div className="py-32">
         <motion.div className="relative w-full">
-          <motion.p
-            className="font-mono text-purp absolute -top-4 left-4"
-            initial={{ right: 10 }}
-            animate={{ right: 0 }}
-            transition={{ duration: 1, delay: 3 }}
-          >
+          <motion.p className="font-mono text-purp absolute -top-4 left-4">
             I'm here
           </motion.p>
           <p className="font-mono text-gray-300 absolute sm:right-20  -top-12">
@@ -30,8 +36,9 @@ export const VennDiagram = () => {
             width="350"
             height="336"
             variants={svgVariants}
+            animate={inView ? 'animate' : 'initial'}
+            ref={ref}
             initial="initial"
-            animate="animate"
             className="overflow-x-hidden"
           >
             <motion.path

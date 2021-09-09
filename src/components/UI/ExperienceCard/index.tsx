@@ -43,14 +43,14 @@ export const ExperienceCard = ({ ...props }) => {
   const [ref, inView, entry] = useInView({
     /* Optional options */
     threshold: 0.5,
-    triggerOnce: false,
+    triggerOnce: true,
   })
 
   return (
     <>
       {props.side == 'left' && (
         <div className="flex md:contents">
-          <div className="flex flex-row-reverse md:contents">
+          <div className="flex flex-row-reverse md:contents mr-10">
             <motion.div
               className="col-start-1 col-end-5"
               transition={{ type: 'spring', stiffness: 100, duration: 2 }}
@@ -60,7 +60,7 @@ export const ExperienceCard = ({ ...props }) => {
             >
               <Card props={props} />
             </motion.div>
-            <div className="col-start-5 col-end-6 md:mx-auto relative mr-10">
+            <div className="col-start-5 col-end-6 md:mx-auto relative">
               <TimelineElement />
             </div>
           </div>

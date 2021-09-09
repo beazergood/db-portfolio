@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import { Button, ButtonProps } from '.'
 
 export default {
-  title: 'Component/UI/Button',
+  title: 'Components/UI/Button',
   component: Button,
   argTypes: {
     label: { control: 'string' },

@@ -28,12 +28,6 @@ const variants = {
 
 export const Hero: React.FC<HeroProps> = () => {
   const x = useSpring(0, { stiffness: 300, damping: 200 })
-  const width = useTransform(x, [-500, 200], [350, 0])
-  const scale = useTransform(x, [-100, 0], [1.25, 1])
-  const fadeIn = useTransform(x, [-100, 0], [1, 0])
-  const fadeOut = useTransform(x, [-60, 0], [0, 1])
-  const up = useTransform(x, [-100, 0], [-100, 0])
-  const down = useTransform(x, [-100, 0], [100, 0])
 
   // state
   const [state, setState] = useState(false)
@@ -45,14 +39,6 @@ export const Hero: React.FC<HeroProps> = () => {
 
   const { scrollY } = useViewportScroll()
   const y1 = useTransform(scrollY, [0, -300], [0, -200])
-  const y2 = useTransform(scrollY, [0, 300], [0, -100])
-
-  const [ref, inView, entry] = useInView({
-    /* Optional options */
-    threshold: 0.5,
-    triggerOnce: false,
-  })
-
   const { isTabletOrMobile } = useResponsive()
 
   return (
@@ -105,44 +91,8 @@ export const Hero: React.FC<HeroProps> = () => {
         </motion.div>
 
         {/* <!-- WAVE HERO GRAPHIC WITH IMAGE--> */}
-        {/* <Tablet> */}
         {!isTabletOrMobile && <Wave />}
-        {/* </Tablet> */}
       </div>
-      {/* <motion.div
-        className="mt-20 text-center"
-        initial={{ y: 10 }}
-        animate={{ y: -3 }}
-        transition={{
-          type: 'spring',
-          repeat: Infinity,
-          repeatType: 'mirror',
-          repeatDelay: 0.4,
-        }}
-      >
-        <ArrowDown width="20" height="20" fill="#eoeoeo" />
-      </motion.div> */}
-
-      {/* <motion.div
-        style={{ opacity: fadeIn }}
-        className="bg-purp absolute top-0 left-0 right-0 bottom-0 z-0"
-      ></motion.div>
-      <motion.div
-        className="cursor-move relative mt-10 ml-10 w-1/2 p-10 z-10  bg-purp-dark bg-opacity-80 rounded-xl flex-col"
-        style={{ top: -80, left: 240, x, scale }}
-        drag={'x'}
-        dragConstraints={{ left: -100, right: 100 }}
-        dragElastic={0.05}
-      >
-        <h1 className="text-7xl text-purp">
-          Hi, I'm Dave. A full-stack web developer from the eternally sunny isle
-          of England 🌞
-        </h1>
-        <motion.div
-          className="product-drag-progress block h-2 bg-blue-200 mt-20"
-          style={{ width, translateY: down }}
-        ></motion.div>
-      </motion.div> */}
     </>
   )
 }

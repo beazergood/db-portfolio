@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import { Nav } from '.'
 
 export default {
-  title: 'Component/UI/Navigation',
+  title: 'Components/UI/Navigation',
   component: Nav,
 } as Meta
 

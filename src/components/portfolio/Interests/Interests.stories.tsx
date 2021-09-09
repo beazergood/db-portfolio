@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import { Interests, InterestsProps } from '.'
 
 export default {
-  title: 'Component/Interests',
+  title: 'Components/Interests',
   component: Interests,
   argTypes: {
     title: { control: 'string' },

@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import { Contact, ContactProps } from '.'
 
 export default {
-  title: 'Component/Contact',
+  title: 'Components/Contact',
   component: Contact,
   argTypes: {
     title: { control: 'string' },
