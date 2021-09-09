@@ -107,11 +107,11 @@ const Card = ({ props }) => {
       <h3 className="font-semibold mb-1 text-sm uppercase font-mono text-gray-400">
         {props.company}
       </h3>
-      <h1 className="leading-tight text-justify text-2xl text-gray-600 mb-4">
+      <h1 className="leading-tight text-left text-2xl text-gray-600 mb-4">
         {props.role}
       </h1>
       {props.description && (
-        <p className="text-justify text-gray-500">{props.description}</p>
+        <p className="text-left text-gray-500">{props.description}</p>
       )}
       <motion.ul
         className="py-2 flex flex-wrap p-x-2 my-2 w-full relative top-1"
