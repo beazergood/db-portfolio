@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import { Skills, SkillsProps } from '.'
 
 export default {
-  title: 'Component/Skills',
+  title: 'Components/Skills',
   component: Skills,
   argTypes: {
     title: { control: 'string' },

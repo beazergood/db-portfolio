@@ -2,7 +2,6 @@ import Head from 'next/head'
 import React from 'react'
 import packageInfo from '../../package.json'
 import { motion, useViewportScroll } from 'framer-motion'
-import { Nav } from '../components/UI/Nav'
 
 import { Hero } from '../components/portfolio/Hero'
 import { Interests } from '../components/portfolio/Interests'
@@ -16,9 +15,6 @@ import { Projects } from '../components/portfolio/Projects'
 import { Skills } from '../components/portfolio/Skills'
 import { About } from '../components/portfolio/About'
 import { Contact } from '../components/portfolio/Contact'
-
-import { gql } from '@apollo/client'
-import client from '../apollo-client'
 
 const experienceCards = [
   {
@@ -97,10 +93,10 @@ export default function Home() {
       </Head>
       {/* <Nav props={navProps} /> */}
 
-      <motion.path
+      {/* <motion.path
         d="M 0, 20 a 20, 20 0 1,0 40,0 a 20, 20 0 1,0 -40,0"
         style={{ pathLength: scrollYProgress }}
-      />
+      /> */}
 
       <div>
         <Hero />

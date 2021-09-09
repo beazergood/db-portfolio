@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import { Hero, HeroProps } from '.'
 
 export default {
-  title: 'Component/Hero',
+  title: 'Components/Hero',
   component: Hero,
   argTypes: {
     title: { control: 'string' },

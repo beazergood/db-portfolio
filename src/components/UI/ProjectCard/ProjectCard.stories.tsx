@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import { ProjectCard, ProjectCardProps } from '.'
 
 export default {
-  title: 'Component/UI/ProjectCard',
+  title: 'Components/UI/ProjectCard',
   component: ProjectCard,
   argTypes: {
     title: { control: 'string' },

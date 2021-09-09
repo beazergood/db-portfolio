@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import { Projects, ProjectsProps } from '.'
 
 export default {
-  title: 'Component/Projects',
+  title: 'Components/Projects',
   component: Projects,
   argTypes: {
     title: { control: 'string' },

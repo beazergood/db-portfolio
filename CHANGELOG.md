@@ -1,3 +1,9 @@
+## [0.0.11] - 09-09-21
+### Changes
+- waving hand next to avatar
+- animate venn when in view
+- text tweak
+
 ## [0.0.10] - 20-08-21
 ### Changes recommended by Gary Simon
 - contrast of text
