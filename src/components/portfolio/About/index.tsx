@@ -37,7 +37,7 @@ const WavingHand = () => {
       }}
       transition={{
         duration: 0.2,
-        yoyo: 3,
+        repeat: 3,
         ease: 'easeInOut',
         type: 'tween',
       }}
