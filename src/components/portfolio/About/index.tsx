@@ -36,10 +36,11 @@ const WavingHand = () => {
         display: 'inline-block',
       }}
       transition={{
-        duration: 0.2,
+        duration: 0.3,
         repeat: 3,
         ease: 'easeInOut',
         type: 'tween',
+        from: 0,
       }}
     >
       👋
