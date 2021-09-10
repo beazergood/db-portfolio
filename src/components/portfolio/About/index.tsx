@@ -73,7 +73,7 @@ export const About: React.FC<AboutProps> = () => {
           <div className="md:w-1/2">
             <ReactTooltip />
             <p className="text-xl">
-              I'm Dave a full-stack{' '}
+              I'm Dave, a self-taught, full-stack{' '}
               <strong>UI/UX Designer &amp; Developer</strong> from{' '}
               <span
                 className="text-yellow-400 font-medium"
