@@ -20,7 +20,7 @@ export const Contact: React.FC<ContactProps> = (
       <div className="w-full border- mx-auto px-10  border-grey-200 relative">
         <motion.div className="mt-10 container relative border- border-green-400">
           <h1 className="text-2xl text-mintee-dark payton-one py-10">
-            I am currently available for contract hire
+            Available for contract hire from mid December 2021
           </h1>
           <div className="absolute right-10 top-0 ">
             <h1 className="text-xl text-mintee-dark payton-one py-10 text-left invisible md:visible lg:visible">
