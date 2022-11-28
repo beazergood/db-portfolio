@@ -77,7 +77,7 @@ export const About: React.FC<AboutProps> = () => {
             <p className="text-xl my-4">
               I am experienced at working with front end web technologies and
               take specific interest in crafting high quality user interface
-              (UI) components and enjoyable end user experience (UX)
+              (UI) components and enjoyable end user experiences (UX)
             </p>
           </div>
         </div>

@@ -1,17 +1,8 @@
 import Head from 'next/head'
 import React from 'react'
-import packageInfo from '../../package.json'
-import { motion, useViewportScroll } from 'framer-motion'
 
 import { Hero } from '../components/portfolio/Hero'
-import { Interests } from '../components/portfolio/Interests'
-// import { Recommendations } from '../components/portfolio/Recommendations'
 import { Experience } from '../components/portfolio/Experience'
-
-// import { Me } from '../components/portfolio/Me'
-// import { Eudaimonia } from '../components/portfolio/Eudaimonia'
-
-import { Projects } from '../components/portfolio/Projects'
 import { Skills } from '../components/portfolio/Skills'
 import { About } from '../components/portfolio/About'
 import { Contact } from '../components/portfolio/Contact'
@@ -30,7 +21,7 @@ const experienceCards = [
     dates: 'Jan 2022 - Present',
     img: '',
     side: 'right',
-    description: 'Working in the clients team building Angular & React apps for the Inifinity video platform.',
+    description: 'Working in a cross-functional team building Angular & React apps for the Pexip Inifinity video platform.',
   },
   {
     company: 'Beazer Software',
@@ -46,7 +37,7 @@ const experienceCards = [
     dates: 'Jan 2021 - Dec 2021',
     img: '',
     side: 'left',
-    description: 'Contracted to work as part of a full-stack team building a bespoke web application',
+    description: 'Contracted to work as part of a full-stack team migrating a bespoke web application to Angular',
   },
   {
     company: 'High Performance Software Ltd',
@@ -56,7 +47,7 @@ const experienceCards = [
     img: '',
     side: 'right',
     description:
-      'Part of a team building a B2B SASS web app used at tradeshows & events globally'
+      'Web developer building a B2B SASS platform used at tradeshows & events globally'
   },
   {
     company: 'High Performance Software Ltd',
@@ -66,7 +57,7 @@ const experienceCards = [
     img: '',
     side: 'right',
     description:
-      'Built and maintained vanilla js web applications ',
+      'Built and maintained vanilla js web applications for in-house and client usage',
   },
   {
     company: 'Marketpoint Europe Ltd',
@@ -80,12 +71,6 @@ const experienceCards = [
   },
 ]
 export default function Home() {
-  const { scrollYProgress } = useViewportScroll()
-  const navProps = [
-    { id: 1, label: 'Minimal', selected: true },
-    { id: 2, label: 'Sporty', selected: false },
-    { id: 3, label: 'Photographic', selected: false },
-  ]
 
   return (
     <>
@@ -95,7 +80,6 @@ export default function Home() {
         </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Nav props={navProps} /> */}
 
       <div>
         <Hero />
