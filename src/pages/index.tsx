@@ -18,41 +18,45 @@ import { Contact } from '../components/portfolio/Contact'
 
 const experienceCards = [
   {
-    company: 'Beazer Software',
-    role: 'UI/UX Designer & Developer',
+    company: 'Pexip',
+    role: 'Software Engineer',
     pills: [
-      'UI/UX',
-      'Design/Dev Workflows',
+      'Typescript',
       'Angular',
       'React',
-      'Framer',
       'Storybook',
-      'NX',
+      'Figma',
+    ],
+    dates: 'Jan 2022 - Present',
+    img: '',
+    side: 'right',
+    description: 'Working in the clients team building Angular & React apps for the Inifinity video platform.',
+  },
+  {
+    company: 'Beazer Software',
+    role: 'Contract Web Developer',
+    pills: [
+      'Typescript',
+      'Angular',
+      'React',
+      'NextJS',
+      'Storybook',
+      'JAM Stack'
     ],
     dates: 'Jan 2021 - Present',
     img: '',
     side: 'left',
-    description: 'Upskilling on technologies and learning new stacks.',
-  },
-  {
-    company: 'High Performance Software Ltd',
-    role: 'Senior Full Stack Web Developer',
-    pills: ['Angular', 'MongoDB', 'Node', 'AWS'],
-    description:
-      'Responsible for building, maintaining and developing Cloud web applications with new features. Design Lead.',
-    dates: 'Oct 2017 - Oct 2020',
-    img: '',
-    side: 'right',
+    description: 'Contracted to work as part of a full-stack team building a bespoke web application',
   },
   {
     company: 'High Performance Software Ltd',
     role: 'Full Stack Web Developer',
-    pills: ['UI/UX Prototyping', 'AngularJS', 'MongoDB', 'Node'],
-    dates: 'Oct 2014 - Sep 2017',
+    pills: ['Angular', 'MongoDB', 'Node', 'AWS', 'Sketch'],
+    dates: 'Oct 2014 - Nov 2020',
     img: '',
     side: 'right',
     description:
-      'Built and maintained a new MEAN stack application to manage iOS app data. Designed the UI/UX for iOS and Web applications.',
+      'Part of a team building a B2B SASS web app used at tradeshows & events globally'
   },
   {
     company: 'High Performance Software Ltd',
@@ -62,17 +66,17 @@ const experienceCards = [
     img: '',
     side: 'right',
     description:
-      'Built and maintained vanilla js web application for managing HTML5 app.',
+      'Built and maintained vanilla js web applications ',
   },
   {
     company: 'Marketpoint Europe Ltd',
     role: 'Graphic & Web Designer',
-    pills: ['HTML', 'CSS', 'Adobe'],
+    pills: ['HTML', 'CSS', 'jquery', 'Adobe CS'],
     dates: 'Aug 2011 - Sep 2012',
     img: '',
     side: 'left',
     description:
-      'Designed & built a marketing website for new software product. Designed print material for marketing materials.',
+    'Responsible for designing & building marketing websites for internal SASS products',
   },
 ]
 export default function Home() {
@@ -87,23 +91,17 @@ export default function Home() {
     <>
       <Head>
         <title>
-          Dave Beazer | UX/UX Design &amp; Development {packageInfo.version}
+          Dave Beazer | UI/UX Software Engineer {packageInfo.version}
         </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <Nav props={navProps} /> */}
 
-      {/* <motion.path
-        d="M 0, 20 a 20, 20 0 1,0 40,0 a 20, 20 0 1,0 -40,0"
-        style={{ pathLength: scrollYProgress }}
-      /> */}
-
       <div>
         <Hero />
-        {/* <Interests /> */}
         <About />
         <Experience cards={experienceCards} />
-        {/* <Projects data={projects} /> */}
+        <Projects />
         <Skills />
         <Contact />
       </div>

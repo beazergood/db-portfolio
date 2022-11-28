@@ -1,6 +1,5 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import { Linkedin } from '@styled-icons/bootstrap/Linkedin'
 import { Github } from '@styled-icons/bootstrap/Github'
 import * as packageInfo from '../../../../package.json'
@@ -8,10 +7,6 @@ export interface ContactProps {
   title?: string
 }
 
-const clickHandle = () => {
-  console.log('navving...')
-  document.location.href = 'https://www.linkedin.com/in/dave-beazer/'
-}
 export const Contact: React.FC<ContactProps> = (
   { title } = { title: 'A simple Tailiwind template' }
 ) => {
@@ -20,40 +15,35 @@ export const Contact: React.FC<ContactProps> = (
       <div className="w-full border- mx-auto px-10  border-grey-200 relative">
         <motion.div className="mt-10 container relative border- border-green-400">
           <h1 className="text-2xl text-mintee-dark payton-one py-10">
-            Available for contract hire from mid December 2021
+            Available for contract hire from January 2023
           </h1>
           <div className="absolute right-10 top-0 ">
             <h1 className="text-xl text-mintee-dark payton-one py-10 text-left invisible md:visible lg:visible">
               ways to get in touch
             </h1>
             <div className="grid gap-3 grid-cols-2">
-              <div
+              <Linkedin
                 onClick={() => {
                   document.location.href =
                     'https://www.linkedin.com/in/dave-beazer'
                 }}
-              >
-                <Linkedin
-                  width="44"
-                  className="cursor-pointer hover:shadow-lg z-10 relative"
-                  height="44"
-                  data-tip="See my profile 👉"
-                  fill="#C2F0CC"
-                />
-              </div>
-              <div
+                width="44"
+                className="cursor-pointer hover:shadow-lg z-10 relative"
+                height="44"
+                data-tip="See my profile 👉"
+                fill="#C2F0CC"
+              />
+
+              <Github
                 onClick={() => {
                   document.location.href = 'https://github.com/beazergood'
                 }}
-              >
-                <Github
-                  width="44"
-                  height="44"
-                  className="cursor-pointer hover:shadow-lg z-10 relative"
-                  data-tip="See my profile 👉"
-                  fill="#C2F0CC"
-                />
-              </div>
+                width="44"
+                height="44"
+                className="cursor-pointer hover:shadow-lg z-10 relative"
+                data-tip="See my profile 👉"
+                fill="#C2F0CC"
+              />
             </div>
           </div>
         </motion.div>

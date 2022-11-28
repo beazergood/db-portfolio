@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 export const Wave = () => {
@@ -46,7 +45,7 @@ export const Wave = () => {
         <img src={'/images/me-ont-coast.jpg'} className="clipped m-0" />
       </div>
 
-      <div className="svg-container">
+      {/* <div className="svg-container">
         <motion.svg
           viewBox="0 0 1440 805"
           className="svg-content absolute m-0 z-0"
@@ -65,7 +64,7 @@ export const Wave = () => {
           </clipPath>
         </motion.svg>
         <img src={'/images/me-ont-coast-flipped.jpg'} className="clipped2" />
-      </div>
+      </div> */}
 
       <style jsx>{`
         .clipped {

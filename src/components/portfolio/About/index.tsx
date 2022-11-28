@@ -1,6 +1,5 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { VennDiagram } from '../../UI/VennDiagram'
 import { useInView } from 'react-intersection-observer'
 import ReactTooltip from 'react-tooltip'
 import useResponsive from '../../../hooks/responsive'
@@ -53,7 +52,7 @@ export const About: React.FC<AboutProps> = () => {
 
   return (
     <>
-      <div className="my-10 px-4 container mx-auto flex-col">
+      <div className="-mt-20 px-4 container mx-auto flex-col">
         <div className="flex flex-col md:flex-row my-10">
           {isDesktopOrLaptop && (
             <img
@@ -69,36 +68,17 @@ export const About: React.FC<AboutProps> = () => {
             </h1>
           </div>
         </div>
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row mb-10">
           <div className="md:w-1/2">
             <ReactTooltip />
             <p className="text-xl">
-              I'm Dave, a self-taught, full-stack{' '}
-              <strong>UI/UX Designer &amp; Developer</strong> from{' '}
-              <span
-                className="text-yellow-400 font-medium"
-                data-tip="Land of eternal sunshine &amp; sarcasm 😎"
-              >
-                England.
-              </span>
+              I'm Dave, a front-end software engineer from the UK.
             </p>
             <p className="text-xl my-4">
-              {' '}
-              I'm passionate about bringing products and ideas to life on the
-              web and crafting well-rounded <strong>user experiences</strong>. I
-              specialise in <strong>user interface</strong> design and
-              development using <strong>web technologies.</strong> I enjoy the
-              tasks and challenges faced when taking a concept or idea and
-              transforming it into a digital experience others can use and
-              enjoy.
+              I am experienced at working with front end web technologies and
+              take specific interest in crafting high quality user interface
+              (UI) components and enjoyable end user experience (UX)
             </p>
-            <p className="text-xl my-4">
-              Recently I've been learning some new technologies and fully
-              embracing the JAMstack to build <em>lightning fast web apps.</em>
-            </p>
-          </div>
-          <div className="overflow-x-hiden md:w-1/4 mx-auto">
-            <VennDiagram />{' '}
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -110,9 +90,8 @@ export const About: React.FC<AboutProps> = () => {
             <p className="font-bold text-purp-dark">UI</p>
             <p className="text-4xl py-3 text-purp-dark">Design &amp; Build</p>
             <p className="text-2xl text-purp-dark">
-              There's a lot of different hats to wear when traversing design and
-              development. I am always working on improving my workflows between
-              the two disciplines.
+              I enjoy collaborating with designers to bring their prototypes to
+              life 💅🏻
             </p>
           </motion.div>
           <motion.div
@@ -125,9 +104,8 @@ export const About: React.FC<AboutProps> = () => {
               Intuitive &amp; Accessible
             </p>
             <p className="text-2xl text-thyme">
-              I strive to always be adding value to my work by ensuring the end
-              user experience is both performant and accessible across the
-              spectrum of users and devices.
+              It's important for software to facilitate, not infuriate the end
+              user. Dont make me think! 🤌🏻
             </p>
           </motion.div>
         </div>{' '}

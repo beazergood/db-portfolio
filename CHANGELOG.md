@@ -1,3 +1,10 @@
+## [1.1.0] - 28-11-22
+
+### Changes
+
+- updated content
+- tweaked design to be more relevant
+ 
 ## [0.0.11] - 09-09-21
 ### Changes
 - waving hand next to avatar

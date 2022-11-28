@@ -4,13 +4,12 @@ import { Typescript } from '@styled-icons/simple-icons/Typescript'
 import { Html5 } from '@styled-icons/typicons/Html5'
 import { Csswizardry } from '@styled-icons/simple-icons/Csswizardry'
 import { FileJson } from '@styled-icons/boxicons-solid/FileJson'
-import { Framer } from '@styled-icons/feather/Framer'
+import { Figma } from '@styled-icons/feather/Figma'
 import { Nodejs } from '@styled-icons/boxicons-logos/Nodejs'
 import { Angular } from '@styled-icons/boxicons-logos/Angular'
 import { ReactLogo } from '@styled-icons/boxicons-logos/ReactLogo'
 import { Mongodb } from '@styled-icons/simple-icons/Mongodb'
 import { Storybook } from '@styled-icons/simple-icons/Storybook'
-import { Vuejs } from '@styled-icons/boxicons-logos/Vuejs'
 import { Sketch } from '@styled-icons/simple-icons/Sketch'
 import ReactTooltip from 'react-tooltip'
 
@@ -55,23 +54,6 @@ export const Skills: React.FC<SkillsProps> = () => {
                 <ReactTooltip />
               </div>
               <div className="mx-auto">
-                <FileJson width="64" height="64" data-tip="JSON" fill="white" />
-                <ReactTooltip />
-              </div>
-              <div className="mx-auto">
-                <Mongodb
-                  width="64"
-                  height="64"
-                  data-tip="Mongo DB"
-                  fill="white"
-                />
-                <ReactTooltip />
-              </div>
-              <div className="mx-auto">
-                <Nodejs width="64" height="64" data-tip="NodeJS" fill="white" />
-                <ReactTooltip />
-              </div>
-              <div className="mx-auto">
                 <Angular
                   width="64"
                   height="64"
@@ -90,7 +72,20 @@ export const Skills: React.FC<SkillsProps> = () => {
                 <ReactTooltip />
               </div>
               <div className="mx-auto">
-                <Vuejs width="64" height="64" data-tip="Vue" fill="white" />
+                <FileJson width="64" height="64" data-tip="JSON" fill="white" />
+                <ReactTooltip />
+              </div>
+              <div className="mx-auto">
+                <Mongodb
+                  width="64"
+                  height="64"
+                  data-tip="Mongo DB"
+                  fill="white"
+                />
+                <ReactTooltip />
+              </div>
+              <div className="mx-auto">
+                <Nodejs width="64" height="64" data-tip="NodeJS" fill="white" />
                 <ReactTooltip />
               </div>
               <div className="mx-auto">
@@ -100,20 +95,6 @@ export const Skills: React.FC<SkillsProps> = () => {
                   data-tip="Storybook"
                   fill="white"
                 />
-                <ReactTooltip />
-              </div>
-              <div className="mx-auto">
-                <Framer
-                  width="64"
-                  height="64"
-                  data-tip="Framer"
-                  fill="white"
-                  stroke="#E0E0E0"
-                />
-                <ReactTooltip />
-              </div>
-              <div className="mx-auto">
-                <Sketch width="64" height="64" data-tip="Sketch" fill="white" />
                 <ReactTooltip />
               </div>
             </div>
