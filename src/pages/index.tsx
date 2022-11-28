@@ -43,7 +43,7 @@ const experienceCards = [
       'Storybook',
       'JAM Stack'
     ],
-    dates: 'Jan 2021 - Present',
+    dates: 'Jan 2021 - Dec 2021',
     img: '',
     side: 'left',
     description: 'Contracted to work as part of a full-stack team building a bespoke web application',
