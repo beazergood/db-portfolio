@@ -91,7 +91,7 @@ export default function Home() {
     <>
       <Head>
         <title>
-          Dave Beazer | UI/UX Software Engineer {packageInfo.version}
+          Dave Beazer | UI/UX Software Engineer for hire
         </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -101,7 +101,6 @@ export default function Home() {
         <Hero />
         <About />
         <Experience cards={experienceCards} />
-        <Projects />
         <Skills />
         <Contact />
       </div>
