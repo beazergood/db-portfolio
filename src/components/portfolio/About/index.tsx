@@ -91,7 +91,7 @@ export const About: React.FC<AboutProps> = () => {
             <p className="text-4xl py-3 text-purp-dark">Design &amp; Build</p>
             <p className="text-2xl text-purp-dark">
               I enjoy collaborating with designers to bring their prototypes to
-              life 💅🏻
+              life
             </p>
           </motion.div>
           <motion.div
@@ -105,7 +105,7 @@ export const About: React.FC<AboutProps> = () => {
             </p>
             <p className="text-2xl text-thyme">
               It's important for software to facilitate, not infuriate the end
-              user. Dont make me think! 🤌🏻
+              user. Dont make me think!
             </p>
           </motion.div>
         </div>{' '}
