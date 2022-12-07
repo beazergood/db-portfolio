@@ -1,15 +1,9 @@
 import React from 'react'
-import { ExperienceCard, ExperienceCardProps } from '../../UI/ExperienceCard'
-import { motion, useMotionValue } from 'framer-motion'
+import { ExperienceCard } from '../../UI/ExperienceCard'
+import {experienceCards} from '../../../experience.data'
+export const Experience: React.FC = () => {
 
-export interface ExperienceProps {
-  title?: string
-  cards?: Array<ExperienceCardProps>
-}
-
-export const Experience: React.FC<ExperienceProps> = (
-  { title, cards } = { title: 'A simple Tailiwind template' }
-) => {
+  const cards = experienceCards
   return (
     <>
       <div className="w-full border-  py-10 my-10  border-purple-200 container">
