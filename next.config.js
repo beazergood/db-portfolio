@@ -11,10 +11,5 @@ module.exports = withMDX({
     NEXT_PUBLIC_STRAPI_API_URL:
       'https://secure-refuge-04009.herokuapp.com/graphql',
   },
-})
-const withImages = require('next-images')
-module.exports = withImages({
-  images: {
-    domains: ['res.cloudinary.com'], // correct to go here? not 100% sure how to mix different package configs
-  },
+
 })
