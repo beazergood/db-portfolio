@@ -12,23 +12,20 @@ export const About: React.FC<AboutProps> = () => {
 
   return (
     <>
-      <div
-        className={cx(
-          "px-4 container mx-auto flex-col",
-          isDesktopOrLaptop ? "-mt-20" : "mt-20"
-        )}
-      >
-        
+      <div className={"px-4 container mx-auto flex-col"}>
         <div className="flex flex-col md:flex-row mb-10 mt-10">
-          <div className="md:w-1/2 bg-white" >
+          <div className="md:w-1/2">
             <p className="text-xl my-4">
-              👋🏻 I'm Dave. A frontend engineer from the UK. I work with cross-functional design & engineering teams to bring
-              best-in-class web applications to life.
+              👋🏻 I'm Dave. A frontend engineer from the UK. I work with
+              cross-functional teams to bring best-in-class web applications to
+              life.
             </p>
           </div>
-          <div className="md:w-1/2 bg-white">
+          <div className="md:w-1/2">
             <p className="text-xl my-4 sm:ml-0 ml-2">
-              Comfortable working with a variety of tools and technologies that span design and development disciplines, gradually bridging the gap between the two.
+              Comfortable working with a variety of tools and technologies that
+              span design and development disciplines, gradually bridging the
+              gap between the two.
             </p>
           </div>
         </div>
