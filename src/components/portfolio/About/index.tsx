@@ -22,10 +22,10 @@ export const About: React.FC<AboutProps> = () => {
             </p>
           </div>
           <div className="md:w-1/2">
-            <p className="text-xl my-4 sm:ml-0 ml-2">
-              Comfortable working with a variety of tools and technologies that
-              span design and development disciplines, gradually bridging the
-              gap between the two.
+            <p className="text-xl my-4 md:ml-2 ml-0">
+              Comfortable and enthusiastic about working with a variety of tools and technologies that
+              span design and development, gradually bridging the
+              gap between the two disciplines.
             </p>
           </div>
         </div>

@@ -1,3 +1,8 @@
+## [1.1.4] - 08-12-22
+
+### Fixes
+
+- small viewport margin bug.
 ## [1.1.3] - 08-12-22
 
 ### Feature
