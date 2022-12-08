@@ -1,28 +1,29 @@
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
+import useResponsive from "../../../hooks/responsive";
 
-export const Wave = () => {
-  const svgVariants = {
-    hidden: {
-      x: -50,
+const svgVariants = {
+  hidden: {
+    x: -50,
+  },
+  visible: {
+    x: 0,
+    transition: { duration: 1 },
+  },
+};
+const pathVariants = {
+  hidden: {
+    pathLength: 0,
+  },
+  visible: {
+    pathLength: 1,
+    transition: {
+      duration: 3,
+      ease: "easeInOut",
     },
-    visible: {
-      x: 0,
-      transition: { duration: 1 },
-    },
-  }
-  const pathVariants = {
-    hidden: {
-      pathLength: 0,
-    },
-    visible: {
-      pathLength: 1,
-      transition: {
-        duration: 3,
-        ease: 'easeInOut',
-      },
-    },
-  }
+  },
+};
 
+const WaveWithImage = () => {
   return (
     <div className="flex flex-row">
       <div className="svg-container">
@@ -42,29 +43,8 @@ export const Wave = () => {
             ></motion.path>
           </clipPath>
         </motion.svg>
-        <img src={'/images/me-ont-coast.jpg'} className="clipped m-0" />
+        <img src={"/images/me-ont-coast.jpg"} className="clipped m-0" />
       </div>
-
-      {/* <div className="svg-container">
-        <motion.svg
-          viewBox="0 0 1440 805"
-          className="svg-content absolute m-0 z-0"
-        >
-          <path
-            d="M 1440 -0.08 L 0 -0.08 L 0.057 -0 L 1439.875 -0 L 1439.875 291.92 L 1440 291.92 Z M 27 37.738 C 53 75.962 106.7 150.989 160 178.364 C 213 205.739 266.7 183.434 320 145.92 C 373 108.406 426.7 53.656 480 81.031 C 533 108.406 586.7 215.878 640 237.88 C 693 259.476 746.7 194.587 800 178.364 C 853 162.142 906.7 194.587 960 194.587 C 1013 194.587 1066.7 162.142 1120 172.991 C 1173 183.434 1226.7 238.184 1280 264.849 C 1333 291.92 1386.7 291.92 1413.3 291.92 L 1439.875 291.92 L 1439.875 491.718 L 1410.438 491.718 C 1383.963 491.718 1330.513 491.718 1277.76 519.494 C 1224.709 546.853 1171.259 603.029 1118.507 613.744 C 1065.455 624.875 1012.006 591.586 959.253 591.586 C 906.202 591.586 852.752 624.875 799.999 608.23 C 746.948 591.586 693.498 525.007 640.746 547.165 C 587.694 569.74 534.245 680.01 481.492 708.097 C 428.441 736.185 374.991 680.01 322.238 641.519 C 269.187 603.029 215.738 580.142 162.985 608.23 C 109.933 636.318 56.484 713.299 30.605 752.517 L 3.731 791.32 L 0 805 L -0.125 805 L -0.125 -0 L 0.057 -0 Z M 1440 491.718 L 1439.875 491.718 L 1439.875 649.148 Z M 1439.875 805 L 1439.751 805 L 1439.875 649.148 Z"
-            fill="#c285d3"
-          ></path>
-        </motion.svg>
-        <motion.svg width="0" height="0" className="svg-content z-10">
-          <clipPath id="shape2" clipPathUnits="objectBoundingBox">
-            <path
-              d="M1,0.047 C1,0.094,1,0.188,1,0.222 C1,0.256,1,0.228,1,0.181 C1,0.135,1,0.067,1,0.101 C1,0.135,1,0.268,1,0.296 C1,0.322,1,0.242,1,0.222 C1,0.201,1,0.242,1,0.242 C1,0.242,1,0.201,1,0.215 C1,0.228,1,0.296,1,0.329 C1,0.363,1,0.363,1,0.363 L2,0.363 L2,0.611 L1,0.611 C1,0.611,1,0.611,1,0.645 C1,0.679,1,0.749,1,0.762 C1,0.776,1,0.735,1,0.735 C1,0.735,1,0.776,1,0.756 C1,0.735,1,0.652,1,0.68 C1,0.708,1,0.845,1,0.88 C1,0.915,1,0.845,1,0.797 C1,0.749,1,0.721,1,0.756 C1,0.79,1,0.886,1,0.935 L1,0.983 L1,1 L1,1 L1,0 L1,0"
-              fill="#c285d3"
-            ></path>
-          </clipPath>
-        </motion.svg>
-        <img src={'/images/me-ont-coast-flipped.jpg'} className="clipped2" />
-      </div> */}
 
       <style jsx>{`
         .clipped {
@@ -92,5 +72,33 @@ export const Wave = () => {
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
+
+const WaveWithGradient = () => {
+  return (
+    <>
+    <motion.svg viewBox="0 0 1440 605" >
+      <defs>
+        <mask id="mask">
+          <path
+            d="M 0,111 C 96,130 288,207.2 480,206 C 672,204.8 768,117.8 960,105 C 1152,92.2 1344,134.6 1440,142L1440 560L0 560z"
+            fill="rgba(194, 240, 204, 1)"
+          ></path>
+          <path
+            d="M 0,481 C 288,444.2 1152,333.8 1440,297L1440 560L0 560z"
+            fill="rgba(194, 133, 211, 1)"
+          ></path>
+        </mask>
+      </defs>
+      <image href={"/images/me-ont-coast.jpg"} mask="url(#mask)"></image>
+    </motion.svg>
+    </>
+  );
+};
+
+export const Wave = () => {
+  const { isTabletOrMobile } = useResponsive();
+
+  return isTabletOrMobile ? <WaveWithImage /> : <WaveWithGradient />;
+};

@@ -1,20 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { ArrowDown } from '@styled-icons/bootstrap/ArrowDown'
-import { Wave } from '../../UI/Wave'
-import Image from 'next/image'
-import useResponsive from '../../../hooks/responsive'
-
+import React, { useState, useEffect } from "react";
 import {
   useViewportScroll,
   motion,
   useTransform,
   useSpring,
-  useMotionValue,
-} from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+} from "framer-motion";
+
+
+import { Wave } from "../../UI/Wave";
 
 export interface HeroProps {
-  title?: string
+  title?: string;
 }
 
 const variants = {
@@ -24,22 +20,21 @@ const variants = {
     scale: 0.65,
     y: 50,
   },
-}
+};
 
 export const Hero: React.FC<HeroProps> = () => {
-  const x = useSpring(0, { stiffness: 300, damping: 200 })
+  const x = useSpring(0, { stiffness: 300, damping: 200 });
 
   // state
-  const [state, setState] = useState(false)
+  const [state, setState] = useState(false);
   useEffect(() => {
     x.onChange(() => {
-      x.get() > -100 ? setState(false) : setState(true)
-    })
-  }, [x])
+      x.get() > -100 ? setState(false) : setState(true);
+    });
+  }, [x]);
 
-  const { scrollY } = useViewportScroll()
-  const y1 = useTransform(scrollY, [0, -300], [0, -200])
-  const { isTabletOrMobile } = useResponsive()
+  const { scrollY } = useViewportScroll();
+  const y1 = useTransform(scrollY, [0, -300], [0, -200]);
 
   return (
     <>
@@ -50,20 +45,16 @@ export const Hero: React.FC<HeroProps> = () => {
           initial={{ y: -100, x: 0 }}
           animate={{ y: 30 }}
           style={{ y: y1, x: 0 }}
-          transition={{ type: 'spring', stiffness: 100, duration: 2 }}
+          transition={{ type: "spring", stiffness: 100, duration: 2 }}
         >
           <div className="flex flex-col md:flex-row text-center">
             <div className="mb-5 mx-auto md:mx-1">
-              
-                <div>
-                  <img
-                    src={'/images/me.jpg'}
-                    width="90px"
-                    height="90px"
-                    className="rounded-full mr-4"
-                  />
-                </div>
-              
+              <img
+                src={"/images/me.jpg"}
+                width="90px"
+                height="90px"
+                className="rounded-full mr-4"
+              />
             </div>
             <div className="">
               <motion.h3 className="font-semibold font-sans text-gray-2B2B2B payton-one text-3xl md:text-left">
@@ -89,10 +80,8 @@ export const Hero: React.FC<HeroProps> = () => {
             </div>
           </div>
         </motion.div>
-
-        {/* <!-- WAVE HERO GRAPHIC WITH IMAGE--> */}
-        {!isTabletOrMobile && <Wave />}
+         <Wave />
       </div>
     </>
-  )
-}
+  );
+};
