@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
-import { Contact, ContactProps } from '.'
+import { Contact } from '.'
 
 export default {
   title: 'Components/Contact',
@@ -10,7 +10,7 @@ export default {
   },
 } as Meta
 
-const Template: Story<ContactProps> = (args) => <Contact {...args} />
+const Template: Story = (args) => <Contact {...args} />
 
 // Default scenario
 export const Default = Template.bind({})
