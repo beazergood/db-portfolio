@@ -1,3 +1,9 @@
+## [1.1.1] - 08-12-22
+
+### Changes
+
+- added Pexip experience
+- tidied up designs for mobile
 ## [1.1.0] - 28-11-22
 
 ### Changes
@@ -77,3 +83,4 @@
 - Typewriter effect greeting
 - MDX support
 - Framer motion animations/transitions
+
