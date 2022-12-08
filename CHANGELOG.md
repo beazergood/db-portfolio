@@ -1,3 +1,9 @@
+## [1.1.3] - 08-12-22
+
+### Feature
+
+- alternative wave bg component for the hero on big screens
+
 ## [1.1.2] - 08-12-22
 
 ### Fixes
