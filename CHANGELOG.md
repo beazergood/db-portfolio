@@ -1,3 +1,8 @@
+## [1.1.2] - 08-12-22
+
+### Fixes
+
+- bug where layouts would get a coloured background incorrectly.
 ## [1.1.1] - 08-12-22
 
 ### Changes
