@@ -54,16 +54,16 @@ export const Hero: React.FC<HeroProps> = () => {
         >
           <div className="flex flex-col md:flex-row text-center">
             <div className="mb-5 mx-auto md:mx-1">
-              {isTabletOrMobile && (
+              
                 <div>
                   <img
                     src={'/images/me.jpg'}
                     width="90px"
                     height="90px"
-                    className="rounded-full"
+                    className="rounded-full mr-4"
                   />
                 </div>
-              )}
+              
             </div>
             <div className="">
               <motion.h3 className="font-semibold font-sans text-gray-2B2B2B payton-one text-3xl md:text-left">
