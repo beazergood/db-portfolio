@@ -13,9 +13,9 @@ This repo is my portfolio demonstrating some of the technologies I like to work 
 
 # TODO
 
-- add chakra UI
+[x] add chakra UI
 - create an MDX page
 - update Next to 13
-- add a blog!
 - add dark mode
+- add a blog!
 - make it more accessible
