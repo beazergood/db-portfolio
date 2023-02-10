@@ -9,7 +9,7 @@ export const Experience: React.FC = () => {
       <div className="w-full border-  py-10 my-10  border-purple-200 container">
         <div>
           <h3 className="font-semibold font-sans text-gray-2B2B2B  payton-one text-2xl mx-5 mt-10">
-            Experience
+            Experience 👨🏻‍💻
           </h3>
           <svg height="10" width="100" className="my-2 mx-5">
             <line
