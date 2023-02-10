@@ -1,26 +1,23 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Linkedin } from '@styled-icons/bootstrap/Linkedin'
-import { Github } from '@styled-icons/bootstrap/Github'
-import * as packageInfo from '../../../../package.json'
+import React from "react";
+import { motion } from "framer-motion";
+import { Linkedin } from "@styled-icons/bootstrap/Linkedin";
+import { Github } from "@styled-icons/bootstrap/Github";
+import * as packageInfo from "../../../../package.json";
 
 export const Contact: React.FC = () => {
   return (
     <>
       <div className="w-full border- mx-auto px-10  border-grey-200 relative">
         <motion.div className="mt-10 container relative border- border-green-400">
-          <h1 className="text-2xl text-mintee-dark payton-one py-10">
-            Available to hire from January 2023
-          </h1>
           <div className="absolute right-10 top-0 ">
             <h1 className="text-xl text-mintee-dark payton-one py-10 text-left invisible md:visible lg:visible">
-              ways to get in touch
+              ways to get in touch 📮
             </h1>
             <div className="grid gap-3 grid-cols-2">
               <Linkedin
                 onClick={() => {
                   document.location.href =
-                    'https://www.linkedin.com/in/dave-beazer'
+                    "https://www.linkedin.com/in/dave-beazer";
                 }}
                 width="44"
                 className="cursor-pointer hover:shadow-lg z-10 relative"
@@ -31,7 +28,7 @@ export const Contact: React.FC = () => {
 
               <Github
                 onClick={() => {
-                  document.location.href = 'https://github.com/beazergood'
+                  document.location.href = "https://github.com/beazergood";
                 }}
                 width="44"
                 height="44"
@@ -52,7 +49,7 @@ export const Contact: React.FC = () => {
           height="300px"
           preserveAspectRatio="none"
           className="border- border-purp-dark "
-          style={{ right: 0, position: 'absolute', zIndex: -2 }}
+          style={{ right: 0, position: "absolute", zIndex: -2 }}
         >
           <motion.path
             id="myPath"
@@ -61,7 +58,7 @@ export const Contact: React.FC = () => {
           ></motion.path>
           <motion.text x="1200">
             <textPath href="#myPath" fill="#C285D3" fontSize="18">
-              say hi[at]davebeazer.dev
+              email hi[at]davebeazer.dev
             </textPath>
           </motion.text>
           <motion.text x="200">
@@ -77,5 +74,5 @@ export const Contact: React.FC = () => {
         </motion.svg>
       </div>
     </>
-  )
-}
+  );
+};

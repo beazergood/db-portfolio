@@ -16,7 +16,7 @@ export const About: React.FC<AboutProps> = () => {
         <div className="flex flex-col md:flex-row mb-10 mt-10">
           <div className="md:w-1/2">
             <p className="text-xl my-4">
-              👋🏻 I'm Dave. A frontend engineer from the UK. I work with
+            Experienced and versatile software engineer with a strong background in user-interface and user-experience design. I work with
               cross-functional teams to bring best-in-class web applications to
               life.
             </p>
@@ -33,7 +33,7 @@ export const About: React.FC<AboutProps> = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-5 bg-purp flex-col rounded-2xl hover:shadow-lg col-span-1">
             <p className="font-bold text-purp-dark">UI</p>
-            <p className="text-4xl py-3 text-purp-dark">Design &amp; Build</p>
+            <p className="text-4xl py-3 text-purp-dark">Design &amp; Build 🤖</p>
             <p className="text-2xl text-purp-dark">
               Short feedback loops with designers helps to bring their
               prototypes to life as they intended.
@@ -42,7 +42,7 @@ export const About: React.FC<AboutProps> = () => {
           <div className="p-5 bg-mintee flex-col rounded-2xl hover:shadow-lg col-span-1">
             <p className="font-bold text-thyme">UX</p>
             <p className="text-4xl py-3 text-thyme">
-              Intuitive &amp; Accessible
+              Intuitive &amp; Accessible 👓
             </p>
             <p className="text-2xl text-thyme">
               Great apps are the ones that have been carefully thought about
