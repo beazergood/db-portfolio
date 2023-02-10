@@ -4,7 +4,7 @@ import { Typescript } from '@styled-icons/simple-icons/Typescript'
 import { Html5 } from '@styled-icons/typicons/Html5'
 import { Csswizardry } from '@styled-icons/simple-icons/Csswizardry'
 import { FileJson } from '@styled-icons/boxicons-solid/FileJson'
-import { Figma } from '@styled-icons/feather/Figma'
+import { Figma } from '@styled-icons/fa-brands/Figma'
 import { Github } from '@styled-icons/simple-icons/github'
 import { Nodejs } from '@styled-icons/boxicons-logos/Nodejs'
 import { Angular } from '@styled-icons/boxicons-logos/Angular'
@@ -25,7 +25,7 @@ export const Skills: React.FC<SkillsProps> = () => {
 
   return (
     <>
-      <div className="bg-purp py-10 my-10">
+      <div className="bg-mintee py-10 my-10">
         <motion.div className="w-full border- p-4 my-30 py-10  border-green-200 container ">
           <h1 className="text-2xl text-purp-dark payton-one">
             Technologies &amp; tools I like to work with 👾
