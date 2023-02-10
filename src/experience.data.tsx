@@ -18,7 +18,7 @@ export const experienceCards = [
   },
   {
     company: 'Beazer Software',
-    role: 'Contract Web Developer',
+    role: 'Contract Software Engineer',
     pills: [
       'Typescript',
       'Angular',
