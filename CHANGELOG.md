@@ -1,3 +1,15 @@
+## [1.1.5] - 10-02-23
+
+### Changes
+
+- intro section copy updated to align with CV updates
+[] - CV download
+[] - experience section updated
+[] - icons/mentions about indie projects
+    - daysaway.app - simple event countdown application for web and mobile (SvelteKit)
+    - this portfolio site (NextJS / React)
+    - The Provisional - app for finding and rating USA golf courses (SvelteKit)
+ 
 ## [1.1.4] - 08-12-22
 
 ### Fixes
