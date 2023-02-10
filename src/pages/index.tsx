@@ -6,6 +6,7 @@ import { Experience } from '../components/portfolio/Experience'
 import { Skills } from '../components/portfolio/Skills'
 import { About } from '../components/portfolio/About'
 import { Contact } from '../components/portfolio/Contact'
+import { Interests } from '../components/portfolio/Interests'
 
 export default function Home() {
 
@@ -21,6 +22,7 @@ export default function Home() {
         <About />
         <Experience/>
         <Skills />
+        <Interests />
         <Contact />
     </>
   )
