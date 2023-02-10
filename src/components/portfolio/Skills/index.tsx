@@ -5,12 +5,13 @@ import { Html5 } from '@styled-icons/typicons/Html5'
 import { Csswizardry } from '@styled-icons/simple-icons/Csswizardry'
 import { FileJson } from '@styled-icons/boxicons-solid/FileJson'
 import { Figma } from '@styled-icons/feather/Figma'
+import { Github } from '@styled-icons/simple-icons/github'
 import { Nodejs } from '@styled-icons/boxicons-logos/Nodejs'
 import { Angular } from '@styled-icons/boxicons-logos/Angular'
 import { ReactLogo } from '@styled-icons/boxicons-logos/ReactLogo'
 import { Mongodb } from '@styled-icons/simple-icons/Mongodb'
 import { Storybook } from '@styled-icons/simple-icons/Storybook'
-import { Sketch } from '@styled-icons/simple-icons/Sketch'
+import { Svelte } from '@styled-icons/simple-icons/Svelte'
 import ReactTooltip from 'react-tooltip'
 
 export interface SkillsProps {
@@ -93,6 +94,33 @@ export const Skills: React.FC<SkillsProps> = () => {
                   width="64"
                   height="64"
                   data-tip="Storybook"
+                  fill="white"
+                />
+                <ReactTooltip />
+              </div>
+              <div className="mx-auto">
+                <Svelte
+                  width="64"
+                  height="64"
+                  data-tip="Storybook"
+                  fill="white"
+                />
+                <ReactTooltip />
+              </div>
+              <div className="mx-auto">
+                <Figma
+                  width="64"
+                  height="64"
+                  data-tip="Figma"
+                  fill="white"
+                />
+                <ReactTooltip />
+              </div>
+              <div className="mx-auto">
+                <Github
+                  width="64"
+                  height="64"
+                  data-tip="Figma"
                   fill="white"
                 />
                 <ReactTooltip />
