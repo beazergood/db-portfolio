@@ -1,18 +1,18 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
   }
 
   render() {
     const meta = {
-      title: 'The Wonderful World of Dave Beazer',
-      description: 'User experience designer & developer in Ascot, England.',
+      title: "David Beazer | Web Software Engineer",
+      description: "Web software engineer based in Ascot, England.",
       image:
-        'https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png',
-    }
+        "https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png",
+    };
 
     return (
       <Html lang="en">
@@ -52,6 +52,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
 
+          {/* Google Tag Manager script */}
           <script
             dangerouslySetInnerHTML={{
               __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -74,8 +75,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;
