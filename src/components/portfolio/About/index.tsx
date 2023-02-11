@@ -16,12 +16,12 @@ export const About: React.FC<AboutProps> = () => {
         <div className="flex flex-col md:flex-row mb-10 mt-10">
           <div className="md:w-1/2">
             <p className="text-xl m-4">
-            I have a passion for building great products that are intuitive, accessible, and easy to use. I have a strong background in user-interface and user-experience designing and building enterprise web applications built for scale.
+            Creative and versatile software engineer with 10+ years of experience and a strong background in UI/UX designing and building enterprise web applications. Excellent communication skills and track record working with remote and cross-functional teams. 
             </p>
           </div>
           <div className="md:w-1/2">
             <p className="text-xl m-4 md:ml-2 ml-0">
-            I thrive in cross-functional teams of technology experts working to solve challenging business problems in innovative new ways.
+            Proven ability to understand and abstract complex business problems into user-friendly software solutions built for scale.
             </p>
           </div>
         </div>
