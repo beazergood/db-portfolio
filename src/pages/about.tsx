@@ -23,16 +23,12 @@ export default function About() {
             <title>About {version}</title>
             <link rel="icon" href="/favicon.ico" />
           </Head>
-          <motion.div className="flex flex-row justify-end" layoutId="nav">
-            <div className="w-1/3 flex flex-row space-x-4">
-              <Button label="Nav to Home" href="/" />
-              <Button label="About" href="/about" />
-            </div>
-          </motion.div>
+          
           <div className="w-full flex flex-row text-white">
             <div className="w-1/2">
-              <div className="bg-purp p-5 bg-opacity-60 rounded-full w-2/4">
+              <div className="bg-purp p-5 bg-opacity-60 rounded-full">
                 <h1 className="text-left">
+                  With thanks to
                   <Typewriter
                     options={{
                       strings: getGreeting(),
@@ -43,25 +39,8 @@ export default function About() {
                   />
                 </h1>
               </div>
-              <motion.div className="bg-opacity-75 rect absolute bg-purp"></motion.div>
-              <div className="bg-gray-2B2B2B mt-10 p-5 bg-opacity-60 rounded-3xl w-3/4">
-                <div className="text-2xl mt-5 w-full relative">
-                  <p>
-                    I'm Dave, a{' '}
-                    <strong className="text-mintee font-bold">
-                      full-stack designer &amp; developer
-                    </strong>{' '}
-                    of the interwebs from the eternally sunny isle of England.
-                  </p>
-                </div>
-                <p className="text-2xl mt-10 w-full">
-                  I strive to design and build modern web experiences that even
-                  my nan would enjoy.
-                </p>
-                <p className="text-opacity-5 text-gray-2B2B2B text-xl mt-5">
-                  Hi Nan!
-                </p>
-              </div>
+              {/* <motion.div className="bg-opacity-75 rect absolute bg-purp"></motion.div> */}
+              
             </div>
           </div>
         </div>
@@ -92,14 +71,11 @@ export default function About() {
 
 function getGreeting() {
   return [
-    '<span class="text-3xl">Oi oi!</span>',
-    // '<span class="text-3xl">Hello!</span>',
-    // '<span class="text-3xl">Worrrrrd</span>',
-    // '<span class="text-3xl">G\'day!</span>',
-    // '<span class="text-3xl">Hi!</span>',
-    // '<span class="text-3xl">Bonjour!</span>',
-    // '<span class="text-3xl">Wagwan</span>',
-    // '<span class="text-3xl">Jambo!</span>',
-    '<span class="text-3xl">Ello ello...</span>',
+    '<span class="text-3xl">Chat GPT</span>',
+    '<span class="text-3xl">Google</span>',
+    '<span class="text-3xl">AI</span>',
+    '<span class="text-3xl">Caffeine</span>',
+    '<span class="text-3xl">Youtube</span>',
+    '<span class="text-3xl">www</span>',
   ]
 }

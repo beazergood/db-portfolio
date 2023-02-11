@@ -38,7 +38,7 @@ export const Hero: React.FC<HeroProps> = () => {
 
   return (
     <>
-      <div className="border-0 border-green-500 ">
+      <div className="bg-white">
         <motion.div
           layout
           className="container mt-10 "
@@ -70,7 +70,7 @@ export const Hero: React.FC<HeroProps> = () => {
                   y1="0"
                   x2="100"
                   y2="0"
-                  stroke="hsl(287, 47%, 67%)"
+                  stroke="#C2F0CC"
                   strokeWidth="6"
                 />
               </motion.svg>

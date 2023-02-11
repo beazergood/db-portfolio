@@ -4,8 +4,6 @@ import {
   useViewportScroll,
   motion,
   useTransform,
-  useSpring,
-  useMotionValue,
 } from 'framer-motion'
 
 export interface ExperienceCardProps {
@@ -103,16 +101,16 @@ const Card = ({ props }) => {
     show: { opacity: 1 },
   }
   return (
-    <div className="bg-white p-4 rounded-xl my-4 ml-auto shadow-md block">
+    <div className="bg-white p-6 rounded-xl my-4 ml-auto shadow-md block">
       <h3 className="font-semibold mb-1 text-sm uppercase font-mono text-gray-400">
         {props.company}
       </h3>
       <h1 className="leading-tight text-left text-2xl text-gray-600 mb-4">
         {props.role}
       </h1>
-      {props.description && (
+      {/* {props.description && (
         <p className="text-left text-gray-500">{props.description}</p>
-      )}
+      )} */}
       <motion.ul
         className="py-2 flex flex-wrap p-x-2 my-2 w-full relative top-1"
         variants={pillsContainer}
@@ -138,14 +136,14 @@ const TimelineElement = () => {
   return (
     <>
       <div className="h-full w-6 flex items-center justify-center">
-        <div className="h-full w-1 bg-mintee pointer-events-none"></div>
+        <div className="h-full w-1 bg-cool-gray pointer-events-none"></div>
       </div>
       <motion.div
         whileHover={{
           scale: 1.5,
           transition: { duration: 0.2 },
         }}
-        className="w-6 h-6 absolute top-1/2 -mt-10 rounded-full bg-white stroke-2 border-4 border-purp shadow"
+        className="w-6 h-6 absolute top-1/2 -mt-10 rounded-full bg-white stroke-2 border-4 border-melon shadow"
       ></motion.div>
     </>
   )

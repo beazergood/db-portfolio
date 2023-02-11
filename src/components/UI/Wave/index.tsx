@@ -22,7 +22,9 @@ const pathVariants = {
     },
   },
 };
-
+/***
+ * SVG Wave element with image clip path
+ */
 const WaveWithImage = () => {
   return (
     <div className="flex flex-row">
@@ -75,24 +77,27 @@ const WaveWithImage = () => {
   );
 };
 
+/***
+ * SVG Wave element with gradient
+ */
 const WaveWithGradient = () => {
   return (
     <>
-    <motion.svg viewBox="0 0 1440 605" >
-      <defs>
-        <mask id="mask">
-          <path
-            d="M 0,111 C 96,130 288,207.2 480,206 C 672,204.8 768,117.8 960,105 C 1152,92.2 1344,134.6 1440,142L1440 560L0 560z"
-            fill="rgba(194, 240, 204, 1)"
-          ></path>
-          <path
-            d="M 0,481 C 288,444.2 1152,333.8 1440,297L1440 560L0 560z"
-            fill="rgba(194, 133, 211, 1)"
-          ></path>
-        </mask>
-      </defs>
-      <image href={"/images/me-ont-coast.jpg"} mask="url(#mask)"></image>
-    </motion.svg>
+      <motion.svg viewBox="0 0 1440 605">
+        <defs>
+          <mask id="mask">
+            <path
+              d="M 0,111 C 96,130 288,207.2 480,206 C 672,204.8 768,117.8 960,105 C 1152,92.2 1344,134.6 1440,142L1440 560L0 560z"
+              fill="rgba(194, 240, 204, 1)"
+            ></path>
+            <path
+              d="M 0,481 C 288,444.2 1152,333.8 1440,297L1440 560L0 560z"
+              fill="rgba(194, 133, 211, 1)"
+            ></path>
+          </mask>
+        </defs>
+        <image href={"/images/me-ont-coast.jpg"} mask="url(#mask)"></image>
+      </motion.svg>
     </>
   );
 };

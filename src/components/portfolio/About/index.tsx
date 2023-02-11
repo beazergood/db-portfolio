@@ -15,41 +15,55 @@ export const About: React.FC<AboutProps> = () => {
       <div className={"px-4 container mx-auto flex-col"}>
         <div className="flex flex-col md:flex-row mb-10 mt-10">
           <div className="md:w-1/2">
-            <p className="text-xl my-4">
-            Experienced and versatile software engineer with a strong background in user-interface and user-experience design. I work with
-              cross-functional teams to bring best-in-class web applications to
-              life.
+            <p className="text-xl m-4">
+            I have a passion for building great products that are intuitive, accessible, and easy to use. I have a strong background in user-interface and user-experience designing and building enterprise web applications built for scale.
             </p>
           </div>
           <div className="md:w-1/2">
-            <p className="text-xl my-4 md:ml-2 ml-0">
-              Comfortable and enthusiastic about working with a variety of tools and technologies that
-              span design and development, gradually bridging the
-              gap between the two disciplines.
+            <p className="text-xl m-4 md:ml-2 ml-0">
+            I thrive in cross-functional teams of technology experts working to solve challenging business problems in innovative new ways.
             </p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="p-5 bg-purp flex-col rounded-2xl hover:shadow-lg col-span-1">
-            <p className="font-bold text-purp-dark">UI</p>
-            <p className="text-4xl py-3 text-purp-dark">Design &amp; Build 🤖</p>
-            <p className="text-2xl text-purp-dark">
-              Short feedback loops with designers helps to bring their
-              prototypes to life as they intended.
+          <div className="p-5 border-4 border-melon flex-col rounded-2xl hover:shadow-lg col-span-1">
+            <p className="font-bold text-melon">Accessible UI</p>
+            <p className="text-4xl py-3 text-">Design &amp; Build 💅🏻</p>
+            <p className="text-2xl text-">
+              Short feedback loops with designers & UX experts helps to deliver the right end product for all users.
             </p>
           </div>
-          <div className="p-5 bg-mintee flex-col rounded-2xl hover:shadow-lg col-span-1">
-            <p className="font-bold text-thyme">UX</p>
-            <p className="text-4xl py-3 text-thyme">
-              Intuitive &amp; Accessible 👓
+          <div className="p-5 border-4 border-mintee flex-col rounded-2xl hover:shadow-lg col-span-1">
+            <p className="font-bold text-mintee-dark">User-centric UX</p>
+            <p className="text-4xl py-3 text-">
+              Jobs to be done ✅
             </p>
-            <p className="text-2xl text-thyme">
-              Great apps are the ones that have been carefully thought about
-              with the end users in mind from the outset.
+            <p className="text-2xl text-">
+              Always start with the user and work backwards. Understand the problem and the user's goals.
             </p>
           </div>
         </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          <div className="p-5 border-4 border-cool-gray  flex-col rounded-2xl hover:shadow-lg col-span-1">
+            <p className="font-bold text-cool-gray">KISS</p>
+            <p className="text-4xl py-3 text-">Clean Code 🤖</p>
+            <p className="text-2xl text-">
+              {/* Peer reviewed code is the best way to ensure that the code is fit for purpose and easy to understand and maintain. */}
+              Abilitiy to abstract complex business problems into simple solutions that are well tested and built for scale.
+            </p>
+          </div>
+          <div className="p-5 border-4 border-melon flex-col rounded-2xl hover:shadow-lg col-span-1">
+            <p className="font-bold text-melon">Growth Mindset</p>
+            <p className="text-4xl py-3 text-">
+              Every day a schoolday 🧠
+            </p>
+            <p className="text-2xl text-">
+              I have a passion for learning the best new ways to design and build useful web apps. Learning how to learn is a key skill for any developer.
+            </p>
+          </div>
+        </div>
+
       </div>
     </>
   );

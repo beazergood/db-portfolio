@@ -4,12 +4,10 @@ export const experienceCards = [
     role: 'Software Engineer',
     pills: [
       'Typescript',
-      'Angular',
       'React',
-      'Storybook',
-      'Figma',
-      'Playwright',
-      'Jest'
+      'Angular',
+      'HTML',
+      'CSS'
     ],
     dates: 'Jan 2022 - Feb 2023',
     img: '',
@@ -18,16 +16,15 @@ export const experienceCards = [
   },
   {
     company: 'Beazer Software',
-    role: 'Contract Software Engineer',
+    role: 'Contract Web Development',
     pills: [
       'Typescript',
       'Angular',
       'React',
-      'NextJS',
-      'Storybook',
-      'JAM Stack',
+      'Svelte',
       'Node',
-      'Cypress'
+      'HTML',
+      'CSS',
     ],
     dates: 'Jun 2021 - Jan 2022 | Present',
     img: '',
@@ -37,7 +34,7 @@ export const experienceCards = [
   {
     company: 'High Performance Software Ltd',
     role: 'Full Stack Web Developer',
-    pills: ['Angular', 'MongoDB', 'Express', 'Node', 'AWS', 'Sketch'],
+    pills: ['Typescript', 'Angular', 'HTML', 'CSS','Node', 'MongoDB'],
     dates: 'Oct 2014 - Nov 2020',
     img: '',
     side: 'right',
@@ -47,7 +44,7 @@ export const experienceCards = [
   {
     company: 'High Performance Software Ltd',
     role: 'Frontend Web Developer',
-    pills: ['HTML', 'CSS', 'Javascript', 'Sketch', 'Adobe'],
+    pills: ['HTML', 'CSS', 'Javascript', 'Adobe'],
     dates: 'Sep 2012 - Sep 2014',
     img: '',
     side: 'right',

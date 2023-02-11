@@ -21,7 +21,6 @@ export interface ProjectCardProps {
   project: ProjectProps
 }
 export const ProjectCard = ({ project }) => {
-  console.log('build project: ', project)
 
   return (
     <>

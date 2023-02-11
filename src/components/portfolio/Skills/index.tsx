@@ -4,11 +4,12 @@ import { Typescript } from '@styled-icons/simple-icons/Typescript'
 import { Html5 } from '@styled-icons/typicons/Html5'
 import { Csswizardry } from '@styled-icons/simple-icons/Csswizardry'
 import { FileJson } from '@styled-icons/boxicons-solid/FileJson'
-import { Figma } from '@styled-icons/fa-brands/Figma'
+import { Figma } from '@styled-icons/boxicons-logos/Figma'
 import { Github } from '@styled-icons/simple-icons/github'
 import { Nodejs } from '@styled-icons/boxicons-logos/Nodejs'
 import { Angular } from '@styled-icons/boxicons-logos/Angular'
 import { ReactLogo } from '@styled-icons/boxicons-logos/ReactLogo'
+import { Tailwindcss } from '@styled-icons/simple-icons/Tailwindcss'
 import { Mongodb } from '@styled-icons/simple-icons/Mongodb'
 import { Storybook } from '@styled-icons/simple-icons/Storybook'
 import { Svelte } from '@styled-icons/simple-icons/Svelte'
@@ -27,9 +28,10 @@ export const Skills: React.FC<SkillsProps> = () => {
     <>
       <div className="bg-mintee py-10 my-10">
         <motion.div className="w-full border- p-4 my-30 py-10  border-green-200 container ">
-          <h1 className="text-2xl text-purp-dark payton-one">
-            Technologies &amp; tools I like to work with 👾
+          <h1 className="text-2xl text-true-blue payton-one">
+            Web technologies &amp; tools I like to work with 👾
           </h1>
+          {/* <p className="mt-8 font-medium">Actively engaged with web communities of designers and developers to share knowledge, learn best practices and trends for building web applications.</p> */}
           <div className="items-center justify-center w-full">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-20 mx-auto">
               <div className="mx-auto">
@@ -102,22 +104,22 @@ export const Skills: React.FC<SkillsProps> = () => {
                 <Svelte
                   width="64"
                   height="64"
-                  data-tip="Storybook"
+                  data-tip="Svelte"
+                  fill="white"
+                />
+                <ReactTooltip />
+              </div>
+              <div className="mx-auto">
+                <Tailwindcss
+                  width="64"
+                  height="64"
+                  data-tip="Tailwind CSS"
                   fill="white"
                 />
                 <ReactTooltip />
               </div>
               <div className="mx-auto">
                 <Figma
-                  width="64"
-                  height="64"
-                  data-tip="Figma"
-                  fill="white"
-                />
-                <ReactTooltip />
-              </div>
-              <div className="mx-auto">
-                <Github
                   width="64"
                   height="64"
                   data-tip="Figma"
