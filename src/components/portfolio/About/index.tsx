@@ -16,11 +16,11 @@ export const About: React.FC<AboutProps> = () => {
         <div className="flex flex-col md:flex-row mb-10 mt-10">
           <div className="md:w-1/2">
             <p className="text-xl m-4">
-            Creative and versatile software engineer with 10+ years of experience and a strong background in UI/UX designing and building enterprise web applications. Excellent communication skills and track record working with remote and cross-functional teams. 
+            Creative and versatile Software Engineer with 10+ years of experience and a strong background designing and building enterprise web applications. Excellent communication skills and track record working with remote and cross-functional teams. 
             </p>
           </div>
           <div className="md:w-1/2">
-            <p className="text-xl m-4 md:ml-2 ml-0">
+            <p className="text-xl m-4 ml-3">
             Proven ability to understand and abstract complex business problems into user-friendly software solutions built for scale.
             </p>
           </div>
@@ -46,17 +46,16 @@ export const About: React.FC<AboutProps> = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div className="p-5 border-4 border-mintee  flex-col rounded-2xl hover:shadow-lg col-span-1">
-            <p className="font-bold text-cool-gray">KISS</p>
-            <p className="text-4xl py-3 text-">Clean Code 🤖</p>
+            <p className="font-bold text-cool-gray">Clean Code</p>
+            <p className="text-4xl py-3 text-">Peer reviewed 🤖</p>
             <p className="text-2xl text-">
-              {/* Peer reviewed code is the best way to ensure that the code is fit for purpose and easy to understand and maintain. */}
-              Abilitiy to abstract complex business problems into simple solutions that are well tested and built for scale.
+              Working with team members to ensure code is clean, readable and maintainable.
             </p>
           </div>
           <div className="p-5 border-4 border-mintee flex-col rounded-2xl hover:shadow-lg col-span-1">
             <p className="font-bold text-cool-gray">Growth Mindset</p>
             <p className="text-4xl py-3 text-">
-              Every day a schoolday 🧠
+              Always Learning 🧠
             </p>
             <p className="text-2xl text-">
               I have a passion for learning the best new ways to design and build useful web apps. Learning how to learn is a key skill for any developer.

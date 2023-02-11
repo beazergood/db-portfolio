@@ -27,7 +27,7 @@ export const Skills: React.FC<SkillsProps> = () => {
     <>
       <div className="bg-mintee py-10 my-10">
         <motion.div className="w-full border- p-4 my-30 py-10  border-green-200 container ">
-          <h1 className="text-2xl text-true-blue payton-one">
+          <h1 className="text-2xl text-mintee-dark payton-one">
             Web technologies &amp; tools I like to work with 👾
           </h1>
           {/* <p className="mt-8 font-medium">Actively engaged with web communities of designers and developers to share knowledge, learn best practices and trends for building web applications.</p> */}
