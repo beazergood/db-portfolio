@@ -27,15 +27,15 @@ export const About: React.FC<AboutProps> = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="p-5 border-4 border-melon flex-col rounded-2xl hover:shadow-lg col-span-1">
-            <p className="font-bold text-melon">Accessible UI</p>
+          <div className="p-5 border-4 border-mintee flex-col rounded-2xl hover:shadow-lg col-span-1">
+            <p className="font-bold text-cool-gray">Accessible UI</p>
             <p className="text-4xl py-3 text-">Design &amp; Build 💅🏻</p>
             <p className="text-2xl text-">
               Short feedback loops with designers & UX experts helps to deliver the right end product for all users.
             </p>
           </div>
           <div className="p-5 border-4 border-mintee flex-col rounded-2xl hover:shadow-lg col-span-1">
-            <p className="font-bold text-mintee-dark">User-centric UX</p>
+            <p className="font-bold text-cool-gray">User-centric UX</p>
             <p className="text-4xl py-3 text-">
               Jobs to be done ✅
             </p>
@@ -45,7 +45,7 @@ export const About: React.FC<AboutProps> = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-          <div className="p-5 border-4 border-cool-gray  flex-col rounded-2xl hover:shadow-lg col-span-1">
+          <div className="p-5 border-4 border-mintee  flex-col rounded-2xl hover:shadow-lg col-span-1">
             <p className="font-bold text-cool-gray">KISS</p>
             <p className="text-4xl py-3 text-">Clean Code 🤖</p>
             <p className="text-2xl text-">
@@ -53,8 +53,8 @@ export const About: React.FC<AboutProps> = () => {
               Abilitiy to abstract complex business problems into simple solutions that are well tested and built for scale.
             </p>
           </div>
-          <div className="p-5 border-4 border-melon flex-col rounded-2xl hover:shadow-lg col-span-1">
-            <p className="font-bold text-melon">Growth Mindset</p>
+          <div className="p-5 border-4 border-mintee flex-col rounded-2xl hover:shadow-lg col-span-1">
+            <p className="font-bold text-cool-gray">Growth Mindset</p>
             <p className="text-4xl py-3 text-">
               Every day a schoolday 🧠
             </p>
