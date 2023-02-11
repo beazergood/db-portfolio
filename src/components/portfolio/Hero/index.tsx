@@ -6,7 +6,6 @@ import {
   useSpring,
 } from "framer-motion";
 
-
 import { Wave } from "../../UI/Wave";
 
 export interface HeroProps {
@@ -75,7 +74,7 @@ export const Hero: React.FC<HeroProps> = () => {
                 />
               </motion.svg>
               <h1 className="text-2xl text-gray-2B2B2B md:text-left">
-                UI/UX Software Engineer
+                Web Software Engineer
               </h1>
             </div>
           </div>
