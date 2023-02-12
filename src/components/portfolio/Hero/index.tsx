@@ -74,7 +74,7 @@ export const Hero: React.FC<HeroProps> = () => {
                 />
               </motion.svg>
               <h1 className="text-2xl text-gray-2B2B2B md:text-left">
-                Web Software Engineer
+              Frontend Software Engineer
               </h1>
             </div>
           </div>
