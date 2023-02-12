@@ -4,8 +4,8 @@
 
 - intro section copy updated to align with CV updates
 [] - CV download
-[] - experience section updated
-[] - icons/mentions about indie projects
+[x] - experience section updated
+[x] - icons/mentions about indie projects
     - daysaway.app - simple event countdown application for web and mobile (SvelteKit)
     - this portfolio site (NextJS / React)
     - The Provisional - app for finding and rating USA golf courses (SvelteKit)
