@@ -30,7 +30,7 @@ export const About: React.FC<AboutProps> = () => {
             <p className="font-bold text-cool-gray">Accessible UI</p>
             <p className="text-4xl py-3 text-">Design &amp; Build 💅🏻</p>
             <p className="text-lg text-">
-              Short feedback loops with designers & UX experts helps to deliver the right end product forProfe all users.
+              Short feedback loops with designers & UX experts helps to deliver the right end product to all users and devices.
             </p>
           </div>
           <div className="p-5 flex-col rounded-2xl col-span-1">
@@ -39,7 +39,7 @@ export const About: React.FC<AboutProps> = () => {
               Jobs to be done ✅
             </p>
             <p className="text-lg text-">
-              Always start with the user and work backwards. Understand the problem and the user's goals.
+              Ensure the end user has a great experience by understanding their needs and building the right solution.
             </p>
           </div>
         </div>
@@ -48,7 +48,7 @@ export const About: React.FC<AboutProps> = () => {
             <p className="font-bold text-cool-gray">Clean Code</p>
             <p className="text-4xl py-3 text-">Peer reviewed 🤖</p>
             <p className="text-lg text-">
-              Working with team members to ensure code is clean, readable and maintainable.
+              Engaged and collaborative team member always working to ensure code is readable, testable and maintainable.
             </p>
           </div>
           <div className="p-5 flex-col rounded-2xl col-span-1">
@@ -57,7 +57,7 @@ export const About: React.FC<AboutProps> = () => {
               Always Learning 🧠
             </p>
             <p className="text-lg text-">
-              I have a passion for learning the best new ways to design and build useful web apps. Learning how to learn is a key skill for any developer.
+              I'm enthusiastic about increasing my understanding of core web technologies to elevate the end-user experience.
             </p>
           </div>
         </div>
