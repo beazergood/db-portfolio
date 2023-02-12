@@ -69,7 +69,7 @@ export const Hero: React.FC<HeroProps> = () => {
                   y1="0"
                   x2="100"
                   y2="0"
-                  stroke="#C2F0CC"
+                  stroke="#FDB6B8ff"
                   strokeWidth="6"
                 />
               </motion.svg>

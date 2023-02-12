@@ -14,11 +14,18 @@ module.exports = {
                 thyme: '#23903A',
                 'gray-2B2B2B': '#2B2B2B',
                 
-                
-                'true-blue': '#576CA1ff',
+                'blue-1':'#8389aa',
+                'blue-2':'#6d749b',
+                'blue-3':'#1B233E',
+
+                'true-blue': '#5f709d',
                 'cool-gray': '#8F91A8ff',
                 'melon': '#FDB6B8ff',
                 'drab-dark-brown': '#414123ff',
+                'gree':'#009994',
+                'jaune': '#EEE8A9',
+                'malon': '#fbc7c9',
+                'ice-1': '#E6F4F1'
             },
         },
     },

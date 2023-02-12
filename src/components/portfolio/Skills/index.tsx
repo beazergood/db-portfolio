@@ -25,9 +25,9 @@ export const Skills: React.FC<SkillsProps> = () => {
 
   return (
     <>
-      <div className="bg-melon py-10 my-10">
-        <motion.div className="w-full p-4 my-30 py-10 container">
-          <h1 className="text-2xl text-white payton-one">
+      <div className=" py-10 my-10 bg-ice-1">
+        <motion.div className="w-full p-4 my-30 py-10 container ">
+          <h1 className="text-2xl text-true-blue payton-one">
             Web technologies &amp; tools I work with
           </h1>
           {/* <p className="mt-8 font-medium">Actively engaged with web communities of designers and developers to share knowledge, learn best practices and trends for building web applications.</p> */}
@@ -38,12 +38,12 @@ export const Skills: React.FC<SkillsProps> = () => {
                   width="64"
                   height="64"
                   data-tip="Typescript"
-                  fill="white"
+                  fill="#5f709d"
                 />
                 <ReactTooltip />
               </div>
               <div className="mx-auto">
-                <Html5 width="64" height="64" data-tip="HTML" fill="white" />
+                <Html5 width="64" height="64" data-tip="HTML" fill="#5f709d"/>
                 <ReactTooltip />
               </div>
               <div className="mx-auto">
@@ -51,7 +51,7 @@ export const Skills: React.FC<SkillsProps> = () => {
                   width="64"
                   height="64"
                   data-tip="CSS"
-                  fill="white"
+                  fill="#5f709d"
                 />
                 <ReactTooltip />
               </div>
@@ -60,7 +60,7 @@ export const Skills: React.FC<SkillsProps> = () => {
                   width="64"
                   height="64"
                   data-tip="Angular"
-                  fill="white"
+                  fill="#5f709d"
                 />
                 <ReactTooltip />
               </div>
@@ -69,12 +69,12 @@ export const Skills: React.FC<SkillsProps> = () => {
                   width="64"
                   height="64"
                   data-tip="React"
-                  fill="white"
+                  fill="#5f709d"
                 />
                 <ReactTooltip />
               </div>
               <div className="mx-auto">
-                <FileJson width="64" height="64" data-tip="JSON" fill="white" />
+                <FileJson width="64" height="64" data-tip="JSON" fill="#5f709d" />
                 <ReactTooltip />
               </div>
               <div className="mx-auto">
@@ -82,12 +82,12 @@ export const Skills: React.FC<SkillsProps> = () => {
                   width="64"
                   height="64"
                   data-tip="Mongo DB"
-                  fill="white"
+                  fill="#5f709d"
                 />
                 <ReactTooltip />
               </div>
               <div className="mx-auto">
-                <Nodejs width="64" height="64" data-tip="NodeJS" fill="white" />
+                <Nodejs width="64" height="64" data-tip="NodeJS" fill="#5f709d" />
                 <ReactTooltip />
               </div>
               <div className="mx-auto">
@@ -95,7 +95,7 @@ export const Skills: React.FC<SkillsProps> = () => {
                   width="64"
                   height="64"
                   data-tip="Storybook"
-                  fill="white"
+                  fill="#5f709d"
                 />
                 <ReactTooltip />
               </div>
@@ -104,7 +104,7 @@ export const Skills: React.FC<SkillsProps> = () => {
                   width="64"
                   height="64"
                   data-tip="Svelte"
-                  fill="white"
+                  fill="#5f709d"
                 />
                 <ReactTooltip />
               </div>
@@ -113,7 +113,7 @@ export const Skills: React.FC<SkillsProps> = () => {
                   width="64"
                   height="64"
                   data-tip="Tailwind CSS"
-                  fill="white"
+                  fill="#5f709d"
                 />
                 <ReactTooltip />
               </div>
@@ -122,7 +122,7 @@ export const Skills: React.FC<SkillsProps> = () => {
                   width="64"
                   height="64"
                   data-tip="Figma"
-                  fill="white"
+                  fill="#5f709d"
                 />
                 <ReactTooltip />
               </div>
