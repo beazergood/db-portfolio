@@ -57,7 +57,7 @@ export const About: React.FC<AboutProps> = () => {
               Always Learning 🧠
             </p>
             <p className="text-lg text-">
-              I'm enthusiastic about increasing my understanding of core web technologies to elevate the end-user experience.
+              I'm enthusiastic about increasing my understanding of core web tools, technologies, and patterns to elevate the end-user experience.
             </p>
           </div>
         </div>
