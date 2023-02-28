@@ -2,11 +2,11 @@ import Head from 'next/head'
 import React from 'react'
 
 import { Hero } from '../components/portfolio/Hero'
-import { Experience } from '../components/portfolio/Experience'
-import { Skills } from '../components/portfolio/Skills'
 import { About } from '../components/portfolio/About'
+import { Experience } from '../components/portfolio/Experience'
+import { HobbyProjects } from '../components/portfolio/HobbyProjects'
+import { Skills } from '../components/portfolio/Skills'
 import { Contact } from '../components/portfolio/Contact'
-import { Interests } from '../components/portfolio/Interests'
 
 export default function Home() {
 
@@ -21,7 +21,7 @@ export default function Home() {
         <Hero />
         <About />
         <Experience/>
-        <Interests />
+        <HobbyProjects />
         <Skills />
         <Contact />
     </>
