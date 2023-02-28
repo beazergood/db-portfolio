@@ -8,14 +8,3 @@ This repo is my portfolio demonstrating some of the technologies I like to work 
 ### TailwindCSS
 
 - TailwindCSS for styling. I find tailwind really easy to learn and use. So far it can do everything I'm looking for in a CSS framework.
-
-## How to add to project
-
-# TODO
-
-[x] add chakra UI
-- create an MDX page
-- update Next to 13
-- add dark mode
-- add a blog!
-- make it more accessible
