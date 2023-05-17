@@ -4,20 +4,9 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronUp } from "@styled-icons/evaicons-solid/ChevronUp";
 import { ChevronDown } from "@styled-icons/evaicons-solid/ChevronDown";
-export interface InterestsProps {
-  title?: string;
-}
 
-export const Interests: React.FC<InterestsProps> = (
-  { title } = { title: "A simple Tailiwind template" }
-) => {
+export const HobbyProjects: React.FC = () => {
   const [showProjects, setShowProjects] = useState(false);
-
-  const spring = {
-    type: "spring",
-    damping: 10,
-    stiffness: 100,
-  };
 
   return (
     <>

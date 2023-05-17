@@ -1,5 +1,20 @@
 export const experienceCards = [
   {
+    company: 'The Premier League',
+    role: 'Systems Engineer',
+    pills: [
+      'Typescript',
+      'Angular',
+      'NestJS',
+      'HTML',
+      'CSS'
+    ],
+    dates: 'Mar 2023 - Present',
+    img: '',
+    side: 'left',
+    description: 'Implemented a design system, built a documentation site, and worked on a suite of internal applications for the Premier League.',
+  },
+  {
     company: 'Pexip',
     role: 'Software Engineer',
     pills: [
