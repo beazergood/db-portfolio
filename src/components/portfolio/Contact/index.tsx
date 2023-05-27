@@ -10,7 +10,7 @@ export const Contact: React.FC = () => {
       <div className="w-full border- mt-44 mx-auto px-10  border-grey-200 relative">
         <motion.div className="mt-10 container relative ">
           <h1 className="text-2xl text-mintee payton-one py-10">
-            Available for contract hire from July 2023
+            Available for contract hire from September 2023
           </h1>
           <h1 className="text-xl text-true-blue payton-one text-left pb-8 ">
             ways to get in touch

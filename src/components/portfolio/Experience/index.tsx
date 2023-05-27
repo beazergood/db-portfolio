@@ -7,7 +7,7 @@ import { ChevronUp } from "@styled-icons/evaicons-solid/ChevronUp";
 import { ChevronDown } from "@styled-icons/evaicons-solid/ChevronDown";
 
 export const Experience: React.FC = () => {
-  const [showExperience, setShowExperience] = useState(false);
+  const [showExperience, setShowExperience] = useState(true);
   const cards = experienceCards;
   
   return (
