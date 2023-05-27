@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Typescript } from '@styled-icons/simple-icons/Typescript'
 import { Html5 } from '@styled-icons/typicons/Html5'
 import { Csswizardry } from '@styled-icons/simple-icons/Csswizardry'
-import { FileJson } from '@styled-icons/boxicons-solid/FileJson'
+import { Nestjs } from '@styled-icons/simple-icons/Nestjs'
 import { Figma } from '@styled-icons/boxicons-logos/Figma'
 import { Nodejs } from '@styled-icons/boxicons-logos/Nodejs'
 import { Angular } from '@styled-icons/boxicons-logos/Angular'
@@ -74,7 +74,7 @@ export const Skills: React.FC<SkillsProps> = () => {
                 <ReactTooltip />
               </div>
               <div className="mx-auto">
-                <FileJson width="64" height="64" data-tip="JSON" fill="#5f709d" />
+                <Nestjs width="64" height="64" data-tip="NestJs" fill="#5f709d" />
                 <ReactTooltip />
               </div>
               <div className="mx-auto">
