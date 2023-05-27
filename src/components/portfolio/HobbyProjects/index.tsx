@@ -59,29 +59,6 @@ export const HobbyProjects: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-wrap gap-6 mt-20">
-              <div className="w-44 rounded-2xl h-44 flex flex-cols items-center mx-auto text-center border-4 border-cool-gray-300 bg-white">
-                <div className="flex flex-col items-center text-center mx-auto">
-                  <p className="text-4xl">🚗 🏍️</p>
-                  <p className="font-bold text-lg mt-2">cool whips</p>
-                </div>
-              </div>
-              <div className="w-44 rounded-2xl h-44 flex flex-cols items-center mx-auto text-center border-4 border-cool-gray-200 bg-white">
-                <div className="flex flex-col items-center text-center mx-auto">
-                  <p className="text-4xl">🗺️ 📍</p>
-                  <p className="font-bold text-lg mt-2">Pin It</p>
-                </div>
-              </div>
-              <div className="w-44 rounded-2xl h-44 flex flex-cols items-center mx-auto text-center border-4 border-cool-gray-100 bg-white">
-                <div className="flex flex-col items-center text-center mx-auto">
-                  <p className="text-4xl">🪩 ⛳️</p>
-                  <p className="font-bold text-lg mt-2">
-                    Top <span className="text-sm text-red-600">mini </span>
-                    Golf
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         )}
       </motion.div>
