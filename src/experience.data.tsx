@@ -12,7 +12,7 @@ export const experienceCards = [
     dates: 'Mar 2023 - Present',
     img: '',
     side: 'left',
-    description: 'Implemented a design system, built a documentation site, and worked on a suite of internal applications for the Premier League.',
+    description: 'Documenting and developing new & existing component libraries and design systems. Building photo/video annotation tools for business audit and compliance. Developing CRM functionality for managing events and talent.',
   },
   {
     company: 'Pexip',
@@ -30,21 +30,18 @@ export const experienceCards = [
     description: 'Part of a self-managed collective of designers & engineers working in a distributed and mostly-remote fashion making secure video communication applications for the web.',
   },
   {
-    company: 'Beazer Software',
-    role: 'Contract Web Development',
+    company: 'Douglas & Gordon',
+    role: 'Senior Angular Developer',
     pills: [
       'Typescript',
       'Angular',
-      'React',
-      'Svelte',
-      'Node',
       'HTML',
       'CSS',
     ],
-    dates: 'Jun 2021 - Jan 2022 | Present',
+    dates: 'Sep 2021 - Dec 2021',
     img: '',
     side: 'left',
-    description: 'Working on a variety of niche web development projects for clients in the UK and US across property, sports, and creative industries.',
+    description: 'Built remaining modules for new property management system following agile methodology working alongside a team of developers, designers, and product owners.',
   },
   {
     company: 'High Performance Software Ltd',
@@ -54,7 +51,7 @@ export const experienceCards = [
     img: '',
     side: 'right',
     description:
-      'Working on a MEAN stack B2B SaaS product for the events industry. Responsible for the frontend and backend development of the product, as well as the design and development of the company website.',
+      'Building a MEAN stack SaaS product for the events industry and UI/UX lead for products spanning iOS & Web. ',
   },
   {
     company: 'High Performance Software Ltd',
@@ -64,7 +61,7 @@ export const experienceCards = [
     img: '',
     side: 'right',
     description:
-      'Built and maintained vanilla js web applications used globally',
+      'Developed vanilla js web applications for the events industry.',
   },
   {
     company: 'Marketpoint Europe Ltd',
@@ -74,6 +71,6 @@ export const experienceCards = [
     img: '',
     side: 'left',
     description:
-    'Responsible for designing & building marketing websites for internal SaaS products',
+    'Responsible for designing & developing marketing websites and associated assets for SaaS products',
   },
 ]
