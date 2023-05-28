@@ -1,3 +1,8 @@
+## [1.1.6] - 28-05-23
+
+### Features
+
+- update experience
 ## [1.1.5] - 10-02-23
 
 ### Changes
