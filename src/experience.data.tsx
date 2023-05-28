@@ -59,4 +59,14 @@ export const experienceCards = [
     description:
       "Responsible for designing & developing marketing websites and associated assets for SaaS products",
   },
+  {
+    company: "Side Prohect Company",
+    role: "Graphic & Web Designer",
+    pills: ["HTML", "CSS", "jquery", "Illustrator", "Photoshop"],
+    dates: "Sep 2009 - Aug 2011",
+    img: "",
+    side: "right",
+    description:
+      "Working on niche projects for small businesses across the US."
+  },
 ];
