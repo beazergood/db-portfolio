@@ -2,7 +2,15 @@ export const experienceCards = [
   {
     company: "The Premier League",
     role: "Systems Engineer",
-    pills: ["Typescript", "Angular", "NestJS", "HTML", "CSS", "Figma"],
+    pills: [
+      "Typescript",
+      "Angular",
+      "NestJS",
+      "HTML",
+      "CSS",
+      "Storybook",
+      "Figma",
+    ],
     dates: "Mar 2023 - Present",
     img: "",
     side: "left",
@@ -12,7 +20,15 @@ export const experienceCards = [
   {
     company: "Pexip",
     role: "Software Engineer",
-    pills: ["Typescript", "React", "Angular", "HTML", "CSS", "Figma"],
+    pills: [
+      "Typescript",
+      "React",
+      "Angular",
+      "HTML",
+      "CSS",
+      "Storybook",
+      "Figma",
+    ],
     dates: "Jan 2022 - Feb 2023",
     img: "",
     side: "right",
@@ -22,7 +38,7 @@ export const experienceCards = [
   {
     company: "Douglas & Gordon",
     role: "Senior Angular Developer",
-    pills: ["Typescript", "Angular", "HTML", "CSS", "Figma"],
+    pills: ["Typescript", "Angular", "HTML", "CSS", "Storybook", "Figma"],
     dates: "Sep 2021 - Dec 2021",
     img: "",
     side: "left",
@@ -60,13 +76,13 @@ export const experienceCards = [
       "Responsible for designing & developing marketing websites and associated assets for SaaS products",
   },
   {
-    company: "Side Prohect Company",
+    company: "Side Project Company",
     role: "Graphic & Web Designer",
     pills: ["HTML", "CSS", "jquery", "Illustrator", "Photoshop"],
     dates: "Sep 2009 - Aug 2011",
     img: "",
     side: "right",
     description:
-      "Working on niche projects for small businesses across the US."
+      "Working on niche projects for small businesses across the US.",
   },
 ];
