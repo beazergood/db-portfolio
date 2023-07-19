@@ -8,10 +8,7 @@ export const Contact: React.FC = () => {
   return (
     <>
       <div className="w-full border- mt-44 mx-auto px-10  border-grey-200 relative">
-        <motion.div className="mt-10 container relative ">
-          <h1 className="text-2xl text-mintee payton-one py-10">
-            Available for contract hire from August 2023
-          </h1>
+        <motion.div className="mt-10 container relative">
           <h1 className="text-xl text-true-blue payton-one text-left pb-8 ">
             ways to get in touch
           </h1>
