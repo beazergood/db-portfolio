@@ -1,11 +1,11 @@
 {
     "name": "dwjb-portfolio",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "private": true,
     "scripts": {
-        "dev": "next dev",
+        "dev": "next dev -p 4999",
         "build": "next build",
-        "start": "next start -p 3001",
+        "start": "next start -p 3002",
         "storybook": "start-storybook -s ./public -p 9001",
         "build-storybook": "build-storybook"
     },
@@ -43,6 +43,7 @@
         "@types/react": "^17.0.11",
         "autoprefixer": "^10.2.6",
         "babel-loader": "^8.2.2",
+        "chromatic": "^6.17.1",
         "ignore-loader": "^0.1.2",
         "next-transpile-modules": "^8.0.0",
         "postcss": "^8.3.5",

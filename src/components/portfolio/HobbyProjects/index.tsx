@@ -43,19 +43,13 @@ export const HobbyProjects: React.FC = () => {
               <div className="w-44 rounded-2xl h-44 flex flex-cols items-center mx-auto text-center border-4 border-cool-gray-600 bg-white">
                 <div className="flex flex-col items-center text-center mx-auto">
                   <p className="text-4xl">📆 🛫</p>
-                  <p className="font-bold text-lg mt-2">DaysAway.app</p>
+                  <p className="font-bold text-lg mt-2">DaysAway</p>
                 </div>
               </div>
               <div className="w-44 rounded-2xl h-44 flex flex-cols items-center mx-auto text-center border-4 border-cool-gray-500 bg-white">
                 <div className="flex flex-col items-center text-center mx-auto">
                   <p className="text-4xl">⛳️ 🦌</p>
                   <p className="font-bold text-lg mt-2">Golf Hunter</p>
-                </div>
-              </div>
-              <div className="w-44 rounded-2xl h-44 flex flex-cols items-center mx-auto text-center border-4 border-cool-gray-400 bg-white">
-                <div className="flex flex-col items-center text-center mx-auto">
-                  <p className="text-4xl">🏡 🏬</p>
-                  <p className="font-bold text-lg mt-2">every move</p>
                 </div>
               </div>
             </div>
