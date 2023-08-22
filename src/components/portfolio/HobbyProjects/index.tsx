@@ -12,7 +12,7 @@ export const HobbyProjects: React.FC = () => {
     <>
       <motion.div className="w-full border-cool-grey border-4 rounded-lg mx-auto px-10 bg-true-blue py-10 my-10 container">
         <div className="flex flex-row justify-between items-center">
-          <h3 className="font-semibold font-sans text-white  payton-one text-2xl mx-5">
+          <h3 className="font-semibold font-sans text-white  payton-one text-2xl mx-5 mb-2">
             Hobby Projects
           </h3>
           <div className="font-semibold font-sans text-white payton-one text-2xl mx-5 mt-0">
@@ -50,6 +50,12 @@ export const HobbyProjects: React.FC = () => {
                 <div className="flex flex-col items-center text-center mx-auto">
                   <p className="text-4xl">⛳️ 🦌</p>
                   <p className="font-bold text-lg mt-2">Golf Hunter</p>
+                </div>
+              </div>
+              <div className="w-44 rounded-2xl h-44 flex flex-cols items-center mx-auto text-center border-4 border-cool-gray-500 bg-white">
+                <div className="flex flex-col items-center text-center mx-auto">
+                  <p className="text-4xl">🪩🕳️</p>
+                  <p className="font-bold text-lg mt-2">mini Golf Hunter</p>
                 </div>
               </div>
             </div>
