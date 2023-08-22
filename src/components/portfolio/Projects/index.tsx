@@ -8,7 +8,6 @@ export interface ProjectsProps {
 }
 
 export const Projects: React.FC<ProjectsProps> = ({ data }) => {
-  console.log('projects prop data is', data)
   return (
     <>
       <div className="w-full border-  py-10 my-10  border-blue-200 container">

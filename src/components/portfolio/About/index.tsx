@@ -15,7 +15,7 @@ export const About: React.FC<AboutProps> = () => {
         <div className="flex flex-col md:flex-row mb-10 mt-10">
           <div className="md:w-1/2">
             <p className="text-xl m-4">
-            Creative and versatile Software Engineer with 10+ years of experience and a strong background designing and building enterprise web applications. Excellent communication skills and track record working with remote and cross-functional teams. 
+            Creative and versatile Software Engineer experienced in designing and building enterprise web applications. Excellent communication skills and track record working with remote and cross-functional teams. 
             </p>
           </div>
           <div className="md:w-1/2">
@@ -28,14 +28,14 @@ export const About: React.FC<AboutProps> = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-5 flex-col rounded-2xl col-span-1">
             <p className="font-bold text-cool-gray">Accessible UI</p>
-            <p className="text-4xl py-3 text-">Design &amp; Build 💅🏻</p>
+            <p className="text-3xl py-3 text-">Design, build, deploy 👨🏻‍💻</p>
             <p className="text-lg text-">
-              Short feedback loops with designers & UX experts helps to deliver the right end product to all users and devices.
+              Short feedback loops with designers & UX experts helps to deliver the right end product to all users across their devices.
             </p>
           </div>
           <div className="p-5 flex-col rounded-2xl col-span-1">
             <p className="font-bold text-cool-gray">User-centric UX</p>
-            <p className="text-4xl py-3 text-">
+            <p className="text-3xl py-3 text-">
               Jobs to be done ✅
             </p>
             <p className="text-lg text-">
@@ -46,18 +46,18 @@ export const About: React.FC<AboutProps> = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <div className="p-5 flex-col rounded-2xl col-span-1">
             <p className="font-bold text-cool-gray">Clean Code</p>
-            <p className="text-4xl py-3 text-">Peer reviewed 🤖</p>
+            <p className="text-3xl py-3 text-">Built to last 🦾</p>
             <p className="text-lg text-">
-              Engaged and collaborative team member always working to ensure code is readable, testable and maintainable.
+              Always striving for ways to find to improve code quality, readability and performance. 
             </p>
           </div>
           <div className="p-5 flex-col rounded-2xl col-span-1">
             <p className="font-bold text-cool-gray">Growth Mindset</p>
-            <p className="text-4xl py-3 text-">
-              Always Learning 🧠
+            <p className="text-3xl py-3 text-">
+              Everyday a school day 🧠
             </p>
             <p className="text-lg text-">
-              I'm enthusiastic about increasing my understanding of core web tools, technologies, and patterns to elevate the end-user experience.
+              I'm enthusiastic about increasing my understanding of core web tools, technologies, and patterns to elevate the experience of both my peers and the end-user.
             </p>
           </div>
         </div>
