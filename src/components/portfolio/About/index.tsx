@@ -15,14 +15,15 @@ export const About: React.FC<AboutProps> = () => {
         <div className="flex flex-col md:flex-row mb-10 mt-10">
           <div className="md:w-1/2">
             <p className="text-xl m-4">
-            Full-stack web developer specializing in Angular-based applications. Skilled at transforming complex business requirements into efficient, user-friendly solutions. Focused on responsive design that works across all devices. 
+            Web developer with a knack for turning complex briefs into elegant, high-performance applications. Fluent in modern web technologies and committed to clean, efficient code.
+Bringing creative solutions and technical expertise to every project.
             </p>
           </div>
           <div className="md:w-1/2">
             <p className="text-xl m-4 ml-3">
-  Committed to clean code, accessibility, and staying current with industry standards.
-            Bringing both technical expertise and creative problem-solving to every project. Proven track record of delivering scalable, visually appealing web applications that drive business growth.            </p>
-          </div>
+  Proven track record of delivering robust, scalable web apps that boost client success and user satisfaction.
+Flexible, fast learner. Ready to hit the ground running and add immediate value to your development team.
+            </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
