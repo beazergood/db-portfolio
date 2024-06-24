@@ -15,13 +15,13 @@ export const About: React.FC<AboutProps> = () => {
         <div className="flex flex-col md:flex-row mb-10 mt-10">
           <div className="md:w-1/2">
             <p className="text-xl m-4">
-            Creative and versatile Software Engineer with 10+ years of experience and a strong background designing and building enterprise web applications. Excellent communication skills and track record working with remote and cross-functional teams. 
+            Full-stack web developer specializing in Angular-based applications. Skilled at transforming complex business requirements into efficient, user-friendly solutions. Focused on responsive design that works across all devices. 
             </p>
           </div>
           <div className="md:w-1/2">
             <p className="text-xl m-4 ml-3">
-            Proven ability to understand and abstract complex business problems into user-friendly software solutions built for scale.
-            </p>
+  Committed to clean code, accessibility, and staying current with industry standards.
+            Bringing both technical expertise and creative problem-solving to every project. Proven track record of delivering scalable, visually appealing web applications that drive business growth.            </p>
           </div>
         </div>
 
