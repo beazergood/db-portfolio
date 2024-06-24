@@ -23,6 +23,7 @@ Bringing creative solutions and technical expertise to every project.
             <p className="text-xl m-4 ml-3">
   Proven track record of delivering robust, scalable web apps that boost client success and user satisfaction.
 Flexible, fast learner. Ready to hit the ground running and add immediate value to your development team.
+              </p>
             </div>
         </div>
 
