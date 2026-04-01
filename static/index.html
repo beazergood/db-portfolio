@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dave Beazer — Contractor and software engineer with 14+ years building web applications across healthcare, media, and enterprise.">
-  <title>Dave Beazer | Contractor &amp; Software Engineer</title>
+  <meta name="description" content="Dave Beazer — 10x Engineer, Thought Leader, Visionary. Will disrupt your stack for equity.">
+  <title>Dave Beazer | Full-Stack Guru & Digital Alchemist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Paytone+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Paytone+One&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="slop.css">
 </head>
 <body>
   <!-- Wave clip path for mobile -->
@@ -20,18 +21,32 @@
     </defs>
   </svg>
 
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link">Skip to main content (coward)</a>
+
+  <!-- UNDER CONSTRUCTION BANNER -->
+  <div class="under-construction">
+    <marquee behavior="alternate" scrollamount="3">
+      <span>&#128679; UNDER CONSTRUCTION &#128679;</span>
+      <span>&#127775; Best viewed in Internet Explorer 6 at 800x600 &#127775;</span>
+      <span>&#128293; You are visitor #<span id="visitor-count">000,048,291</span> &#128293;</span>
+      <span>&#128276; Site last updated: Just now (I'm always grinding) &#128276;</span>
+    </marquee>
+  </div>
 
   <header>
     <nav class="nav" aria-label="Primary navigation">
       <div class="container nav__inner">
-        <a href="#hero" class="nav__logo">DB</a>
+        <a href="#hero" class="nav__logo">
+          <span class="logo-glow">DB</span>
+          <span class="logo-badge">PRO</span>
+        </a>
         <ul class="nav__links">
-          <li><a href="#about" class="nav__link">About</a></li>
-          <li><a href="#approach" class="nav__link">Approach</a></li>
-          <li><a href="#skills" class="nav__link">Skills</a></li>
-          <li><a href="#work" class="nav__link">Work</a></li>
-          <li><a href="#contact" class="nav__link">Contact</a></li>
+          <li><a href="#about" class="nav__link">Origin Story</a></li>
+          <li><a href="#approach" class="nav__link">Philosophy</a></li>
+          <li><a href="#skills" class="nav__link">Arsenal</a></li>
+          <li><a href="#work" class="nav__link">Portfolio</a></li>
+          <li><a href="#testimonials" class="nav__link">Proof</a></li>
+          <li><a href="#contact" class="nav__link">Hire Me</a></li>
         </ul>
         <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
           <span class="nav__toggle-bar"></span>
@@ -39,11 +54,12 @@
       </div>
       <div class="container">
         <div class="nav__mobile-menu">
-          <a href="#about" class="nav__link">About</a>
-          <a href="#approach" class="nav__link">Approach</a>
-          <a href="#skills" class="nav__link">Skills</a>
-          <a href="#work" class="nav__link">Work</a>
-          <a href="#contact" class="nav__link">Contact</a>
+          <a href="#about" class="nav__link">Origin Story</a>
+          <a href="#approach" class="nav__link">Philosophy</a>
+          <a href="#skills" class="nav__link">Arsenal</a>
+          <a href="#work" class="nav__link">Portfolio</a>
+          <a href="#testimonials" class="nav__link">Proof</a>
+          <a href="#contact" class="nav__link">Hire Me</a>
         </div>
       </div>
     </nav>
@@ -53,13 +69,24 @@
     <section id="hero" class="hero">
       <div class="container">
         <div class="hero__intro">
-          <img src="images/me.jpg" alt="Dave Beazer" class="hero__avatar" width="90" height="90">
+          <div class="avatar-wrapper">
+            <img src="images/me.jpg" alt="Dave Beazer, disrupting industries since 2012" class="hero__avatar" width="90" height="90">
+            <span class="avatar-status">&#128994; Available for disruption</span>
+          </div>
           <div>
+            <p class="hero__kicker">&#10024; Award-Eligible &#10024;</p>
             <h1 class="hero__title">Dave <span>Beazer</span></h1>
             <svg class="hero__underline" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
               <path d="M0 5 Q25 0, 50 5 T100 5"/>
             </svg>
-            <p class="hero__tagline">Contractor &amp; Software Engineer</p>
+            <p class="hero__tagline">Full-Stack Guru &bull; Digital Alchemist &bull; Vibe Architect</p>
+            <p class="hero__sub-tagline">Turning caffeine into mass-produced code since 2012 (mass-produced since 2020)</p>
+            <div class="hero__badges">
+              <span class="badge badge--fire">&#128293; Hot Profile</span>
+              <span class="badge badge--verified">&#9989; Verified Human*</span>
+              <span class="badge badge--new">&#127381; New: Now with opinions</span>
+            </div>
+            <p class="hero__disclaimer">*verification pending</p>
           </div>
         </div>
       </div>
@@ -71,10 +98,10 @@
           <svg class="hero__wave-decoration" viewBox="0 0 1440 805" preserveAspectRatio="none" aria-hidden="true">
             <path d="M 1412.875 37.738 C 1386.875 75.962 1333.175 150.989 1279.875 178.364 C 1226.875 205.739 1173.175 183.434 1119.875 145.92 C 1066.875 108.406 1013.175 53.656 959.875 81.031 C 906.875 108.406 853.175 215.878 799.875 237.88 C 746.875 259.476 693.175 194.587 639.875 178.364 C 586.875 162.142 533.175 194.587 479.875 194.587 C 426.875 194.587 373.175 162.142 319.875 172.991 C 266.875 183.434 213.175 238.184 159.875 264.849 C 106.875 291.92 53.175 291.92 26.575 291.92 L 0 291 L 0 491.718 L 29.437 491.718 C 55.912 491.718 109.362 491.718 162.115 519.494 C 215.166 546.853 268.616 603.029 321.368 613.744 C 374.42 624.875 427.869 591.586 480.622 591.586 C 533.673 591.586 587.123 624.875 639.876 608.23 C 692.927 591.586 746.377 525.007 799.129 547.165 C 852.181 569.74 905.63 680.01 958.383 708.097 C 1011.434 736.185 1064.884 680.01 1117.637 641.519 C 1170.688 603.029 1224.137 580.142 1276.89 608.23 C 1329.942 636.318 1383.391 713.299 1409.27 752.517 L 1436.144 791.32 L 1439.875 805 L 1440 805 L 1441 1 Z" fill="#FDB6B8"/>
           </svg>
-          <img src="images/me-ont-coast.jpg" alt="Coastal landscape" class="hero__wave-img-mobile" width="1440" height="805">
+          <img src="images/me-ont-coast.jpg" alt="Coastal landscape (I'm very outdoorsy, I went outside once)" class="hero__wave-img-mobile" width="1440" height="805">
         </div>
 
-        <!-- Desktop: SVG mask version with mintee + purple wave overlay -->
+        <!-- Desktop: SVG mask version -->
         <div class="hero__wave-desktop">
           <svg viewBox="0 0 1440 605" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
             <defs>
@@ -91,31 +118,64 @@
 
     <section id="about" class="section animate-on-scroll">
       <div class="container">
-        <h2 class="section__title">About</h2>
-        <p class="about__text">I specialise in Angular and TypeScript full-stack development — taking features from brief to production across frontend, API, and infrastructure. I've shipped component libraries, design systems, clinical portals, real-time video tools, and SaaS platforms for organisations including the Premier League and Pexip.</p>
-        <p class="about__text">I embed quickly in existing teams, bring senior-level judgement to architecture and delivery decisions, and own my work end-to-end. I'm most useful when you need someone who can pick up context fast and start shipping from week one.</p>
+        <h2 class="section__title">Origin Story</h2>
+        <div class="about__quote-box">
+          <p class="about__quote">"Dave is... certainly one of the developers of all time."</p>
+          <p class="about__quote-attr">&mdash; A former colleague (who asked to remain anonymous)</p>
+        </div>
+        <p class="about__text">I've been writing code professionally for over 14 years, which means I've generated more legacy code than most developers have had hot dinners. I specialise in Angular and TypeScript full-stack development &mdash; taking features from brief to production across frontend, API, and infrastructure. Mostly without breaking things. Mostly.</p>
+        <p class="about__text">I've shipped component libraries, design systems, clinical portals, real-time video tools, and SaaS platforms for organisations including a major football league and Pexip. I embed quickly in existing teams, bring what I'd describe as "senior-level judgement" to architecture decisions, and own my work end-to-end. I'm most useful when you need someone who can pick up context fast and start shipping from week one &mdash; or at least look busy from day one.</p>
+
+        <div class="about__fun-facts">
+          <h3 class="fun-facts__title">&#128202; Key Metrics That Definitely Matter</h3>
+          <div class="fun-facts__grid">
+            <div class="fun-fact">
+              <span class="fun-fact__number" data-count="14">0</span>
+              <span class="fun-fact__suffix">+</span>
+              <span class="fun-fact__label">Years of Mass-Produced Experience</span>
+            </div>
+            <div class="fun-fact">
+              <span class="fun-fact__number" data-count="847">0</span>
+              <span class="fun-fact__label">Tabs Open Right Now</span>
+            </div>
+            <div class="fun-fact">
+              <span class="fun-fact__number" data-count="3">0</span>
+              <span class="fun-fact__label">Personal Projects Finished (out of 200 started)</span>
+            </div>
+            <div class="fun-fact">
+              <span class="fun-fact__number" data-count="99">0</span>
+              <span class="fun-fact__suffix">%</span>
+              <span class="fun-fact__label">of Stack Overflow Answers Read But Not Upvoted</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="approach" class="section section--tinted animate-on-scroll">
       <div class="container">
-        <h2 class="section__title">How I Work</h2>
+        <h2 class="section__title">My Philosophy</h2>
+        <p class="approach__intro">I've distilled 14 years of engineering wisdom into four principles that I definitely follow 100% of the time and have never compromised on, not even once.</p>
         <div class="approach__grid">
           <div class="approach__card animate-on-scroll">
+            <span class="approach__icon">&#128640;</span>
             <h3 class="approach__heading">Full-Stack Delivery</h3>
-            <p class="approach__text">I don't just build UIs. I own features across the entire stack — Angular frontends, NestJS APIs, PostgreSQL migrations, Docker deployments. One person, fewer handoffs, faster delivery.</p>
+            <p class="approach__text">I don't just build UIs. I own features across the entire stack &mdash; Angular frontends, NestJS APIs, PostgreSQL migrations, Docker deployments. One person, fewer handoffs, more opportunities for a single point of failure. Efficiency!</p>
           </div>
           <div class="approach__card animate-on-scroll">
-            <h3 class="approach__heading">Ship &amp; Iterate</h3>
-            <p class="approach__text">I break work into small, reviewable increments and ship often. Short feedback loops mean fewer surprises and faster course-correction when requirements shift.</p>
+            <span class="approach__icon">&#9889;</span>
+            <h3 class="approach__heading">Ship & Iterate</h3>
+            <p class="approach__text">I break work into small, reviewable increments and ship often. Some people call this "agile." I call it "deploying before anyone notices the TODO comments." Short feedback loops mean fewer surprises and faster course-correction when requirements inevitably shift at 4:47pm on a Friday.</p>
           </div>
           <div class="approach__card animate-on-scroll">
+            <span class="approach__icon">&#128142;</span>
             <h3 class="approach__heading">Production-Grade Code</h3>
-            <p class="approach__text">Readable, tested, peer-reviewed. I write code that the next developer can understand and maintain — because on contracts, that's often someone else.</p>
+            <p class="approach__text">Readable, tested, peer-reviewed. I write code that the next developer can understand and maintain &mdash; because on contracts, that's often someone else's problem. My code has been described as "fine" and "yeah that works I guess."</p>
           </div>
           <div class="approach__card animate-on-scroll">
+            <span class="approach__icon">&#127912;</span>
             <h3 class="approach__heading">Design Collaboration</h3>
-            <p class="approach__text">Tight feedback loops with designers and product. I care about accessibility, responsive behaviour, and building interfaces that actually work for the people using them.</p>
+            <p class="approach__text">Tight feedback loops with designers and product. I care about accessibility, responsive behaviour, and building interfaces that actually work for the people using them. I can pixel-push with the best of them. Will I enjoy it? That's between me and my therapist.</p>
           </div>
         </div>
       </div>
@@ -123,23 +183,50 @@
 
     <section id="skills" class="section animate-on-scroll">
       <div class="container">
-        <h2 class="section__title">Technologies</h2>
-        <p class="section__intro">The tools and technologies I reach for most on current projects.</p>
-        <div class="skills__grid">
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">Angular</span>
-          <span class="skill-tag">NestJS</span>
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Nx</span>
-          <span class="skill-tag">HTML</span>
-          <span class="skill-tag">CSS</span>
-          <span class="skill-tag">Storybook</span>
-          <span class="skill-tag">Figma</span>
-          <span class="skill-tag">Mapbox</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">Git</span>
+        <h2 class="section__title">Tech Arsenal</h2>
+        <p class="section__intro">Technologies I've shipped production code with. Sorted by "how loudly I'll defend them in a pub argument."</p>
+
+        <div class="skills-tier">
+          <h3 class="skills-tier__title"><span class="tier-badge tier-badge--s">S</span> Will fight you over these</h3>
+          <div class="skills__grid">
+            <span class="skill-tag skill-tag--s">TypeScript</span>
+            <span class="skill-tag skill-tag--s">Angular</span>
+            <span class="skill-tag skill-tag--s">NestJS</span>
+            <span class="skill-tag skill-tag--s">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="skills-tier">
+          <h3 class="skills-tier__title"><span class="tier-badge tier-badge--a">A</span> Strong opinions, loosely held</h3>
+          <div class="skills__grid">
+            <span class="skill-tag skill-tag--a">Node.js</span>
+            <span class="skill-tag skill-tag--a">Docker</span>
+            <span class="skill-tag skill-tag--a">Nx</span>
+            <span class="skill-tag skill-tag--a">Git</span>
+          </div>
+        </div>
+
+        <div class="skills-tier">
+          <h3 class="skills-tier__title"><span class="tier-badge tier-badge--b">B</span> Yeah these are fine</h3>
+          <div class="skills__grid">
+            <span class="skill-tag skill-tag--b">HTML</span>
+            <span class="skill-tag skill-tag--b">CSS</span>
+            <span class="skill-tag skill-tag--b">Storybook</span>
+            <span class="skill-tag skill-tag--b">Figma</span>
+            <span class="skill-tag skill-tag--b">Mapbox</span>
+            <span class="skill-tag skill-tag--b">MongoDB</span>
+          </div>
+        </div>
+
+        <div class="skills-tier">
+          <h3 class="skills-tier__title"><span class="tier-badge tier-badge--c">C</span> Added to pad out the list</h3>
+          <div class="skills__grid">
+            <span class="skill-tag skill-tag--c">Googling Error Messages</span>
+            <span class="skill-tag skill-tag--c">Closing Vim</span>
+            <span class="skill-tag skill-tag--c">Pretending to Understand Kubernetes</span>
+            <span class="skill-tag skill-tag--c">Nodding in Architecture Meetings</span>
+            <span class="skill-tag skill-tag--c">Renaming Variables Until Tests Pass</span>
+          </div>
         </div>
       </div>
     </section>
@@ -147,11 +234,16 @@
     <section id="work" class="section section--tinted animate-on-scroll">
       <div class="container">
         <h2 class="section__title">Selected Work</h2>
+        <p class="section__intro">A curated selection of things I built that didn't immediately catch fire in production. Results may vary.</p>
         <div class="projects__grid">
           <article class="project-card animate-on-scroll">
-            <span class="project-card__label">Healthcare</span>
+            <div class="project-card__header">
+              <span class="project-card__label">Healthcare</span>
+              <span class="project-card__status">&#128994; Still Running (somehow)</span>
+            </div>
             <h3 class="project-card__title">Clinical Portal</h3>
-            <p class="project-card__description">Patient-facing platform for a healthcare provider. Built document signing with audit trails, photo capture and management, dark mode theming, real-time notifications, and multi-stage QA review workflows used daily by clinical teams.</p>
+            <p class="project-card__description">Patient-facing platform for a healthcare provider. Built document signing with audit trails, photo capture and management, dark mode theming (the real MVP feature), real-time notifications, and multi-stage QA review workflows used daily by clinical teams. No patients were harmed in the making of this software.*</p>
+            <p class="project-card__footnote">*that I know of</p>
             <div class="project-card__tech">
               <span class="skill-tag">Angular</span>
               <span class="skill-tag">NestJS</span>
@@ -160,9 +252,12 @@
           </article>
 
           <article class="project-card animate-on-scroll">
-            <span class="project-card__label">Media &amp; Sport</span>
-            <h3 class="project-card__title">Premier League Internal Tools</h3>
-            <p class="project-card__description">Multiple internal applications supporting league operations — from component libraries and design systems to photo and video annotation tools, CRM features, and event management platforms.</p>
+            <div class="project-card__header">
+              <span class="project-card__label">Media & Sport</span>
+              <span class="project-card__status">&#9917; It's a Goal</span>
+            </div>
+            <h3 class="project-card__title">Football League Internal Tools</h3>
+            <p class="project-card__description">Multiple internal applications supporting league operations &mdash; from component libraries and design systems to photo and video annotation tools, CRM features, and event management platforms. Yes, I did get to visit the offices. No, I did not meet any footballers. Yes, I'm still bitter about it.</p>
             <div class="project-card__tech">
               <span class="skill-tag">Angular</span>
               <span class="skill-tag">NestJS</span>
@@ -173,9 +268,12 @@
           </article>
 
           <article class="project-card animate-on-scroll">
-            <span class="project-card__label">Enterprise</span>
+            <div class="project-card__header">
+              <span class="project-card__label">Enterprise</span>
+              <span class="project-card__status">&#128188; Synergised</span>
+            </div>
             <h3 class="project-card__title">Consulting Dashboard</h3>
-            <p class="project-card__description">Internal platform for a consulting firm. Architected the Nx monorepo, established CI/CD pipelines, and delivered content management features with shared component libraries across multiple applications.</p>
+            <p class="project-card__description">Internal platform for a consulting firm. Architected the Nx monorepo, established CI/CD pipelines, and delivered content management features with shared component libraries. The kind of project where "architected" means "spent three days arguing about folder structure in a PR review."</p>
             <div class="project-card__tech">
               <span class="skill-tag">Angular</span>
               <span class="skill-tag">NestJS</span>
@@ -185,9 +283,12 @@
           </article>
 
           <article class="project-card animate-on-scroll">
-            <span class="project-card__label">Side Project</span>
+            <div class="project-card__header">
+              <span class="project-card__label">Side Project</span>
+              <span class="project-card__status">&#128679; Eternally WIP</span>
+            </div>
             <h3 class="project-card__title">Scraps</h3>
-            <p class="project-card__description">Personal media archive for organising a large photo and video library. Features perceptual duplicate detection, interactive Mapbox maps with time-slider filtering, and Adobe Lightroom catalogue integration.</p>
+            <p class="project-card__description">Personal media archive for organising a large photo and video library. Features perceptual duplicate detection, interactive Mapbox maps with time-slider filtering, and Adobe Lightroom catalogue integration. The kind of side project you build to avoid organising your photos manually, which would have taken a fraction of the time.</p>
             <div class="project-card__tech">
               <span class="skill-tag">TypeScript</span>
               <span class="skill-tag">Docker</span>
@@ -200,16 +301,50 @@
       </div>
     </section>
 
-    <section id="contact" class="section animate-on-scroll">
+    <section id="testimonials" class="section animate-on-scroll">
       <div class="container">
-        <h2 class="section__title">Get in Touch</h2>
-        <p class="contact__text">Available for contract roles and consulting. Let's talk about what you need built.</p>
+        <h2 class="section__title">What People Definitely Said About Me</h2>
+        <p class="section__intro">100% real, unedited testimonials that I did not write myself at 2am.</p>
+        <div class="testimonials__grid">
+          <blockquote class="testimonial">
+            <p class="testimonial__text">"Dave joined our team and within a week he'd already churned out enough components to fill a small warehouse. The code was readable, the tests passed, and he only introduced 3 bugs that we know of."</p>
+            <footer class="testimonial__author">
+              <span class="testimonial__name">Definitely A Real Person</span>
+              <span class="testimonial__role">Senior Director of Synergy, TechCorp Ltd</span>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p class="testimonial__text">"I've worked with many contractors. Dave is one of them."</p>
+            <footer class="testimonial__author">
+              <span class="testimonial__name">Someone Who Exists</span>
+              <span class="testimonial__role">Chief Vibe Officer, StartupCo</span>
+            </footer>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p class="testimonial__text">"He cranked out an entire design system in two sprints. When I asked how, he just gestured vaguely at his monitor and whispered 'efficiency.' Still not sure what that means."</p>
+            <footer class="testimonial__author">
+              <span class="testimonial__name">Totally Not Dave In A Wig</span>
+              <span class="testimonial__role">Lead Product Designer, Enterprise Solutions Inc</span>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section--tinted animate-on-scroll">
+      <div class="container">
+        <h2 class="section__title">Hire Me (Please)</h2>
+        <p class="contact__text">Available for contract roles, consulting, and genuinely any opportunity that doesn't involve another CRUD app. Just kidding. I'll build your CRUD app. I'll build it <em>so hard</em>.</p>
+        <div class="contact__urgency">
+          <span class="pulse-dot"></span>
+          <span>&#9888; Only 2 availability slots remaining for Q2 2026 (not really but the scarcity makes you want it more, right?)</span>
+        </div>
         <div class="contact__links">
           <a href="https://linkedin.com/in/dave-beazer" target="_blank" rel="noopener noreferrer" class="contact__link" aria-label="Dave Beazer on LinkedIn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
-            LinkedIn
+            Connect & Validate My Existence
           </a>
           <a href="mailto:hi@davebeazer.dev" class="contact__link" aria-label="Email Dave Beazer">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -219,16 +354,35 @@
             hi@davebeazer.dev
           </a>
         </div>
+        <p class="contact__fine-print">By contacting me you agree to my Terms of Service, Privacy Policy, Cookie Policy, and acknowledge that I may respond with unsolicited opinions about TypeScript.</p>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p class="footer__text">&copy; 2026 Dave Beazer</p>
+      <div class="footer__slop">
+        <p class="footer__text">&copy; 2026 Dave Beazer &bull; All Rights Reserved &bull; Some Wrongs Reserved Too</p>
+        <p class="footer__built-with">Built with artisanal HTML, free-range CSS, and cage-free JavaScript. No frameworks were harmed (or used).</p>
+        <div class="footer__badges-row">
+          <span class="footer__badge">&#127775; Lovingly cobbled together</span>
+          <span class="footer__badge">&#128187; Works on my machine</span>
+          <span class="footer__badge">&#9749; Powered by mass-produced anxiety</span>
+        </div>
+        <p class="footer__easter-egg">If you've scrolled this far, you legally owe me a coffee.</p>
+      </div>
     </div>
   </footer>
 
+  <div class="theme-switcher" aria-label="Theme switcher">
+    <button class="theme-switcher__btn active" data-theme="light" aria-label="Light mode">&#9728;&#65039;</button>
+    <button class="theme-switcher__btn" data-theme="dark" aria-label="Dark mode">&#127761;</button>
+    <button class="theme-switcher__btn" data-theme="rainbow" aria-label="Rainbow mode">&#129412;</button>
+  </div>
+
   <script src="script.js" defer></script>
+  <script src="slop.js" defer></script>
+  <!-- April Fools 2026 — remove after April 1st! -->
+  <script src="webrant.js"></script>
 </body>
 </html>
