@@ -1051,7 +1051,7 @@ var WebRant=(()=>{var B=Object.defineProperty;var oe=Object.getOwnPropertyDescri
 /* ===== AI BADGE ===== */
 #wr-ai-badge {
   position: fixed;
-  top: 80px;
+  top: 120px;
   right: 20px;
   background: linear-gradient(135deg, #6366f1, #8b5cf6, #a78bfa);
   color: white;
