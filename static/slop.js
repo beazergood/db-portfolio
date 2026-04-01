@@ -85,13 +85,39 @@
     });
   });
 
+  // -- Footer cookie preferences link --
+  document.addEventListener('click', e => {
+    const link = e.target.closest('#open-cookie-prefs');
+    if (!link) return;
+    e.preventDefault();
+    const prefsModal = document.getElementById('wr-cookie-prefs');
+    if (!prefsModal) { console.warn('Cookie prefs modal not found in DOM'); return; }
+    // Hide cookie banner if visible
+    const banner = document.getElementById('wr-cookie-banner');
+    if (banner) { banner.style.display = 'none'; }
+    // Dismiss any open WebRant overlay first
+    document.querySelectorAll('.wr-overlay.wr-open').forEach(el => el.classList.remove('wr-open'));
+    // Hide the cookie link itself so it doesn't bleed through
+    link.closest('.footer__cookie-link').style.visibility = 'hidden';
+    // Force modal open
+    prefsModal.classList.add('wr-open');
+    // Restore link when modal closes
+    const observer = new MutationObserver(() => {
+      if (!prefsModal.classList.contains('wr-open')) {
+        link.closest('.footer__cookie-link').style.visibility = '';
+        observer.disconnect();
+      }
+    });
+    observer.observe(prefsModal, { attributes: true, attributeFilter: ['class'] });
+  });
+
   // -- Console branding --
   console.log(
-    '%c lol.davebeazer.dev ',
+    '%c davebeazer.dev ',
     'background: linear-gradient(135deg, #C285D3, #642975); color: white; font-size: 20px; font-weight: bold; padding: 10px 20px; border-radius: 8px;'
   );
   console.log(
-    '%cHappy April Fools! This is the slop edition of my portfolio. The real one is at davebeazer.dev',
+    '%cHappy April Fools! Every pixel lovingly crafted to reflect the true state of the modern web in 2026.',
     'color: #8F91A8; font-size: 12px;'
   );
 })();

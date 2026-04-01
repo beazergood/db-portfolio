@@ -10,7 +10,7 @@
   position: fixed;
   top: 70px;
   right: 16px;
-  z-index: 999999;
+  z-index: 99;
   display: flex;
   background: white;
   border-radius: var(--radius-pill);
@@ -766,10 +766,32 @@
   border: 1px solid var(--color-mintee);
 }
 
+.footer__cookie-link {
+  font-size: 0.75rem;
+  margin-top: var(--space-sm);
+}
+
+.footer__cookie-link a {
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  display: inline-block;
+  padding: 12px 20px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+}
+
+.footer__cookie-link a:hover {
+  color: var(--color-purp);
+  border-color: var(--color-purp);
+}
+
 .footer__easter-egg {
   font-size: 0.6rem;
   color: var(--color-text-muted);
   margin-top: var(--space-sm);
+  padding-bottom: 120px;
   font-style: italic;
   opacity: 0.6;
 }
