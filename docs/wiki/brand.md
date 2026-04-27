@@ -25,6 +25,7 @@ lastUpdated: 2026-04-27
 - Plain language. No jargon if a normal word will do.
 - Self-deprecating without being insecure.
 - Doesn't oversell.
+- **No craft-romance vocabulary.** Words like *rig*, *bench*, *workshop*, *artisan*, *maker* don't fit. Prefer plain alternatives — *tools*, *using*, *day to day*, *building*. Dave sees himself as a developer who cobbles things together, not a craftsperson at a workbench.
 
 ## What we are
 

@@ -311,7 +311,7 @@ body.is-enhanced {
   &:has(chat-entry[q="show"])      .prompt[data-q="show"],
   &:has(chat-entry[q="care"])      .prompt[data-q="care"],
   &:has(chat-entry[q="why"])       .prompt[data-q="why"],
-  &:has(chat-entry[q="bench"])     .prompt[data-q="bench"] {
+  &:has(chat-entry[q="tools"])     .prompt[data-q="tools"] {
     color: var(--c-fg-faint);
     border-color: var(--c-border);
     background: transparent;

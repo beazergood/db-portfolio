@@ -2,31 +2,31 @@
   "work": {
     "label": "What kind of work do you do?",
     "tags": ["work", "do", "kind", "build", "specialise", "specialize", "offer"],
-    "followups": ["show", "bench", "care"]
+    "followups": ["show", "tools", "care"]
   },
   "available": {
     "label": "Are you available?",
     "tags": ["available", "availability", "free", "capacity", "hire", "hiring", "when"],
-    "followups": ["why", "bench", "work"]
+    "followups": ["why", "tools", "work"]
   },
   "show": {
     "label": "Show me something you’ve built.",
     "tags": ["show", "something", "built", "project", "projects", "examples", "example", "portfolio"],
-    "followups": ["bench", "care", "work"]
+    "followups": ["tools", "care", "work"]
   },
   "care": {
     "label": "What do you care about?",
     "tags": ["care", "value", "values", "principle", "principles", "matter", "philosophy", "believe"],
-    "followups": ["why", "bench", "show"]
+    "followups": ["why", "tools", "show"]
   },
   "why": {
     "label": "Why hire a contractor?",
     "tags": ["why", "contractor", "contract", "consultant", "freelance", "reason", "pitch"],
-    "followups": ["available", "bench", "work"]
+    "followups": ["available", "tools", "work"]
   },
-  "bench": {
-    "label": "What’s on your bench?",
-    "tags": ["bench", "rig", "tools", "stack", "using", "working", "currently", "into", "lately", "kit", "setup", "use"],
+  "tools": {
+    "label": "What are you working with?",
+    "tags": ["tools", "working", "with", "use", "using", "stack", "currently", "into", "lately", "kit", "setup", "tech"],
     "followups": ["work", "care", "show"]
   }
 }
