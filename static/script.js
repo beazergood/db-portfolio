@@ -162,10 +162,16 @@ $field.addEventListener('input', () => {
 // Theme toggle (with View Transitions for cross-fade)                        //
 // ------------------------------------------------------------------------- //
 
+// iOS Safari URL bar / Chrome Android address bar follow this meta — keep it
+// in sync with the active theme (not the OS pref).
+const $themeColorMeta = document.querySelector('meta[name="theme-color"]');
+const THEME_COLOR = { dark: '#0F0A14', light: '#FFFFFF' };
+
 function setTheme(theme, persist) {
   const next = theme === 'light' ? 'light' : 'dark';
   const apply = () => {
     document.documentElement.dataset.theme = next;
+    if ($themeColorMeta) $themeColorMeta.setAttribute('content', THEME_COLOR[next]);
     if (persist) {
       try { localStorage.setItem('db-theme', next); } catch (_) { /* no-op */ }
     }
