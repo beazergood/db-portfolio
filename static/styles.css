@@ -347,7 +347,10 @@ body.is-enhanced {
   & a { color: var(--c-accent); }
 }
 
-body.is-enhanced:has(chat-entry:nth-of-type(6)) .prompts__complete {
+/* Body class (set by script.js) is more reliable than counting chat-entry
+   elements, since miss entries are also chat-entries but shouldn't count
+   toward completion. */
+body.is-complete .prompts__complete {
   display: block;
   animation: rise var(--t-med) var(--ease);
 }
@@ -620,13 +623,6 @@ chat-entry {
       cursor: not-allowed;
     }
   }
-}
-
-.input-row__nudge {
-  margin: -0.5rem 0 0;
-  font-family: var(--f-mono);
-  font-size: 0.78rem;
-  color: var(--c-accent-melon);
 }
 
 /* ---------- No-JS fallback ---------- */

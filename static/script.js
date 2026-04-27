@@ -8,7 +8,9 @@
 import answers from './answers.json' with { type: 'json' };
 import './chat-entry.js';
 
-const TOTAL_QUESTIONS = Object.keys(answers).length;
+// Real-question keys (excludes anything starting with `_`, like `_miss`)
+const REAL_KEYS = Object.keys(answers).filter((k) => !k.startsWith('_'));
+const TOTAL = REAL_KEYS.length;
 
 // ------------------------------------------------------------------------- //
 // Element refs                                                               //
@@ -18,7 +20,6 @@ const $body     = document.body;
 const $thread   = document.getElementById('thread');
 const $form     = document.getElementById('input-row');
 const $field    = document.getElementById('ask');
-const $nudge    = document.getElementById('input-nudge');
 const $themeBtn = document.querySelector('.theme-toggle');
 
 // Visitor's path through the chat — preserves order, deduped
@@ -39,13 +40,15 @@ const prefersReducedMotion = () =>
 
 // ------------------------------------------------------------------------- //
 // Ask a question                                                             //
+// `qText` is optional — if provided, it shows in the transcript as the       //
+// visitor's literal phrasing instead of the canonical answer label.          //
 // ------------------------------------------------------------------------- //
 
-function ask(key) {
+function ask(key, qText) {
   if (!answers[key]) return;
 
-  // Already in the path → scroll to the existing entry, brief highlight
-  if (path.includes(key)) {
+  // For real questions: dedup. Already-asked → scroll to existing.
+  if (key !== '_miss' && path.includes(key)) {
     const existing = $thread.querySelector(`chat-entry[q="${key}"]`);
     if (existing) {
       existing.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -57,21 +60,34 @@ function ask(key) {
     return;
   }
 
-  path.push(key);
-
-  const meta = answers[key];
-  const fresh = meta.followups.filter((k) => !path.includes(k));
+  // For real keys, push to path and compute followups from the answer's list.
+  // For _miss, skip path tracking and show every still-unanswered prompt as
+  // the followup set.
+  let fresh;
+  if (key === '_miss') {
+    fresh = REAL_KEYS.filter((k) => !path.includes(k));
+  } else {
+    path.push(key);
+    fresh = answers[key].followups.filter((k) => !path.includes(k));
+  }
 
   const entry = document.createElement('chat-entry');
   entry.setAttribute('q', key);
+  if (qText) entry.setAttribute('q-text', qText);
   if (fresh.length > 0) entry.setAttribute('followups', fresh.join(','));
   entry.classList.add('is-fresh');
   $thread.appendChild(entry);
   setTimeout(() => entry.classList.remove('is-fresh'), 600);
 
-  if (history.replaceState) {
+  // URL hash captures the path through real answers only — misses are
+  // ephemeral and don't replay well from URL.
+  if (key !== '_miss' && history.replaceState) {
     history.replaceState(null, '', '#' + path.join(','));
   }
+
+  // Mark completion when every real question has been asked. Pure body class
+  // — CSS reveals the completion CTA by reading it.
+  if (path.length >= TOTAL) $body.classList.add('is-complete');
 
   requestAnimationFrame(() => {
     entry.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -90,7 +106,7 @@ function matchInput(text) {
 
   let best = null;
   let bestScore = 0;
-  for (const key of Object.keys(answers)) {
+  for (const key of REAL_KEYS) {
     const tags = answers[key].tags;
     let score = 0;
     for (const w of words) {
@@ -104,22 +120,6 @@ function matchInput(text) {
   return bestScore > 0 ? best : null;
 }
 
-function showNudge() {
-  $nudge.hidden = false;
-  // Pulse only the prompts that haven't been asked yet
-  document.querySelectorAll('.prompts__list .prompt').forEach((b) => {
-    if (path.includes(b.dataset.q)) return;
-    b.classList.remove('is-pulse');
-    void b.offsetWidth;
-    b.classList.add('is-pulse');
-  });
-  setTimeout(() => {
-    document.querySelectorAll('.prompt').forEach((b) => b.classList.remove('is-pulse'));
-  }, 700);
-}
-
-function clearNudge() { $nudge.hidden = true; }
-
 // ------------------------------------------------------------------------- //
 // Event wiring                                                               //
 // ------------------------------------------------------------------------- //
@@ -127,7 +127,6 @@ function clearNudge() { $nudge.hidden = true; }
 document.addEventListener('click', (e) => {
   const btn = e.target.closest('.prompt');
   if (btn?.dataset.q) {
-    clearNudge();
     ask(btn.dataset.q);
     return;
   }
@@ -146,16 +145,18 @@ $form.addEventListener('submit', (e) => {
   if (!text) return;
   const matched = matchInput(text);
   if (matched) {
-    clearNudge();
-    ask(matched);
-    $field.value = '';
+    // If the matched answer is already in the thread, ask() will scroll
+    // to it instead of duping. Don't pass q-text in that case so the user
+    // sees the existing entry's canonical label, not their typed phrase.
+    if (path.includes(matched)) {
+      ask(matched);
+    } else {
+      ask(matched, text);
+    }
   } else {
-    showNudge();
+    ask('_miss', text);
   }
-});
-
-$field.addEventListener('input', () => {
-  if (!$nudge.hidden) clearNudge();
+  $field.value = '';
 });
 
 // ------------------------------------------------------------------------- //
@@ -210,6 +211,6 @@ if ($themeBtn) {
 const initial = (window.location.hash || '').replace(/^#/, '');
 if (initial) {
   initial.split(',').forEach((key) => {
-    if (answers[key]) ask(key);
+    if (answers[key] && !key.startsWith('_')) ask(key);
   });
 }

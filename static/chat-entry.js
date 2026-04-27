@@ -21,7 +21,12 @@ function escapeText(text) {
   return div.innerHTML;
 }
 
+// Hardcoded body for unmatched typed input — kept off the noscript
+// fallback section, which holds only real answers.
+const MISS_BODY = '<p>I haven’t got an answer for that one yet.</p>';
+
 function getBodyHtml(key) {
+  if (key === '_miss') return MISS_BODY;
   const fallback = document.getElementById('fallback');
   const node = fallback?.querySelector(`[data-answer="${key}"]`);
   if (!node) return '';
@@ -41,7 +46,7 @@ function nextQuarter() {
 }
 
 class ChatEntry extends HTMLElement {
-  static observedAttributes = ['q', 'followups'];
+  static observedAttributes = ['q', 'followups', 'q-text'];
 
   #rendered = false;
 
@@ -59,6 +64,10 @@ class ChatEntry extends HTMLElement {
     const meta = answers[key];
     if (!meta) return;
 
+    // q-text overrides the canonical label — for typed input we want the
+    // visitor's literal phrase to show up in the transcript instead.
+    const askedText = this.getAttribute('q-text') || meta.label;
+
     const followupKeys = (this.getAttribute('followups') || '')
       .split(',').map((s) => s.trim()).filter(Boolean);
 
@@ -75,7 +84,7 @@ class ChatEntry extends HTMLElement {
       </footer>
     `;
 
-    this.innerHTML = TEMPLATE_BODY(escapeText(meta.label), getBodyHtml(key), followupsHtml);
+    this.innerHTML = TEMPLATE_BODY(escapeText(askedText), getBodyHtml(key), followupsHtml);
     this.#hydrateLive();
     this.#rendered = true;
   }
