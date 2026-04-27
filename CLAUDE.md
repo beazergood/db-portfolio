@@ -63,9 +63,15 @@ No build step required. The `/static/` directory can be served from any static h
 ## Key Commands
 
 ```bash
-# Serve locally for development
-cd static && python3 -m http.server 8080
+# Bring up both static site (8080) and wiki viewer (8081) at once
+npm run dev
 
-# The legacy Next.js site (reference only)
-npm install && npm run dev
+# Or individually
+npm run dev:site   # http://localhost:8080/
+npm run dev:docs   # http://localhost:8081/
+
+# Stop a stuck pair
+npm run stop
 ```
+
+Ports are documented (with neighbour awareness across scraps / enable-platform / pl-docs) in [docs/wiki/architecture.md](docs/wiki/architecture.md#ports).

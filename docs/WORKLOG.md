@@ -54,6 +54,13 @@
 
 ## Session Notes
 
+### 2026-04-27 — single-command dev + port survey
+
+- `package.json` replaced. Old Next.js / Storybook entries dropped (the legacy `/src/` tree is staying on disk per existing decision, but its dependencies aren't part of the active project). Bumped to 2.0.0 to mark the static-rebuild era cleanly.
+- `scripts/dev.js` runs both python http.server processes in parallel with colour-prefixed output. No npm deps; mirrors the scraps / enable-platform pattern at a smaller scale.
+- Ports documented in `wiki/architecture.md` with neighbour awareness across scraps / enable-platform / pl-docs.
+- One thing learned: pl-docs is **Docusaurus**, not VitePress. The "docs alignment" story across projects is "match enable-platform" rather than "match all docs sites." Worth flagging when the VitePress migration is sequenced.
+
 ### 2026-04-27 — vision, brand, first feature pair
 
 Pivoted from "scaffold the wiki" to "establish the project's compass". Captured:

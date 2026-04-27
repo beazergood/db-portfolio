@@ -51,12 +51,42 @@ The legacy `/src/` and `/dwjb-api/` trees are still on disk for reference but ar
 
 ## Dev loop
 
+From the project root, one command brings up both surfaces:
+
 ```bash
-cd static && python3 -m http.server 8080
-# → http://localhost:8080/
+npm run dev
+# [site] → http://localhost:8080/   (the portfolio)
+# [docs] → http://localhost:8081/   (the wiki)
 ```
 
+The orchestrator is `scripts/dev.js` — a small Node script with zero npm deps that spawns both `python3 -m http.server` processes and prefixes their output. Mirrors the scraps and enable-platform pattern at a smaller scale.
+
+Individual surfaces can be brought up with `npm run dev:site` or `npm run dev:docs`. Stop a stuck pair with `npm run stop`.
+
 No build, no watcher, no transpile. Edit a file, refresh.
+
+## Ports
+
+This project's ports:
+
+| Port | Surface | Run with |
+|---|---|---|
+| 8080 | Static portfolio site (`/static/`) | `npm run dev:site` |
+| 8081 | Wiki viewer (`/docs/`) | `npm run dev:docs` |
+
+**Neighbour awareness** — we share a machine with other projects. Known active dev ports across the household so we don't clash when multi-project dev sessions are running:
+
+| Project | Service | Port |
+|---|---|---|
+| scraps | api (NestJS) | 3333 |
+| scraps | web (Angular) | 4202 |
+| scraps | capture daemon | 9090 |
+| enable-platform | api (NestJS) | 3000 |
+| enable-platform | app (Angular) | 4201 |
+| enable-platform | docs (VitePress) | 5173 |
+| pl-docs | docusaurus | 3000 (default; latent) |
+
+When the [VitePress migration](./decisions.md) lands, db-portfolio's docs should pick a port other than 5173 (e.g. 5181) to avoid clashing with enable-platform.
 
 ## Related
 
