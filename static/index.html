@@ -1,234 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dave Beazer — Contractor and software engineer with 14+ years building web applications across healthcare, media, and enterprise.">
-  <title>Dave Beazer | Contractor &amp; Software Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0F0A14" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <title>Dave Beazer</title>
+  <meta name="description" content="Dave Beazer — software contractor. Ask, don't scroll.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F0A14'/%3E%3Ctext x='16' y='22' font-family='Inter,system-ui,sans-serif' font-size='14' font-weight='700' fill='%23C285D3' text-anchor='middle'%3EDB%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Paytone+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Paytone+One&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Set theme before first paint to avoid FOUC. Default is dark; light is opt-in. -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('db-theme');
+        document.documentElement.dataset.theme = saved || 'dark';
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
-  <!-- Wave clip path for mobile -->
-  <svg width="0" height="0" aria-hidden="true">
-    <defs>
-      <clipPath id="wave-clip" clipPathUnits="objectBoundingBox">
-        <path d="M0.981,0.047 C0.963,0.094,0.926,0.188,0.889,0.222 C0.852,0.256,0.815,0.228,0.778,0.181 C0.741,0.135,0.704,0.067,0.667,0.101 C0.63,0.135,0.592,0.268,0.555,0.296 C0.519,0.322,0.481,0.242,0.444,0.222 C0.408,0.201,0.37,0.242,0.333,0.242 C0.296,0.242,0.259,0.201,0.222,0.215 C0.185,0.228,0.148,0.296,0.111,0.329 C0.074,0.363,0.037,0.363,0.018,0.363 L0,0.363 L0,0.611 L0.02,0.611 C0.039,0.611,0.076,0.611,0.113,0.645 C0.149,0.679,0.187,0.749,0.223,0.762 C0.26,0.776,0.297,0.735,0.334,0.735 C0.371,0.735,0.408,0.776,0.444,0.756 C0.481,0.735,0.518,0.652,0.555,0.68 C0.592,0.708,0.629,0.845,0.666,0.88 C0.702,0.915,0.74,0.845,0.776,0.797 C0.813,0.749,0.85,0.721,0.887,0.756 C0.924,0.79,0.961,0.886,0.979,0.935 L0.997,0.983 L1,1 L1,1 L1,0 L1,0"/>
-      </clipPath>
-    </defs>
-  </svg>
 
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a class="sr-only" href="#main">Skip to main content</a>
 
-  <header>
-    <nav class="nav" aria-label="Primary navigation">
-      <div class="container nav__inner">
-        <a href="#hero" class="nav__logo">DB</a>
-        <ul class="nav__links">
-          <li><a href="#about" class="nav__link">About</a></li>
-          <li><a href="#approach" class="nav__link">Approach</a></li>
-          <li><a href="#skills" class="nav__link">Skills</a></li>
-          <li><a href="#work" class="nav__link">Work</a></li>
-          <li><a href="#contact" class="nav__link">Contact</a></li>
-        </ul>
-        <button class="nav__toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span class="nav__toggle-bar"></span>
-        </button>
-      </div>
-      <div class="container">
-        <div class="nav__mobile-menu">
-          <a href="#about" class="nav__link">About</a>
-          <a href="#approach" class="nav__link">Approach</a>
-          <a href="#skills" class="nav__link">Skills</a>
-          <a href="#work" class="nav__link">Work</a>
-          <a href="#contact" class="nav__link">Contact</a>
-        </div>
-      </div>
-    </nav>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Home">
+      <span class="brand__mark">DB</span>
+    </a>
+    <button class="theme-toggle" type="button" aria-label="Toggle light or dark theme" aria-pressed="false">
+      <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor"/>
+      </svg>
+      <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" fill="currentColor"/>
+        <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="12" y1="2" x2="12" y2="5"/>
+          <line x1="12" y1="19" x2="12" y2="22"/>
+          <line x1="2" y1="12" x2="5" y2="12"/>
+          <line x1="19" y1="12" x2="22" y2="12"/>
+          <line x1="4.2" y1="4.2" x2="6.3" y2="6.3"/>
+          <line x1="17.7" y1="17.7" x2="19.8" y2="19.8"/>
+          <line x1="4.2" y1="19.8" x2="6.3" y2="17.7"/>
+          <line x1="17.7" y1="6.3" x2="19.8" y2="4.2"/>
+        </g>
+      </svg>
+    </button>
   </header>
 
-  <main id="main-content">
-    <section id="hero" class="hero">
-      <div class="container">
-        <div class="hero__intro">
-          <img src="images/me.jpg" alt="Dave Beazer" class="hero__avatar" width="90" height="90">
-          <div>
-            <h1 class="hero__title">Dave <span>Beazer</span></h1>
-            <svg class="hero__underline" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M0 5 Q25 0, 50 5 T100 5"/>
-            </svg>
-            <p class="hero__tagline">Contractor &amp; Software Engineer</p>
-          </div>
-        </div>
-      </div>
+  <main id="main" class="main">
 
-      <!-- Full-width wave image — desktop: SVG mask, mobile: clip-path -->
-      <div class="hero__wave">
-        <!-- Mobile: clip-path version with decorative wave overlay -->
-        <div class="hero__wave-mobile">
-          <svg class="hero__wave-decoration" viewBox="0 0 1440 805" preserveAspectRatio="none" aria-hidden="true">
-            <path d="M 1412.875 37.738 C 1386.875 75.962 1333.175 150.989 1279.875 178.364 C 1226.875 205.739 1173.175 183.434 1119.875 145.92 C 1066.875 108.406 1013.175 53.656 959.875 81.031 C 906.875 108.406 853.175 215.878 799.875 237.88 C 746.875 259.476 693.175 194.587 639.875 178.364 C 586.875 162.142 533.175 194.587 479.875 194.587 C 426.875 194.587 373.175 162.142 319.875 172.991 C 266.875 183.434 213.175 238.184 159.875 264.849 C 106.875 291.92 53.175 291.92 26.575 291.92 L 0 291 L 0 491.718 L 29.437 491.718 C 55.912 491.718 109.362 491.718 162.115 519.494 C 215.166 546.853 268.616 603.029 321.368 613.744 C 374.42 624.875 427.869 591.586 480.622 591.586 C 533.673 591.586 587.123 624.875 639.876 608.23 C 692.927 591.586 746.377 525.007 799.129 547.165 C 852.181 569.74 905.63 680.01 958.383 708.097 C 1011.434 736.185 1064.884 680.01 1117.637 641.519 C 1170.688 603.029 1224.137 580.142 1276.89 608.23 C 1329.942 636.318 1383.391 713.299 1409.27 752.517 L 1436.144 791.32 L 1439.875 805 L 1440 805 L 1441 1 Z" fill="#FDB6B8"/>
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 class="hero__title" id="hero-title">
+        <span class="hero__name">Dave Beazer.</span>
+      </h1>
+      <p class="hero__prompt" id="hero-prompt">What do you want to know?</p>
+    </section>
+
+    <section class="thread" id="thread" aria-live="polite" aria-label="Conversation"></section>
+
+    <template id="entry-template">
+      <article class="entry">
+        <header class="entry__q">
+          <span class="entry__q-label">asked</span>
+          <span class="entry__q-text"></span>
+        </header>
+        <div class="entry__body"></div>
+        <footer class="entry__followups">
+          <p class="entry__followups-label">Or →</p>
+          <ul class="entry__followups-list"></ul>
+        </footer>
+      </article>
+    </template>
+
+    <section class="prompts" id="prompts" aria-labelledby="prompts-title">
+      <h2 class="sr-only" id="prompts-title">Suggested prompts</h2>
+      <ul class="prompts__list">
+        <li><button class="prompt" type="button" data-q="work">What kind of work?</button></li>
+        <li><button class="prompt" type="button" data-q="available">Are you available?</button></li>
+        <li><button class="prompt" type="button" data-q="show">Show me something.</button></li>
+        <li><button class="prompt" type="button" data-q="care">What do you care about?</button></li>
+        <li><button class="prompt" type="button" data-q="why">Why a contractor?</button></li>
+        <li><button class="prompt" type="button" data-q="tools">What are you working with?</button></li>
+      </ul>
+      <p class="prompts__complete" id="prompts-complete">
+        That's the lot. If anything resonated, <a href="mailto:hi@davebeazer.dev">drop me a line</a>.
+      </p>
+    </section>
+
+    <form class="input-row" id="input-row" role="search" novalidate>
+      <label for="ask" class="sr-only">Ask something</label>
+      <span class="input-row__caret" aria-hidden="true">›</span>
+      <input
+        id="ask"
+        class="input-row__field"
+        type="text"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="or type something…"
+        maxlength="200">
+      <button class="input-row__send" type="submit" aria-label="Send">
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+          <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </form>
+
+    <p class="input-row__nudge" id="input-nudge" hidden aria-live="polite">
+      I haven't got an answer for that one. Try a suggestion above.
+    </p>
+
+    <!--
+      No-JS fallback. All answers below, semantic and readable.
+      Hidden via class once JS hydrates the interactive layer.
+    -->
+    <section class="fallback" id="fallback" aria-label="All answers">
+      <article class="fallback__item" data-answer="work">
+        <h3>What kind of work do you do?</h3>
+        <p>I build things on the web. End-to-end &mdash; frontend, API, infrastructure when it matters. Recent work has shipped real-time video tools used in conferencing rooms, clinical portals for healthcare teams, design systems for sports-data platforms, and component libraries other teams build on. The thread: complex domains made simple to use.</p>
+        <div class="tiers" role="group" aria-label="End-to-end stack">
+          <button class="tier" type="button" aria-expanded="false">
+            <span class="tier__name">Frontend</span>
+            <span class="tier__detail">components · accessibility · performance</span>
+          </button>
+          <span class="tier-arrow" aria-hidden="true">→</span>
+          <button class="tier" type="button" aria-expanded="false">
+            <span class="tier__name">API</span>
+            <span class="tier__detail">services · data · auth</span>
+          </button>
+          <span class="tier-arrow" aria-hidden="true">→</span>
+          <button class="tier" type="button" aria-expanded="false">
+            <span class="tier__name">Infra</span>
+            <span class="tier__detail">deploy · observability · security</span>
+          </button>
+        </div>
+      </article>
+
+      <article class="fallback__item" data-answer="available">
+        <h3>Are you available?</h3>
+        <p>For interesting work, typically <span data-live="quarter">Q3 2026</span> onwards &mdash; one engagement at a time, no agencies in between. If you're wondering whether your project counts as interesting, the test is: would I tell a friend what I'm working on? If yes, get in touch.</p>
+      </article>
+
+      <article class="fallback__item" data-answer="show">
+        <h3>Show me something you've built.</h3>
+        <p>I can't pin down a single screenshot &mdash; the work is rarely public. A real-time conferencing UI used by hundreds of meeting rooms. A clinical scheduling portal where a missed appointment costs a hospital £400. A sports-data interface where a 60ms button delay gets noticed. They look different. They needed someone who could pick up the domain, the stack, and the constraints, and own it end to end.</p>
+        <figure class="answer__visual" aria-hidden="true">
+          <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid meet">
+            <rect x="2" y="2" width="316" height="176" rx="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="2" y="2" width="316" height="22" fill="currentColor" opacity="0.12"/>
+            <circle cx="14" cy="13" r="3" fill="currentColor" opacity="0.5"/>
+            <circle cx="26" cy="13" r="3" fill="currentColor" opacity="0.5"/>
+            <circle cx="38" cy="13" r="3" fill="currentColor" opacity="0.5"/>
+            <rect x="20" y="40"  width="80"  height="8" rx="2" fill="currentColor" opacity="0.7"/>
+            <rect x="20" y="56"  width="120" height="6" rx="2" fill="currentColor" opacity="0.35"/>
+            <rect x="20" y="68"  width="100" height="6" rx="2" fill="currentColor" opacity="0.35"/>
+            <rect x="20" y="92"  width="280" height="68" rx="4" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+            <polyline points="30,148 60,130 90,138 120,118 150,124 180,108 210,118 240,98 270,110 290,100"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          <img src="images/me-ont-coast.jpg" alt="Coastal landscape" class="hero__wave-img-mobile" width="1440" height="805">
-        </div>
+          <figcaption>Composite of recent UI surfaces &mdash; abstracted; the work isn't public.</figcaption>
+        </figure>
+      </article>
 
-        <!-- Desktop: SVG mask version with mintee + purple wave overlay -->
-        <div class="hero__wave-desktop">
-          <svg viewBox="0 0 1440 605" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <defs>
-              <mask id="wave-mask">
-                <path d="M 0,111 C 96,130 288,207.2 480,206 C 672,204.8 768,117.8 960,105 C 1152,92.2 1344,134.6 1440,142 L1440 560 L0 560 Z" fill="rgba(194, 240, 204, 1)"/>
-                <path d="M 0,481 C 288,444.2 1152,333.8 1440,297 L1440 560 L0 560 Z" fill="rgba(194, 133, 211, 1)"/>
-              </mask>
-            </defs>
-            <image href="images/me-ont-coast.jpg" width="1440" height="605" preserveAspectRatio="xMidYMid slice" mask="url(#wave-mask)"/>
-          </svg>
-        </div>
-      </div>
+      <article class="fallback__item" data-answer="care">
+        <h3>What do you care about?</h3>
+        <p>Code that works. Interfaces that feel right on the worst phone, the worst connection. Picking the boring tool when boring is correct &mdash; and the right tool when it isn't. Not over-engineering. Teams that ship.</p>
+      </article>
+
+      <article class="fallback__item" data-answer="why">
+        <h3>Why hire a contractor?</h3>
+        <p>You don't always need to. If you've got the bandwidth, the domain knowledge, and the time to onboard a permanent hire, hire permanent. A contractor is for when you have a real piece of work, a real deadline, and you want someone who can land in week one and ship in week two. That's the whole pitch.</p>
+      </article>
+
+      <article class="fallback__item" data-answer="tools">
+        <h3>What are you working with?</h3>
+        <p>Lately: turning over how good interfaces age. Three years out, are they still legible? Five years out, is the code still kind to its maintainer? It's the question that decides whether a stack choice was the right one.</p>
+        <p>Day to day: Angular and TypeScript on the front, NestJS and Postgres on the back. I try a new editor every couple of years and end up back in VS Code with too many keybindings.</p>
+        <ul class="chips" aria-label="Tools I use day to day">
+          <li class="chip">Angular</li>
+          <li class="chip">TypeScript</li>
+          <li class="chip">NestJS</li>
+          <li class="chip">Postgres</li>
+          <li class="chip">Prisma</li>
+          <li class="chip">Azure</li>
+          <li class="chip">AWS</li>
+          <li class="chip">Git</li>
+        </ul>
+      </article>
     </section>
 
-    <section id="about" class="section animate-on-scroll">
-      <div class="container">
-        <h2 class="section__title">About</h2>
-        <p class="about__text">I specialise in Angular and TypeScript full-stack development — taking features from brief to production across frontend, API, and infrastructure. I've shipped component libraries, design systems, clinical portals, real-time video tools, and SaaS platforms for organisations including the Premier League and Pexip.</p>
-        <p class="about__text">I embed quickly in existing teams, bring senior-level judgement to architecture and delivery decisions, and own my work end-to-end. I'm most useful when you need someone who can pick up context fast and start shipping from week one.</p>
-      </div>
-    </section>
-
-    <section id="approach" class="section section--tinted animate-on-scroll">
-      <div class="container">
-        <h2 class="section__title">How I Work</h2>
-        <div class="approach__grid">
-          <div class="approach__card animate-on-scroll">
-            <h3 class="approach__heading">Full-Stack Delivery</h3>
-            <p class="approach__text">I don't just build UIs. I own features across the entire stack — Angular frontends, NestJS APIs, PostgreSQL migrations, Docker deployments. One person, fewer handoffs, faster delivery.</p>
-          </div>
-          <div class="approach__card animate-on-scroll">
-            <h3 class="approach__heading">Ship &amp; Iterate</h3>
-            <p class="approach__text">I break work into small, reviewable increments and ship often. Short feedback loops mean fewer surprises and faster course-correction when requirements shift.</p>
-          </div>
-          <div class="approach__card animate-on-scroll">
-            <h3 class="approach__heading">Production-Grade Code</h3>
-            <p class="approach__text">Readable, tested, peer-reviewed. I write code that the next developer can understand and maintain — because on contracts, that's often someone else.</p>
-          </div>
-          <div class="approach__card animate-on-scroll">
-            <h3 class="approach__heading">Design Collaboration</h3>
-            <p class="approach__text">Tight feedback loops with designers and product. I care about accessibility, responsive behaviour, and building interfaces that actually work for the people using them.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section animate-on-scroll">
-      <div class="container">
-        <h2 class="section__title">Technologies</h2>
-        <p class="section__intro">The tools and technologies I reach for most on current projects.</p>
-        <div class="skills__grid">
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">Angular</span>
-          <span class="skill-tag">NestJS</span>
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Nx</span>
-          <span class="skill-tag">HTML</span>
-          <span class="skill-tag">CSS</span>
-          <span class="skill-tag">Storybook</span>
-          <span class="skill-tag">Figma</span>
-          <span class="skill-tag">Mapbox</span>
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">Git</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="work" class="section section--tinted animate-on-scroll">
-      <div class="container">
-        <h2 class="section__title">Selected Work</h2>
-        <div class="projects__grid">
-          <article class="project-card animate-on-scroll">
-            <span class="project-card__label">Healthcare</span>
-            <h3 class="project-card__title">Clinical Portal</h3>
-            <p class="project-card__description">Patient-facing platform for a healthcare provider. Built document signing with audit trails, photo capture and management, dark mode theming, real-time notifications, and multi-stage QA review workflows used daily by clinical teams.</p>
-            <div class="project-card__tech">
-              <span class="skill-tag">Angular</span>
-              <span class="skill-tag">NestJS</span>
-              <span class="skill-tag">PostgreSQL</span>
-            </div>
-          </article>
-
-          <article class="project-card animate-on-scroll">
-            <span class="project-card__label">Media &amp; Sport</span>
-            <h3 class="project-card__title">Premier League Internal Tools</h3>
-            <p class="project-card__description">Multiple internal applications supporting league operations — from component libraries and design systems to photo and video annotation tools, CRM features, and event management platforms.</p>
-            <div class="project-card__tech">
-              <span class="skill-tag">Angular</span>
-              <span class="skill-tag">NestJS</span>
-              <span class="skill-tag">TypeScript</span>
-              <span class="skill-tag">Storybook</span>
-              <span class="skill-tag">Figma</span>
-            </div>
-          </article>
-
-          <article class="project-card animate-on-scroll">
-            <span class="project-card__label">Enterprise</span>
-            <h3 class="project-card__title">Consulting Dashboard</h3>
-            <p class="project-card__description">Internal platform for a consulting firm. Architected the Nx monorepo, established CI/CD pipelines, and delivered content management features with shared component libraries across multiple applications.</p>
-            <div class="project-card__tech">
-              <span class="skill-tag">Angular</span>
-              <span class="skill-tag">NestJS</span>
-              <span class="skill-tag">PostgreSQL</span>
-              <span class="skill-tag">Nx</span>
-            </div>
-          </article>
-
-          <article class="project-card animate-on-scroll">
-            <span class="project-card__label">Side Project</span>
-            <h3 class="project-card__title">Scraps</h3>
-            <p class="project-card__description">Personal media archive for organising a large photo and video library. Features perceptual duplicate detection, interactive Mapbox maps with time-slider filtering, and Adobe Lightroom catalogue integration.</p>
-            <div class="project-card__tech">
-              <span class="skill-tag">TypeScript</span>
-              <span class="skill-tag">Docker</span>
-              <span class="skill-tag">PostgreSQL</span>
-              <span class="skill-tag">Mapbox</span>
-              <span class="skill-tag">Raspberry Pi</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section animate-on-scroll">
-      <div class="container">
-        <h2 class="section__title">Get in Touch</h2>
-        <p class="contact__text">Available for contract roles and consulting. Let's talk about what you need built.</p>
-        <div class="contact__links">
-          <a href="https://linkedin.com/in/dave-beazer" target="_blank" rel="noopener noreferrer" class="contact__link" aria-label="Dave Beazer on LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-            LinkedIn
-          </a>
-          <a href="mailto:hi@davebeazer.dev" class="contact__link" aria-label="Email Dave Beazer">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="M22 7l-10 7L2 7"/>
-            </svg>
-            hi@davebeazer.dev
-          </a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p class="footer__text">&copy; 2026 Dave Beazer</p>
-    </div>
+    <p class="footer__line">
+      <span class="footer__dot"></span>
+      Pre-curated answers. No LLM. Works without JavaScript.
+    </p>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script type="module" src="script.js?v=1"></script>
 </body>
 </html>
