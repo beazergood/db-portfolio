@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0F0A14" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+  <title>Dave Beazer</title>
+  <meta name="description" content="Dave Beazer — software contractor. Ask, don't scroll.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Paytone+One&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Set theme before first paint to avoid FOUC. Default is dark; light is opt-in. -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('db-theme');
+        document.documentElement.dataset.theme = saved || 'dark';
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <a class="sr-only" href="#main">Skip to main content</a>
+
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Home">
+      <span class="brand__mark">DB</span>
+    </a>
+    <button class="theme-toggle" type="button" aria-label="Toggle light or dark theme" aria-pressed="false">
+      <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" fill="currentColor"/>
+      </svg>
+      <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="4" fill="currentColor"/>
+        <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="12" y1="2" x2="12" y2="5"/>
+          <line x1="12" y1="19" x2="12" y2="22"/>
+          <line x1="2" y1="12" x2="5" y2="12"/>
+          <line x1="19" y1="12" x2="22" y2="12"/>
+          <line x1="4.2" y1="4.2" x2="6.3" y2="6.3"/>
+          <line x1="17.7" y1="17.7" x2="19.8" y2="19.8"/>
+          <line x1="4.2" y1="19.8" x2="6.3" y2="17.7"/>
+          <line x1="17.7" y1="6.3" x2="19.8" y2="4.2"/>
+        </g>
+      </svg>
+    </button>
+  </header>
+
+  <main id="main" class="main">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 class="hero__title" id="hero-title">
+        <span class="hero__name">Dave Beazer.</span>
+      </h1>
+      <p class="hero__prompt" id="hero-prompt">What do you want to know?</p>
+    </section>
+
+    <section class="answer" id="answer" aria-live="polite" hidden>
+      <p class="answer__meta">
+        <span class="answer__label">asked</span>
+        <span class="answer__q" id="answer-q"></span>
+      </p>
+      <div class="answer__body" id="answer-body"></div>
+      <p class="answer__followup-label">Or →</p>
+      <ul class="answer__followups" id="answer-followups"></ul>
+    </section>
+
+    <section class="prompts" id="prompts" aria-labelledby="prompts-title">
+      <h2 class="sr-only" id="prompts-title">Suggested prompts</h2>
+      <ul class="prompts__list">
+        <li><button class="prompt" type="button" data-q="work">What kind of work?</button></li>
+        <li><button class="prompt" type="button" data-q="available">Are you available?</button></li>
+        <li><button class="prompt" type="button" data-q="show">Show me something.</button></li>
+        <li><button class="prompt" type="button" data-q="care">What do you care about?</button></li>
+        <li><button class="prompt" type="button" data-q="why">Why a contractor?</button></li>
+      </ul>
+    </section>
+
+    <form class="input-row" id="input-row" role="search" novalidate>
+      <label for="ask" class="sr-only">Ask something</label>
+      <span class="input-row__caret" aria-hidden="true">›</span>
+      <input
+        id="ask"
+        class="input-row__field"
+        type="text"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="or type something…"
+        maxlength="200">
+      <button class="input-row__send" type="submit" aria-label="Send">
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+          <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </form>
+
+    <p class="input-row__nudge" id="input-nudge" hidden aria-live="polite">
+      I haven't got an answer for that one. Try a suggestion above.
+    </p>
+
+    <!--
+      No-JS fallback. All answers below, semantic and readable.
+      Hidden via class once JS hydrates the interactive layer.
+    -->
+    <section class="fallback" id="fallback" aria-label="All answers">
+      <article class="fallback__item" data-answer="work">
+        <h3>What kind of work do you do?</h3>
+        <p>I build things on the web. End-to-end &mdash; frontend, API, infrastructure when it matters. Recent work has shipped real-time video tools used in conferencing rooms, clinical portals for healthcare teams, design systems for sports-data platforms, and component libraries other teams build on. The thread: complex domains made simple to use.</p>
+      </article>
+
+      <article class="fallback__item" data-answer="available">
+        <h3>Are you available?</h3>
+        <p>For interesting work, typically &mdash; one engagement at a time, no agencies in between. If you're wondering whether your project counts as interesting, the test is: would I tell a friend what I'm working on? If yes, get in touch.</p>
+      </article>
+
+      <article class="fallback__item" data-answer="show">
+        <h3>Show me something you've built.</h3>
+        <p>I can't pin down a single screenshot &mdash; the work is rarely public. A real-time conferencing UI used by hundreds of meeting rooms. A clinical scheduling portal where a missed appointment costs a hospital £400. A sports-data interface where a 60ms button delay gets noticed. They look different. They needed someone who could pick up the domain, the stack, and the constraints, and own it end to end.</p>
+        <figure class="answer__visual" aria-hidden="true">
+          <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid meet">
+            <rect x="2" y="2" width="316" height="176" rx="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <rect x="2" y="2" width="316" height="22" fill="currentColor" opacity="0.12"/>
+            <circle cx="14" cy="13" r="3" fill="currentColor" opacity="0.5"/>
+            <circle cx="26" cy="13" r="3" fill="currentColor" opacity="0.5"/>
+            <circle cx="38" cy="13" r="3" fill="currentColor" opacity="0.5"/>
+            <rect x="20" y="40"  width="80"  height="8" rx="2" fill="currentColor" opacity="0.7"/>
+            <rect x="20" y="56"  width="120" height="6" rx="2" fill="currentColor" opacity="0.35"/>
+            <rect x="20" y="68"  width="100" height="6" rx="2" fill="currentColor" opacity="0.35"/>
+            <rect x="20" y="92"  width="280" height="68" rx="4" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+            <polyline points="30,148 60,130 90,138 120,118 150,124 180,108 210,118 240,98 270,110 290,100"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <figcaption>Composite of recent UI surfaces &mdash; abstracted; the work isn't public.</figcaption>
+        </figure>
+      </article>
+
+      <article class="fallback__item" data-answer="care">
+        <h3>What do you care about?</h3>
+        <p>Code that works. Interfaces that feel right on the worst phone, the worst connection. Picking the boring tool when boring is correct &mdash; and the right tool when it isn't. Not over-engineering. Teams that ship.</p>
+      </article>
+
+      <article class="fallback__item" data-answer="why">
+        <h3>Why hire a contractor?</h3>
+        <p>You don't always need to. If you've got the bandwidth, the domain knowledge, and the time to onboard a permanent hire, hire permanent. A contractor is for when you have a real piece of work, a real deadline, and you want someone who can land in week one and ship in week two. That's the whole pitch.</p>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer__line">
+      <span class="footer__dot"></span>
+      Pre-curated answers. No LLM. Works without JavaScript.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
