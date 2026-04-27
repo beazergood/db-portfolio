@@ -53,6 +53,10 @@ A contractor whose site demonstrates the paradigm shift is providing a portfolio
 - **Same palette and typography as the current site.** Continuity.
 - **2-minute visit, full impression.** Visitors who don't dig deeper still leave with a clear feel for who I am.
 
+## PoC
+
+A first proof at `static/chat-hero/` (committed on `wiki-bootstrap`). Dark-default with a working light toggle, 5 hand-authored answers, typed-input keyword matching with an honest fallback, follow-up prompts per answer, hash routing, progressive-enhancement noscript fallback. View at `http://localhost:8080/chat-hero/`. Not wired into `static/index.html` yet — production main still serves the old sectioned site.
+
 ## Open questions
 
 - **Entry affordance** — blank chat box, or seeded with 3–4 suggested prompts as visible entry points? *Strong instinct: suggested prompts visible as buttons, with the input box present too. Explicit invitation, not blank-page anxiety.*

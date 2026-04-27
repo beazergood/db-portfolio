@@ -54,6 +54,12 @@
 
 ## Session Notes
 
+### 2026-04-27 — chat-hero PoC
+
+Built the proof of the chat-driven direction at `static/chat-hero/`. Dark-default with a working light toggle, 5 hand-authored answers, typed-input keyword matching with an honest fallback, follow-up prompts per answer, hash routing, progressive-enhancement noscript fallback. ~935 lines across `index.html`, `styles.css`, `script.js`. View at `http://localhost:8080/chat-hero/`.
+
+Not wired to production — main still serves the old static site with PL/Pexip names. Next move depends on whether the PoC vibe is right; if so, the path is to merge `wiki-bootstrap` and then either route `chat-hero/` to root or rebuild `static/index.html` from the PoC.
+
 ### 2026-04-27 — direction pivot: chat-driven portfolio
 
 The portfolio-refresh-2026 spec evolved significantly. The earlier framing was "rewrite the copy on a sectioned site"; the new framing is "the sectioned site is the antithesis." Direction crystallised as a chat-driven UI surface where depth is found by interacting, not scrolling.
