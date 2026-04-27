@@ -1,6 +1,8 @@
 /* ===========================================================================
    chat-hero — interactive layer
    Pre-curated answers. No LLM. Progressive enhancement.
+   The visitor's path accumulates as a thread; each prompt is asked at most
+   once. When they've asked all five, they've effectively read the site.
    =========================================================================== */
 
 (function () {
@@ -9,10 +11,6 @@
   // ---------------------------------------------------------------------- //
   // Curated answers + keyword tags                                          //
   // ---------------------------------------------------------------------- //
-
-  // Each answer: prompt label (shown in the answer chrome), tags (for typed
-  // input matching), HTML body (extracted from the no-JS fallback so we
-  // don't duplicate copy), and follow-up keys.
 
   const ANSWERS = {
     work: {
@@ -42,23 +40,25 @@
     },
   };
 
+  const TOTAL_QUESTIONS = Object.keys(ANSWERS).length;
+
   // ---------------------------------------------------------------------- //
   // Element refs                                                            //
   // ---------------------------------------------------------------------- //
 
   const $body         = document.body;
   const $hero         = document.querySelector('.hero');
-  const $heroPrompt   = document.getElementById('hero-prompt');
-  const $answer       = document.getElementById('answer');
-  const $answerQ      = document.getElementById('answer-q');
-  const $answerBody   = document.getElementById('answer-body');
-  const $followups    = document.getElementById('answer-followups');
-  const $promptsList  = document.querySelector('.prompts__list');
+  const $thread       = document.getElementById('thread');
+  const $template     = document.getElementById('entry-template');
   const $form         = document.getElementById('input-row');
   const $field        = document.getElementById('ask');
   const $nudge        = document.getElementById('input-nudge');
   const $fallback     = document.getElementById('fallback');
   const $themeBtn     = document.querySelector('.theme-toggle');
+  const $complete     = document.getElementById('prompts-complete');
+
+  // Visitor's path through the chat — preserves order, deduped
+  const path = [];
 
   // ---------------------------------------------------------------------- //
   // Hydrate                                                                  //
@@ -66,13 +66,9 @@
 
   $body.classList.add('is-enhanced');
 
-  // Pull the rich answer HTML out of the no-JS fallback so we have one
-  // copy of the content. Each answer key's HTML lives in a fallback article.
   function getAnswerHtml(key) {
     const node = $fallback.querySelector(`[data-answer="${key}"]`);
     if (!node) return '';
-    // Take everything after the <h3> — the question heading is rendered
-    // separately in the answer chrome, we don't want it twice.
     const clone = node.cloneNode(true);
     const heading = clone.querySelector('h3');
     if (heading) heading.remove();
@@ -80,49 +76,86 @@
   }
 
   // ---------------------------------------------------------------------- //
-  // Render answer                                                           //
+  // Render                                                                  //
   // ---------------------------------------------------------------------- //
 
-  function renderAnswer(key) {
+  function buildEntryNode(key) {
     const meta = ANSWERS[key];
-    if (!meta) return false;
+    const fragment = $template.content.cloneNode(true);
+    const article = fragment.querySelector('.entry');
 
-    // Build follow-up buttons from this answer's followup keys
-    const followupHtml = meta.followups
-      .map((k) => {
-        const label = ANSWERS[k] && ANSWERS[k].label;
-        if (!label) return '';
-        // Trim trailing punctuation from the label for the button
-        const buttonText = label.replace(/[.?]+$/, '');
-        return `<li><button class="prompt" type="button" data-q="${k}">${buttonText}</button></li>`;
-      })
-      .join('');
+    article.dataset.q = key;
+    fragment.querySelector('.entry__q-text').textContent = meta.label;
+    fragment.querySelector('.entry__body').innerHTML = getAnswerHtml(key);
 
-    $answerQ.textContent = meta.label;
-    $answerBody.innerHTML = getAnswerHtml(key);
-    $followups.innerHTML = followupHtml;
-    $answer.hidden = false;
+    // Build follow-ups, excluding any that have already been asked
+    const list = fragment.querySelector('.entry__followups-list');
+    const fresh = meta.followups.filter((k) => !path.includes(k));
+    if (fresh.length === 0) {
+      // No fresh follow-ups — hide the whole footer rather than show "Or →" alone
+      fragment.querySelector('.entry__followups').remove();
+    } else {
+      fresh.forEach((k) => {
+        const li = document.createElement('li');
+        const btn = document.createElement('button');
+        btn.className = 'prompt';
+        btn.type = 'button';
+        btn.dataset.q = k;
+        // Trim trailing punctuation for the button label
+        btn.textContent = ANSWERS[k].label.replace(/[.?]+$/, '');
+        li.appendChild(btn);
+        list.appendChild(li);
+      });
+    }
 
-    // Hide the hero greeting once an answer is up — but keep prompts list
-    // for direct re-selection.
+    return article;
+  }
+
+  function ask(key) {
+    if (!ANSWERS[key]) return;
+
+    // Already asked — scroll to that entry and pulse
+    if (path.includes(key)) {
+      const existing = $thread.querySelector(`.entry[data-q="${key}"]`);
+      if (existing) {
+        existing.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        existing.classList.remove('is-pulse');
+        void existing.offsetWidth; // restart animation
+        existing.classList.add('is-pulse');
+        setTimeout(() => existing.classList.remove('is-pulse'), 1000);
+      }
+      return;
+    }
+
+    path.push(key);
+
+    // Hide the hero greeting on first ask
     if ($hero) $hero.style.display = 'none';
 
-    // Scroll the answer into view on small screens
-    if (window.innerWidth < 720) {
-      $answer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    const node = buildEntryNode(key);
+    node.classList.add('is-fresh');
+    $thread.appendChild(node);
+    setTimeout(() => node.classList.remove('is-fresh'), 600);
 
-    // Mark the active prompt button
-    document.querySelectorAll('.prompt').forEach((b) => {
-      b.classList.toggle('is-active', b.dataset.q === key);
+    // Mark prompt as seen
+    document.querySelectorAll(`.prompt[data-q="${key}"]`).forEach((b) => {
+      b.classList.add('is-seen');
     });
 
-    // Update URL hash for shareable state (without a scroll jump)
+    // Scroll the new entry into view
+    requestAnimationFrame(() => {
+      node.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // Update URL hash with the path so it can be shared / restored
     if (history.replaceState) {
-      history.replaceState(null, '', '#' + key);
+      history.replaceState(null, '', '#' + path.join(','));
     }
 
-    return true;
+    // Show completion state once everything's been asked
+    if (path.length >= TOTAL_QUESTIONS && $complete) {
+      $complete.hidden = false;
+    }
   }
 
   // ---------------------------------------------------------------------- //
@@ -135,7 +168,6 @@
 
     const words = norm.split(/\s+/);
 
-    // Score each answer by tag-hits
     let best = null;
     let bestScore = 0;
     for (const key of Object.keys(ANSWERS)) {
@@ -154,10 +186,8 @@
 
   function showNudge() {
     $nudge.hidden = false;
-    // Pulse the prompts so the eye is drawn there
-    document.querySelectorAll('.prompt').forEach((b) => {
+    document.querySelectorAll('.prompt:not(.is-seen)').forEach((b) => {
       b.classList.remove('is-pulse');
-      // Force reflow before reapplying so the animation re-runs
       void b.offsetWidth;
       b.classList.add('is-pulse');
     });
@@ -172,15 +202,13 @@
   // Event wiring                                                            //
   // ---------------------------------------------------------------------- //
 
-  // Delegated click handler for both the main prompt list and follow-ups
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('.prompt');
     if (!btn || !btn.dataset.q) return;
     clearNudge();
-    renderAnswer(btn.dataset.q);
+    ask(btn.dataset.q);
   });
 
-  // Form submit (typed input)
   $form.addEventListener('submit', (e) => {
     e.preventDefault();
     const text = $field.value.trim();
@@ -188,14 +216,13 @@
     const matched = matchInput(text);
     if (matched) {
       clearNudge();
-      renderAnswer(matched);
+      ask(matched);
       $field.value = '';
     } else {
       showNudge();
     }
   });
 
-  // Clear nudge as soon as the user starts typing again
   $field.addEventListener('input', () => {
     if (!$nudge.hidden) clearNudge();
   });
@@ -215,7 +242,6 @@
     }
   }
 
-  // Sync the aria-pressed attribute with the initial theme
   setTheme(document.documentElement.dataset.theme, false);
 
   if ($themeBtn) {
@@ -230,12 +256,16 @@
   // and persists for return visits.
 
   // ---------------------------------------------------------------------- //
-  // Restore from URL hash (for shareable links)                             //
+  // Restore from URL hash                                                   //
   // ---------------------------------------------------------------------- //
+  // Hash format is a comma-separated list of keys representing the visitor's
+  // path. e.g. "#work,available,care" — replays those entries in order.
 
   const initial = (window.location.hash || '').replace(/^#/, '');
-  if (initial && ANSWERS[initial]) {
-    renderAnswer(initial);
+  if (initial) {
+    initial.split(',').forEach((key) => {
+      if (ANSWERS[key]) ask(key);
+    });
   }
 
 })();

@@ -59,15 +59,21 @@
       <p class="hero__prompt" id="hero-prompt">What do you want to know?</p>
     </section>
 
-    <section class="answer" id="answer" aria-live="polite" hidden>
-      <p class="answer__meta">
-        <span class="answer__label">asked</span>
-        <span class="answer__q" id="answer-q"></span>
-      </p>
-      <div class="answer__body" id="answer-body"></div>
-      <p class="answer__followup-label">Or →</p>
-      <ul class="answer__followups" id="answer-followups"></ul>
-    </section>
+    <section class="thread" id="thread" aria-live="polite" aria-label="Conversation"></section>
+
+    <template id="entry-template">
+      <article class="entry">
+        <header class="entry__q">
+          <span class="entry__q-label">asked</span>
+          <span class="entry__q-text"></span>
+        </header>
+        <div class="entry__body"></div>
+        <footer class="entry__followups">
+          <p class="entry__followups-label">Or →</p>
+          <ul class="entry__followups-list"></ul>
+        </footer>
+      </article>
+    </template>
 
     <section class="prompts" id="prompts" aria-labelledby="prompts-title">
       <h2 class="sr-only" id="prompts-title">Suggested prompts</h2>
@@ -78,6 +84,9 @@
         <li><button class="prompt" type="button" data-q="care">What do you care about?</button></li>
         <li><button class="prompt" type="button" data-q="why">Why a contractor?</button></li>
       </ul>
+      <p class="prompts__complete" id="prompts-complete" hidden>
+        That's the lot. If anything resonated, <a href="mailto:hi@davebeazer.dev">drop me a line</a>.
+      </p>
     </section>
 
     <form class="input-row" id="input-row" role="search" novalidate>
