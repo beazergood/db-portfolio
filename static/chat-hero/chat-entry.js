@@ -30,6 +30,16 @@ function getBodyHtml(key) {
   return clone.innerHTML;
 }
 
+// Compute the next calendar quarter as "Q<n> <yyyy>", e.g. "Q3 2026".
+// Used by the "Are you available?" answer's [data-live="quarter"] span.
+function nextQuarter() {
+  const d = new Date();
+  const q = Math.floor(d.getMonth() / 3) + 1; // 1..4
+  const next = q === 4 ? 1 : q + 1;
+  const year = q === 4 ? d.getFullYear() + 1 : d.getFullYear();
+  return `Q${next} ${year}`;
+}
+
 class ChatEntry extends HTMLElement {
   static observedAttributes = ['q', 'followups'];
 
@@ -66,7 +76,14 @@ class ChatEntry extends HTMLElement {
     `;
 
     this.innerHTML = TEMPLATE_BODY(escapeText(meta.label), getBodyHtml(key), followupsHtml);
+    this.#hydrateLive();
     this.#rendered = true;
+  }
+
+  #hydrateLive() {
+    this.querySelectorAll('[data-live="quarter"]').forEach((el) => {
+      el.textContent = nextQuarter();
+    });
   }
 }
 

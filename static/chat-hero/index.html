@@ -83,6 +83,7 @@
         <li><button class="prompt" type="button" data-q="show">Show me something.</button></li>
         <li><button class="prompt" type="button" data-q="care">What do you care about?</button></li>
         <li><button class="prompt" type="button" data-q="why">Why a contractor?</button></li>
+        <li><button class="prompt" type="button" data-q="bench">What's on your bench?</button></li>
       </ul>
       <p class="prompts__complete" id="prompts-complete">
         That's the lot. If anything resonated, <a href="mailto:hi@davebeazer.dev">drop me a line</a>.
@@ -119,11 +120,27 @@
       <article class="fallback__item" data-answer="work">
         <h3>What kind of work do you do?</h3>
         <p>I build things on the web. End-to-end &mdash; frontend, API, infrastructure when it matters. Recent work has shipped real-time video tools used in conferencing rooms, clinical portals for healthcare teams, design systems for sports-data platforms, and component libraries other teams build on. The thread: complex domains made simple to use.</p>
+        <div class="tiers" role="group" aria-label="End-to-end stack">
+          <button class="tier" type="button" aria-expanded="false">
+            <span class="tier__name">Frontend</span>
+            <span class="tier__detail">components · accessibility · performance</span>
+          </button>
+          <span class="tier-arrow" aria-hidden="true">→</span>
+          <button class="tier" type="button" aria-expanded="false">
+            <span class="tier__name">API</span>
+            <span class="tier__detail">services · data · auth</span>
+          </button>
+          <span class="tier-arrow" aria-hidden="true">→</span>
+          <button class="tier" type="button" aria-expanded="false">
+            <span class="tier__name">Infra</span>
+            <span class="tier__detail">deploy · observability · security</span>
+          </button>
+        </div>
       </article>
 
       <article class="fallback__item" data-answer="available">
         <h3>Are you available?</h3>
-        <p>For interesting work, typically &mdash; one engagement at a time, no agencies in between. If you're wondering whether your project counts as interesting, the test is: would I tell a friend what I'm working on? If yes, get in touch.</p>
+        <p>For interesting work, typically <span data-live="quarter">Q3 2026</span> onwards &mdash; one engagement at a time, no agencies in between. If you're wondering whether your project counts as interesting, the test is: would I tell a friend what I'm working on? If yes, get in touch.</p>
       </article>
 
       <article class="fallback__item" data-answer="show">
@@ -155,6 +172,22 @@
       <article class="fallback__item" data-answer="why">
         <h3>Why hire a contractor?</h3>
         <p>You don't always need to. If you've got the bandwidth, the domain knowledge, and the time to onboard a permanent hire, hire permanent. A contractor is for when you have a real piece of work, a real deadline, and you want someone who can land in week one and ship in week two. That's the whole pitch.</p>
+      </article>
+
+      <article class="fallback__item" data-answer="bench">
+        <h3>What's on your bench?</h3>
+        <p>Lately: turning over how good interfaces age. Three years out, are they still legible? Five years out, is the code still kind to its maintainer? It's the question that decides whether a stack choice was the right one.</p>
+        <p>On the rig: Angular and TypeScript on the front, NestJS and Postgres on the back. I try a new editor every couple of years and end up back in VS Code with too many keybindings.</p>
+        <ul class="chips" aria-label="Tools I tend to reach for">
+          <li class="chip">Angular</li>
+          <li class="chip">TypeScript</li>
+          <li class="chip">NestJS</li>
+          <li class="chip">Postgres</li>
+          <li class="chip">Prisma</li>
+          <li class="chip">Vercel</li>
+          <li class="chip">VS Code</li>
+          <li class="chip">Git</li>
+        </ul>
       </article>
     </section>
 

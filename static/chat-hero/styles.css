@@ -137,6 +137,11 @@ button { font: inherit; }
   align-items: center;
   justify-content: space-between;
   padding: 1rem clamp(1rem, 4vw, 2rem);
+  /* Constrain on huge screens (48" 4K etc) so the brand doesn't sit
+     lonely at the corner of an empty 3840px void. */
+  max-width: 64rem;
+  width: 100%;
+  margin-inline: auto;
 }
 
 .brand {
@@ -305,7 +310,8 @@ body.is-enhanced {
   &:has(chat-entry[q="available"]) .prompt[data-q="available"],
   &:has(chat-entry[q="show"])      .prompt[data-q="show"],
   &:has(chat-entry[q="care"])      .prompt[data-q="care"],
-  &:has(chat-entry[q="why"])       .prompt[data-q="why"] {
+  &:has(chat-entry[q="why"])       .prompt[data-q="why"],
+  &:has(chat-entry[q="bench"])     .prompt[data-q="bench"] {
     color: var(--c-fg-faint);
     border-color: var(--c-border);
     background: transparent;
@@ -341,7 +347,7 @@ body.is-enhanced {
   & a { color: var(--c-accent); }
 }
 
-body.is-enhanced:has(chat-entry:nth-of-type(5)) .prompts__complete {
+body.is-enhanced:has(chat-entry:nth-of-type(6)) .prompts__complete {
   display: block;
   animation: rise var(--t-med) var(--ease);
 }
@@ -444,6 +450,105 @@ chat-entry {
 
   /* Only the most recent entry shows its follow-up suggestions. */
   &:not(:last-of-type) .entry__followups { display: none; }
+}
+
+/* ---------- In-answer widgets: tier diagram & tool chips ---------- */
+
+/* Tiers — the "Frontend → API → Infra" interactive diagram in the work answer.
+   Mobile: stacked. Desktop (container >= 540px): horizontal. */
+
+.tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+}
+
+@container main (min-width: 540px) {
+  .tiers { flex-direction: row; }
+}
+
+.tier {
+  flex: 1;
+  appearance: none;
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  background: var(--c-bg-elev);
+  color: var(--c-fg);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-height: 2.75rem;
+  transition:
+    border-color var(--t-fast) var(--ease),
+    background var(--t-fast) var(--ease);
+
+  &:hover { border-color: var(--c-accent); }
+
+  & .tier__name {
+    font-family: var(--f-mono);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--c-accent-mint);
+  }
+
+  & .tier__detail {
+    font-family: var(--f-body);
+    font-size: 0.85rem;
+    color: var(--c-fg-soft);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      max-height var(--t-med) var(--ease),
+      opacity var(--t-fast) var(--ease);
+  }
+
+  /* Reveal detail on hover, keyboard focus, or tap-toggled aria-expanded */
+  &:hover .tier__detail,
+  &:focus-visible .tier__detail,
+  &[aria-expanded="true"] .tier__detail {
+    max-height: 4rem;
+    opacity: 1;
+  }
+}
+
+.tier-arrow {
+  display: grid;
+  place-items: center;
+  font-family: var(--f-mono);
+  font-size: 1rem;
+  color: var(--c-fg-faint);
+  transform: rotate(90deg);  /* down arrow when stacked on mobile */
+}
+
+@container main (min-width: 540px) {
+  .tier-arrow { transform: none; }
+}
+
+/* Chips — small tool badges in the bench answer. */
+
+.chips {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  font-family: var(--f-mono);
+  font-size: 0.74rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--c-border-strong);
+  border-radius: 999px;
+  background: var(--c-bg-soft);
+  color: var(--c-fg-soft);
 }
 
 /* ---------- Input row ---------- */
@@ -559,6 +664,9 @@ body.is-enhanced .fallback { display: none; }
 .footer {
   padding: 2rem clamp(1.25rem, 4vw, 2rem) 2rem;
   text-align: center;
+  max-width: 64rem;
+  width: 100%;
+  margin-inline: auto;
 
   & .footer__line {
     display: inline-flex;

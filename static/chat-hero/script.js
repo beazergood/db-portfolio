@@ -126,9 +126,18 @@ function clearNudge() { $nudge.hidden = true; }
 
 document.addEventListener('click', (e) => {
   const btn = e.target.closest('.prompt');
-  if (!btn || !btn.dataset.q) return;
-  clearNudge();
-  ask(btn.dataset.q);
+  if (btn?.dataset.q) {
+    clearNudge();
+    ask(btn.dataset.q);
+    return;
+  }
+
+  // Tier expand/collapse (the end-to-end stack diagram)
+  const tier = e.target.closest('.tier');
+  if (tier) {
+    const expanded = tier.getAttribute('aria-expanded') === 'true';
+    tier.setAttribute('aria-expanded', String(!expanded));
+  }
 });
 
 $form.addEventListener('submit', (e) => {
@@ -166,7 +175,11 @@ function setTheme(theme, persist) {
   };
 
   if (persist && document.startViewTransition && !prefersReducedMotion()) {
-    document.startViewTransition(apply);
+    const t = document.startViewTransition(apply);
+    // Swallow abort errors — they fire when a new transition starts before
+    // the previous finishes (e.g. rapid theme-toggle clicks). Harmless.
+    t.finished?.catch(() => {});
+    t.ready?.catch(() => {});
   } else {
     apply();
   }
