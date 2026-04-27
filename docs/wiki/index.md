@@ -25,7 +25,7 @@ The living memory of [davebeazer.dev](https://www.davebeazer.dev/). LLM-owned, r
 > What's actively in flight. Refreshed at session end.
 
 - **vision + brand captured** — first pass at the canvas's north-star and posture. See [vision.md](../project/vision.md) and [brand.md](./brand.md). Both pages are starting-frames; will grow.
-- **portfolio-refresh-2026** — replace the canonical content on davebeazer.dev. Strip named clients, swap "about me" prose for dynamic project facets. Spec captured; design questions surfaced. See [features/portfolio-refresh-2026/spec.md](../features/portfolio-refresh-2026/spec.md) and the [overview](../features/portfolio-refresh-2026/overview.html).
+- **portfolio-refresh-2026** — *direction crystallised*: chat-driven UI surface, anti-section, anti-template. The current static site is the antithesis. North star [dcurt.is](https://dcurt.is/). Progressive enhancement; pre-curated answers (not real-LLM for v1). See [features/portfolio-refresh-2026/spec.md](../features/portfolio-refresh-2026/spec.md) and the [overview](../features/portfolio-refresh-2026/overview.html).
 - **wiki-bootstrap** — adopting the scraps-style living wiki here. This page and its siblings are the first artefact. (this branch)
 - **redesign-retro** — hero proof-of-concept committed (`cf6f4aa`); 2026-spin 8-bit aesthetic. Parked as a *visual* experiment that may donate elements; not the canonical direction.
 - **lolz subdomain** — `lolz.davebeazer.dev` earmarked to host the April Fools build so it remains rediscoverable. Vercel domain config pending.

@@ -54,6 +54,16 @@
 
 ## Session Notes
 
+### 2026-04-27 — direction pivot: chat-driven portfolio
+
+The portfolio-refresh-2026 spec evolved significantly. The earlier framing was "rewrite the copy on a sectioned site"; the new framing is "the sectioned site is the antithesis." Direction crystallised as a chat-driven UI surface where depth is found by interacting, not scrolling.
+
+North star: [dcurt.is](https://dcurt.is/). Brand sharpened — calm-confident not calm-passive; edgy and anti-template; the medium is the message; depth on demand. Decisions log gained chat-UI as canonical interaction model, progressive enhancement as a hard principle, and pre-curated (not real-LLM) answers for v1.
+
+The redesign-retro 8-bit experiment is now clearly not the canonical path. Marked as kept-for-nostalgia rather than donor-of-elements.
+
+`spec.md` and `overview.html` rewritten to match. The overview gained a hypothesis pull-quote and a north-star section.
+
 ### 2026-04-27 — single-command dev + port survey
 
 - `package.json` replaced. Old Next.js / Storybook entries dropped (the legacy `/src/` tree is staying on disk per existing decision, but its dependencies aren't part of the active project). Bumped to 2.0.0 to mark the static-rebuild era cleanly.

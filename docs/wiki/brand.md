@@ -11,9 +11,12 @@ lastUpdated: 2026-04-27
 ## Posture
 
 - Senior contractor, not a junior. Not loud about it.
-- Calm surface. No popups, no urgency theatre, no "just one more thing" modals.
+- **Calm-confident, not calm-passive.** Calm isn't softness; it's deliberate restraint. Opinionated when it counts.
+- **Edgy, on the frontier, anti-template.** Cookie-cutter contractor portfolios are not the energy. Single bold idea executed with rare restraint, after [dcurt.is](https://dcurt.is/).
+- **The medium is the message.** Where possible, the UI itself demonstrates the craft — interactions, typography, composition all do work that copy cannot.
+- **Depth on demand.** The more a visitor interacts, the more they find. Nothing is laid out comprehensively by default. A 2-minute visit should feel right; a 20-minute visit rewards.
 - Show, don't tell. Surface project facets rather than write a CV in prose.
-- Hand-drawn warmth (waves, pastels) over corporate sleekness.
+- Human warmth via considered interaction, not just pastels and waves.
 
 ## Voice
 
@@ -38,9 +41,9 @@ lastUpdated: 2026-04-27
 
 ## Inspiration / mood
 
-> Loose pins, not a strict mood board. Add anchors here as they emerge — designers, sites, illustrations, books, anything that tunes how the canvas should feel. When something stops fitting, replace it rather than rationalise.
+> Loose pins, not a strict mood board. Add anchors as they emerge. When something stops fitting, replace it rather than rationalise.
 
-- *(empty — add as we go)*
+- **[dcurt.is](https://dcurt.is/)** — calm, opinionated, anti-template, a single bold idea per page, no fluff. North star for the portfolio refresh.
 
 ## The April Fools foil
 

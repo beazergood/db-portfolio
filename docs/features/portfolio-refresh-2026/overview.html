@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio Refresh 2026 — Overview</title>
-  <meta name="description" content="Stakeholder-friendly overview of the davebeazer.dev portfolio refresh.">
+  <meta name="description" content="Stakeholder overview of the davebeazer.dev portfolio refresh — pivoting to a chat-driven, progressive-enhancement UI surface.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Paytone+One&family=JetBrains+Mono&display=swap" rel="stylesheet">
@@ -89,10 +89,11 @@
     }
 
     .lede {
-      font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.25rem);
-      max-width: 36em;
+      font-size: clamp(1.1rem, 0.95rem + 0.5vw, 1.35rem);
+      max-width: 38em;
       color: var(--c-text);
       margin: 0;
+      font-weight: 500;
     }
 
     .meta-strip {
@@ -119,6 +120,82 @@
     }
 
     .why p { max-width: 38em; }
+
+    /* Pull-quote / hypothesis block */
+    .hypothesis {
+      background: var(--c-purple-deep);
+      color: #fff;
+      padding: 2.5rem 2.25rem;
+      border-radius: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hypothesis::before {
+      content: "";
+      position: absolute;
+      top: -3rem; right: -3rem;
+      width: 12rem; height: 12rem;
+      background: var(--c-purple);
+      border-radius: 50%;
+      opacity: 0.25;
+    }
+    .hypothesis::after {
+      content: "";
+      position: absolute;
+      bottom: -2rem; left: -2rem;
+      width: 8rem; height: 8rem;
+      background: var(--c-melon);
+      border-radius: 50%;
+      opacity: 0.3;
+    }
+    .hypothesis .label {
+      font-family: var(--f-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-mint);
+      position: relative;
+      z-index: 1;
+    }
+    .hypothesis blockquote {
+      font-family: var(--f-display);
+      font-size: clamp(1.4rem, 1.5vw + 1rem, 2rem);
+      line-height: 1.25;
+      margin: 0.75rem 0 0;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      max-width: 30ch;
+    }
+    .hypothesis em {
+      color: var(--c-mint);
+      font-style: normal;
+    }
+
+    /* North star */
+    .northstar {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    @media (min-width: 720px) { .northstar { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
+    .northstar .pin {
+      border: 1px solid var(--c-border);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--c-bg);
+    }
+    .northstar .pin h3 {
+      font-family: var(--f-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-purple);
+      margin: 0 0 0.5rem;
+    }
+    .northstar .pin p { margin: 0; color: var(--c-text); }
+    .northstar .pin a { color: var(--c-purple-deep); }
 
     /* Two-column "is / isn't" */
     .columns {
@@ -261,50 +338,77 @@
     </svg>
 
     <header class="hero">
-      <span class="kicker">Feature overview · spec phase</span>
+      <span class="kicker">Feature overview · spec phase · pivot 2026-04-27</span>
       <h1 class="title">Portfolio <em>Refresh</em></h1>
       <p class="lede">
-        davebeazer.dev hasn't had its canonical content touched in years. The April Fools build was the first change since the rebuild. This is the second — and the bigger one. A quieter, more deliberate surface that reflects who the project is now.
+        The current static site is the antithesis. Moving away from sectioned-CV-as-portfolio toward a single, focused, chat-driven surface where depth is found by interacting, not scrolling. The medium is the message.
       </p>
       <div class="meta-strip">
         <span><strong>Status:</strong> spec</span>
         <span><strong>Owner:</strong> Dave</span>
         <span><strong>Branch:</strong> tbd</span>
-        <span><strong>Started:</strong> 2026-04-27</span>
+        <span><strong>North star:</strong> dcurt.is</span>
       </div>
     </header>
+
+    <section class="block">
+      <div class="hypothesis">
+        <span class="label">Hypothesis</span>
+        <blockquote>
+          A contractor's site that <em>demonstrates</em> the 2026 paradigm shift is itself the portfolio piece.
+        </blockquote>
+      </div>
+    </section>
 
     <section class="block why">
       <h2>The why</h2>
       <p>
-        The current page names specific employers and clients. That doesn't reflect the direction any more — work is described by <em>kind</em>, not by <em>brand</em>. Beyond the copy, the structure itself is due a re-think: a static "about me" doesn't suit someone whose work lives mostly in projects.
+        Visitors to a portfolio spend two minutes, not twenty. The current site is built for the second case — comprehensive, sectioned, scannable, slightly less bland with each block. It works. It's also forgettable.
       </p>
       <p>
-        The replacement keeps the calm surface of the existing site and reuses the same hues and typography. It's an evolution, not a redesign — that comes later (or doesn't), as a separate question.
+        The 2026 paradigm shift in UX is from <em>listing content</em> to <em>surfacing it through conversation</em>. A chat-driven portfolio puts that shift on display while delivering the actual content, which means the site demonstrates the very craft it's selling. Calm-confident, not calm-pastoral.
       </p>
     </section>
 
     <section class="block">
-      <h2>What it keeps · what it changes</h2>
+      <h2>North star</h2>
+      <div class="northstar">
+        <div class="pin">
+          <h3>Reference site</h3>
+          <p>
+            <a href="https://dcurt.is/" target="_blank" rel="noopener">dcurt.is</a> — calm, opinionated, anti-template. A single bold idea per page, executed with rare restraint. Calm isn't passive; it's deliberate.
+          </p>
+        </div>
+        <div class="pin">
+          <h3>Paradigm</h3>
+          <p>
+            Dynamic, chat-driven, results-led UX. Visitors prompt, click, follow up. The interface doesn't lay everything out — it surfaces what was asked for, when it was asked for.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>What it keeps · what it deliberately drops</h2>
       <div class="columns">
         <div class="column">
           <h3>Keeps</h3>
           <ul>
-            <li>Calm surface — no popups, no banners, no urgency.</li>
-            <li>Mint / purple / melon palette and the hand-drawn waves.</li>
-            <li>One-page spine with depth that grows behind clicks.</li>
-            <li>Loads instantly on patchy mobile.</li>
-            <li>Paytone One headings, Inter body.</li>
+            <li>The hue family — purple, mint, melon, ice. Used <em>boldly</em>, not pastorally.</li>
+            <li>Paytone One headings, Inter body. Voice intact.</li>
+            <li>Hand-drawn touches, used sparingly and with intent.</li>
+            <li>Calm. No popups, no urgency theatre, no AI-typing chrome.</li>
+            <li>Loads instantly. Senior-contractor credibility throughout.</li>
           </ul>
         </div>
         <div class="column crossed">
-          <h3>Changes</h3>
+          <h3>Drops</h3>
           <ul>
-            <li>No named clients or employers in copy.</li>
-            <li>"About me" prose replaced by dynamic project facets.</li>
-            <li>Tagline refreshed without the "for organisations including…" tail.</li>
-            <li>Skills and approach blocks audited — keep what still rings true, drop what doesn't.</li>
-            <li>Contact list audited and pruned.</li>
+            <li>Sectioned page structure. Hero / About / Approach / Skills / Work / Contact — gone.</li>
+            <li>About-me prose. Show by being shown, not by narrating.</li>
+            <li>Named clients and employers in copy.</li>
+            <li>"Listing every skill" energy. Comprehensive over confident.</li>
+            <li>The pastel-pastoral feel. We're going calm-confident, not calm-passive.</li>
           </ul>
         </div>
       </div>
@@ -314,17 +418,18 @@
       <h2>Open questions</h2>
       <p style="max-width:38em;color:var(--c-text-soft);margin:0 0 0.5rem;">Surfaced visibly. The answers will land as the work proceeds.</p>
       <ol>
-        <li><strong>What are the dynamic facets?</strong> Project cards that surface different work each visit? Cards that pull from the wiki? Live data from a project? No answer yet.</li>
-        <li><strong>Does the redesign-retro PoC fit anywhere?</strong> It was a visual experiment, parked. It may donate specific elements but isn't the canonical direction.</li>
-        <li><strong>Is "no one-pager" actually true?</strong> Or is the one-pager fine if the depth lives behind clicks rather than scrolls?</li>
-        <li><strong>What replaces the PL/Pexip line specifically?</strong> Need a verbal model for describing work without brands.</li>
-        <li><strong>Where does the wiki feed in?</strong> Could project cards be generated from feature specs? The spec→portfolio pipeline could be its own facet.</li>
+        <li><strong>Entry affordance.</strong> Blank chat box, or seeded with 3–4 suggested prompts as visible buttons? Strong instinct: visible suggested prompts plus the input box. Explicit invitation, not blank-page anxiety.</li>
+        <li><strong>The suggested prompts.</strong> What are they? Drafting: <em>What kind of work do you do?</em> · <em>Are you available?</em> · <em>Show me something you've built.</em> · <em>What do you care about?</em></li>
+        <li><strong>Answer composition.</strong> Streamed text? Cards? Mixed media — text plus a project still plus a small fact-card? Has to feel rich, not like a wall of returned text.</li>
+        <li><strong>Follow-ups.</strong> After an answer, do inline next-prompts appear? Is the input always sticky? How does a "conversation" thread visually?</li>
+        <li><strong>The noscript fallback.</strong> Effectively the calm sectioned page we'd otherwise have built. May be where the pastel-pastoral feel is allowed to live.</li>
+        <li><strong>Real-LLM hatch (v2).</strong> If it lands later, where does it sit? An "ask anything" affordance below the curated set, cost-gated by an edge function?</li>
       </ol>
     </section>
 
     <section class="block">
       <h2>Mood</h2>
-      <p style="max-width:38em;color:var(--c-text-soft);margin:0 0 0.5rem;">The visual vocabulary the refresh inherits.</p>
+      <p style="max-width:38em;color:var(--c-text-soft);margin:0 0 0.5rem;">Same hues as the current site. Used boldly, not pastorally.</p>
       <div class="mood">
         <div>
           <div class="swatches">
@@ -336,9 +441,9 @@
           </div>
         </div>
         <div class="type-sample">
-          <p class="display">Calm</p>
+          <p class="display">Calm-confident.</p>
           <p class="body">
-            Inter body, sized for comfortable reading on phones, tablets, and laptops. British spelling. Plain words ahead of jargon. Self-deprecating without being insecure. Doesn't oversell.
+            Inter body. British spelling. Plain language ahead of jargon. Self-deprecating without insecure. Doesn't oversell — and now: doesn't comprehensively explain. Show; surface; let the visitor dig if they want to.
           </p>
         </div>
       </div>
@@ -349,7 +454,8 @@
       <a href="../../project/vision.md">↗ Vision</a>
       <a href="../../wiki/design-system.md">↗ Design System</a>
       <a href="./spec.md">↗ Working spec</a>
-      <a href="../../../static/index.html" target="_blank" rel="noopener">↗ Live site</a>
+      <a href="../../../static/index.html" target="_blank" rel="noopener">↗ Live site (the antithesis)</a>
+      <a href="https://dcurt.is/" target="_blank" rel="noopener">↗ dcurt.is</a>
     </nav>
 
   </div>

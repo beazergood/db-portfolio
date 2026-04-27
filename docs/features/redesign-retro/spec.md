@@ -7,7 +7,7 @@ lastUpdated: 2026-04-27
 
 # Redesign — Retro 8-bit, 2026 spin
 
-> **Parked as a visual experiment.** The canonical direction for the portfolio is now [portfolio-refresh-2026](../portfolio-refresh-2026/spec.md) — content-led, not visual-led. This page may donate specific elements (typography, frame treatments, hard-shadow buttons) but isn't the path to `main`. Hero PoC is committed on `redesign-retro` (commit `cf6f4aa`).
+> **Parked.** The canonical direction has crystallised as [portfolio-refresh-2026](../portfolio-refresh-2026/spec.md) — a chat-driven, anti-template surface, north-starred on dcurt.is. The retro 8-bit aesthetic is **clearly not the path** any more (different energy entirely). Keeping the PoC committed for nostalgia / cheap reference, but not expecting elements to graduate. Hero PoC is on the `redesign-retro` branch at `cf6f4aa`.
 
 ## Goal
 
