@@ -409,36 +409,38 @@ body.is-complete .prompts__complete {
 }
 
 chat-entry {
-  display: block;
-  border: 1px solid var(--c-border);
-  background: linear-gradient(180deg, var(--c-bg-elev), var(--c-bg));
-  border-radius: var(--radius);
-  padding: clamp(1.25rem, 3vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
   scroll-margin-top: 1rem;
 
   &.is-fresh { animation: rise var(--t-med) var(--ease); }
 
-  &.is-pulse { animation: highlight 0.9s var(--ease); }
+  &.is-pulse .entry__response { animation: highlight 0.9s var(--ease); }
 
-  & .entry__q {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    margin: 0 0 1rem;
-    font-family: var(--f-mono);
-    font-size: 0.75rem;
-    color: var(--c-fg-soft);
+  /* User bubble — right-aligned, accent-tinted, asymmetric corners.
+     The bubble's *position* signals "user said this"; no label needed. */
+  & .entry__bubble {
+    align-self: flex-end;
+    max-width: min(80%, 28rem);
+    padding: 0.65rem 1rem;
+    background: var(--c-accent);
+    color: var(--c-bg);
+    border-radius: 1.2rem 1.2rem 0.3rem 1.2rem;
+    font-family: var(--f-body);
+    font-size: 0.94rem;
+    line-height: 1.45;
+    font-weight: 500;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
   }
 
-  & .entry__q-label {
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--c-accent-mint);
-  }
-
-  & .entry__q-text {
-    color: var(--c-fg);
-    font-style: italic;
+  /* Assistant response — keeps the existing card chrome. */
+  & .entry__response {
+    border: 1px solid var(--c-border);
+    background: linear-gradient(180deg, var(--c-bg-elev), var(--c-bg));
+    border-radius: var(--radius);
+    padding: clamp(1.25rem, 3vw, 1.75rem);
   }
 
   & .entry__body {
@@ -607,13 +609,16 @@ chat-entry {
   border: 1px solid var(--c-border-strong);
   border-radius: 999px;
   padding: 0.5rem 0.5rem 0.5rem 1rem;
-  transition: border-color var(--t-fast) var(--ease);
+  transition: border-color var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
 
   &:focus-within {
     border-color: var(--c-accent);
     outline: 2px solid var(--c-focus-ring);
     outline-offset: 2px;
   }
+
+  /* Hide the slash hint when the field has focus — it's redundant once you're typing. */
+  &:focus-within .input-row__kbd { display: none; }
 
   & .input-row__caret {
     font-family: var(--f-mono);
@@ -635,6 +640,25 @@ chat-entry {
     outline: none;
 
     &::placeholder { color: var(--c-fg-faint); }
+  }
+
+  /* Keyboard-shortcut hint (`/` to focus). Hidden when the field is focused
+     and on small screens where there's no keyboard shortcut convention. */
+  & .input-row__kbd {
+    font-family: var(--f-mono);
+    font-size: 0.7rem;
+    line-height: 1;
+    padding: 0.3rem 0.45rem;
+    border: 1px solid var(--c-border-strong);
+    border-bottom-width: 2px;
+    border-radius: 0.3rem;
+    color: var(--c-fg-soft);
+    background: var(--c-bg);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 720px) {
+    & .input-row__kbd { display: none; }
   }
 
   & .input-row__send {
@@ -665,6 +689,18 @@ chat-entry {
       opacity: 0.5;
       cursor: not-allowed;
     }
+  }
+}
+
+/* Sticky input on small viewports — keeps the input in reach as the chat
+   thread grows. Backed by a soft fade so content scrolling under it doesn't
+   jar the eye. Only on mobile; desktop keeps it in flow. */
+@media (max-width: 720px) {
+  .input-row {
+    position: sticky;
+    bottom: 0.75rem;
+    z-index: 5;
+    box-shadow: 0 6px 24px -8px color-mix(in oklch, var(--c-bg) 80%, transparent);
   }
 }
 

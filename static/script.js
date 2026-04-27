@@ -6,7 +6,7 @@
    =========================================================================== */
 
 import answers from './answers.json' with { type: 'json' };
-import './chat-entry.js';
+import './chat-entry.js?v=2';
 
 // Real-question keys (excludes anything starting with `_`, like `_miss`)
 const REAL_KEYS = Object.keys(answers).filter((k) => !k.startsWith('_'));
@@ -157,6 +157,27 @@ $form.addEventListener('submit', (e) => {
     ask('_miss', text);
   }
   $field.value = '';
+  // Reclaim focus so a follow-up question is one keystroke away.
+  $field.focus({ preventScroll: true });
+});
+
+// Esc clears the field and drops focus.
+$field.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    $field.value = '';
+    $field.blur();
+  }
+});
+
+// "/" anywhere on the page pulls focus to the input — a common power-user
+// shortcut. Skip when the user is already typing in any field.
+document.addEventListener('keydown', (e) => {
+  if (e.key !== '/') return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const active = document.activeElement;
+  if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable)) return;
+  e.preventDefault();
+  $field.focus({ preventScroll: true });
 });
 
 // ------------------------------------------------------------------------- //

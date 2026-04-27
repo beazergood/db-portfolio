@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Paytone+One&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=4">
 
   <!-- Set theme before first paint to avoid FOUC. Default is dark; light is opt-in. -->
   <script>
@@ -113,8 +113,9 @@
         type="text"
         autocomplete="off"
         spellcheck="false"
-        placeholder="or type something…"
+        placeholder="type a question…"
         maxlength="200">
+      <kbd class="input-row__kbd" aria-hidden="true" title="Press / to focus">/</kbd>
       <button class="input-row__send" type="submit" aria-label="Send">
         <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
           <path d="M5 12h14M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -210,6 +211,6 @@
     </p>
   </footer>
 
-  <script type="module" src="script.js?v=1"></script>
+  <script type="module" src="script.js?v=3"></script>
 </body>
 </html>

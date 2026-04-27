@@ -1,19 +1,12 @@
 /* ===========================================================================
-   <chat-entry q="..." followups="...,...">
+   <chat-entry q="..." followups="..." q-text="...">
    Light-DOM custom element. Self-renders from the answers data + the
    noscript fallback (which holds the rich answer body, single source).
+   Visual structure: a right-aligned user bubble + the assistant response
+   card below it — reads as a real chat transcript.
    =========================================================================== */
 
 import answers from './answers.json' with { type: 'json' };
-
-const TEMPLATE_BODY = (label, bodyHtml, followupsHtml) => `
-  <header class="entry__q">
-    <span class="entry__q-label">asked</span>
-    <span class="entry__q-text">${label}</span>
-  </header>
-  <div class="entry__body">${bodyHtml}</div>
-  ${followupsHtml}
-`;
 
 function escapeText(text) {
   const div = document.createElement('div');
@@ -84,7 +77,13 @@ class ChatEntry extends HTMLElement {
       </footer>
     `;
 
-    this.innerHTML = TEMPLATE_BODY(escapeText(askedText), getBodyHtml(key), followupsHtml);
+    this.innerHTML = `
+      <div class="entry__bubble">${escapeText(askedText)}</div>
+      <div class="entry__response">
+        <div class="entry__body">${getBodyHtml(key)}</div>
+        ${followupsHtml}
+      </div>
+    `;
     this.#hydrateLive();
     this.#rendered = true;
   }
