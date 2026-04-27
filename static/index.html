@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Paytone+One&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=3">
 
   <!-- Set theme before first paint to avoid FOUC. Default is dark; light is opt-in. -->
   <script>
@@ -55,9 +55,21 @@
   <main id="main" class="main">
 
     <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__wave" aria-hidden="true">
+        <svg class="hero__wave-svg" viewBox="0 0 1440 605" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <mask id="wave-mask">
+              <path d="M 0,111 C 96,130 288,207.2 480,206 C 672,204.8 768,117.8 960,105 C 1152,92.2 1344,134.6 1440,142 L1440 560 L0 560 Z" fill="rgba(194, 240, 204, 1)"/>
+              <path d="M 0,481 C 288,444.2 1152,333.8 1440,297 L1440 560 L0 560 Z" fill="rgba(194, 133, 211, 1)"/>
+            </mask>
+          </defs>
+          <image href="images/me-ont-coast.jpg" width="1440" height="605" preserveAspectRatio="xMidYMid slice" mask="url(#wave-mask)"/>
+        </svg>
+      </div>
       <h1 class="hero__title" id="hero-title">
         <span class="hero__name">Dave Beazer.</span>
       </h1>
+      <p class="hero__role">Contract software engineer.</p>
       <p class="hero__prompt" id="hero-prompt">What do you want to know?</p>
     </section>
 
