@@ -1,13 +1,13 @@
 ---
 layout: doc
 title: Redesign — Retro 8-bit (2026 spin) — Spec
-status: spec
+status: parked — visual experiment
 lastUpdated: 2026-04-27
 ---
 
 # Redesign — Retro 8-bit, 2026 spin
 
-> Working spec. Hero PoC is committed on `redesign-retro` (commit `cf6f4aa`). Rest of the page is unwritten.
+> **Parked as a visual experiment.** The canonical direction for the portfolio is now [portfolio-refresh-2026](../portfolio-refresh-2026/spec.md) — content-led, not visual-led. This page may donate specific elements (typography, frame treatments, hard-shadow buttons) but isn't the path to `main`. Hero PoC is committed on `redesign-retro` (commit `cf6f4aa`).
 
 ## Goal
 

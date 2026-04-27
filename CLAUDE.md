@@ -43,8 +43,18 @@ The site uses a specific color palette — always use these values via CSS custo
 - Position Dave as a **senior contractor**, not a junior developer
 - Do NOT list every position held — keep it high-level
 - Do NOT mention AI tooling, Claude, or any AI assistants anywhere in site content
-- Project descriptions should be anonymised where appropriate
+- **Do NOT name specific clients or employers** in site copy — describe work by *kind* (clinical portal, real-time video, sports-data platform), not by *brand*. This is a hard rule. See [docs/wiki/brand.md](docs/wiki/brand.md) for fuller context
 - The "How I Work" section replaces a traditional experience timeline
+
+## Living wiki
+
+Working notebook lives under `docs/`. Vision, brand, decisions, feature specs, and per-feature stakeholder HTML overviews. Browse it locally with:
+
+```bash
+cd docs && python3 -m http.server 8081
+```
+
+Slash commands available: `/wiki-update`, `/wiki-query`, `/wiki-ingest`, `/wiki-idea`, `/wiki-lint`, `/pickup`. They operate on `docs/wiki/*` regardless of project name.
 
 ## Build & Deploy
 

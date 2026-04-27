@@ -54,6 +54,19 @@
 
 ## Session Notes
 
+### 2026-04-27 — vision, brand, first feature pair
+
+Pivoted from "scaffold the wiki" to "establish the project's compass". Captured:
+
+- `project/vision.md` — the canvas thread. Compass, not contract.
+- `wiki/brand.md` — posture, voice, what we are and aren't. Starting-frame.
+- `features/portfolio-refresh-2026/spec.md` + `overview.html` — first dual-doc pair, replacing the existing canonical site copy. Strips named clients; surfaces design questions about dynamic facets.
+- Decisions: VitePress is the planned docs stack; current viewer is interim; no-named-clients is a hard rule; every shipping feature gets spec.md + overview.html.
+
+Sharpened the `Anonymise client work where appropriate` line in CLAUDE.md to a hard `Do not name specific clients or employers` rule.
+
+The redesign-retro spec was reframed from "future of the portfolio" to "visual experiment, parked, may donate elements." Saves us pretending it's the canonical direction when it isn't.
+
 ### 2026-04-27 — wiki bootstrap
 
 Starting point: the auto-generated `docs/` from a July 2025 "Working Tree MCP" tool — generic emoji-laden templates with no real content. Wiped and replaced with a scraps-style layout:

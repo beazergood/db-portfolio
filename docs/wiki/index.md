@@ -10,6 +10,7 @@ The living memory of [davebeazer.dev](https://www.davebeazer.dev/). LLM-owned, r
 
 **Sister docs**
 
+- 🧭 [Vision](../project/vision.md) — the compass. Reread when the project drifts
 - 📘 [Project README](https://github.com/beazergood/db-portfolio/blob/main/README.md) — terse, what-is-this orientation
 - 🛠 [Working specs](../features/) — per-feature task plans + acceptance criteria
 - 📋 [Project spec](../project/spec.md) — what the site is and isn't
@@ -23,8 +24,10 @@ The living memory of [davebeazer.dev](https://www.davebeazer.dev/). LLM-owned, r
 
 > What's actively in flight. Refreshed at session end.
 
+- **vision + brand captured** — first pass at the canvas's north-star and posture. See [vision.md](../project/vision.md) and [brand.md](./brand.md). Both pages are starting-frames; will grow.
+- **portfolio-refresh-2026** — replace the canonical content on davebeazer.dev. Strip named clients, swap "about me" prose for dynamic project facets. Spec captured; design questions surfaced. See [features/portfolio-refresh-2026/spec.md](../features/portfolio-refresh-2026/spec.md) and the [overview](../features/portfolio-refresh-2026/overview.html).
 - **wiki-bootstrap** — adopting the scraps-style living wiki here. This page and its siblings are the first artefact. (this branch)
-- **redesign-retro** — hero proof-of-concept committed (`cf6f4aa` on `redesign-retro`); 2026-spin 8-bit aesthetic. Parked pending design-time. See [features/redesign-retro/spec.md](../features/redesign-retro/spec.md).
+- **redesign-retro** — hero proof-of-concept committed (`cf6f4aa`); 2026-spin 8-bit aesthetic. Parked as a *visual* experiment that may donate elements; not the canonical direction.
 - **lolz subdomain** — `lolz.davebeazer.dev` earmarked to host the April Fools build so it remains rediscoverable. Vercel domain config pending.
 
 ## Concepts
@@ -32,6 +35,7 @@ The living memory of [davebeazer.dev](https://www.davebeazer.dev/). LLM-owned, r
 | Page | What it answers |
 |---|---|
 | [Architecture](./architecture.md) | Static no-framework rebuild, Vercel deploy model, branch strategy |
+| [Brand](./brand.md) | Posture, voice, what we are and aren't |
 | [Design System](./design-system.md) | Palette, typography, component patterns |
 
 ## Reference
@@ -45,8 +49,10 @@ The living memory of [davebeazer.dev](https://www.davebeazer.dev/). LLM-owned, r
 
 | Thread | Status | One-line |
 |---|---|---|
-| wiki-bootstrap | shipping | First-pass scaffold + browser viewer. This branch. |
-| redesign-retro | spec | Hero PoC built; needs design-time before going wider |
+| portfolio-refresh-2026 | spec | Strip named clients; replace about-me with dynamic facets. Design questions open |
+| wiki-bootstrap | shipping | First-pass scaffold + browser viewer + vision/brand pages. This branch |
+| vitepress-migration | deferred | Replace the no-build viewer with VitePress to align with scraps / pl-docs / enable-platform |
+| redesign-retro | parked (visual exp.) | Hero PoC built; visual experiment, may donate elements to portfolio-refresh |
 | lolz-subdomain | pending | Vercel domain alias to `april-fools-2026` branch |
 | static-migration | mostly shipped | Static site live on `main`; legacy `/src/` and `/dwjb-api/` still on disk pending tidy |
 

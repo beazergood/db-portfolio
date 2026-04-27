@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Refresh 2026 — Overview</title>
+  <meta name="description" content="Stakeholder-friendly overview of the davebeazer.dev portfolio refresh.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Paytone+One&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --c-purple:      #C285D3;
+      --c-purple-deep: #642975;
+      --c-mint:        #C2F0CC;
+      --c-mint-deep:   #6FDC87;
+      --c-melon:       #FDB6B8;
+      --c-ice:         #E6F4F1;
+      --c-text:        #2B2B2B;
+      --c-text-soft:   #8F91A8;
+      --c-bg:          #FFFFFF;
+      --c-border:      #E5E7EB;
+
+      --f-display: "Paytone One", system-ui, sans-serif;
+      --f-body:    "Inter", system-ui, -apple-system, sans-serif;
+      --f-mono:    "JetBrains Mono", ui-monospace, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--f-body);
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--c-text);
+      background: var(--c-bg);
+    }
+
+    .frame {
+      max-width: 64rem;
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 5rem) clamp(1.25rem, 4vw, 3rem) 6rem;
+    }
+
+    .kicker {
+      font-family: var(--f-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-purple-deep);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 1.5rem;
+      height: 2px;
+      background: var(--c-purple);
+    }
+
+    .hero { margin-bottom: 4rem; }
+
+    h1.title {
+      font-family: var(--f-display);
+      font-size: clamp(2.5rem, 5vw + 1rem, 5rem);
+      line-height: 1.05;
+      color: var(--c-purple-deep);
+      margin: 0.5rem 0 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    h1.title em {
+      font-style: normal;
+      color: var(--c-purple);
+      position: relative;
+    }
+
+    h1.title em::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: -0.1em;
+      height: 0.3em;
+      background: var(--c-melon);
+      z-index: -1;
+      transform: skewX(-8deg);
+    }
+
+    .lede {
+      font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.25rem);
+      max-width: 36em;
+      color: var(--c-text);
+      margin: 0;
+    }
+
+    .meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 2rem;
+      font-family: var(--f-mono);
+      font-size: 0.78rem;
+      color: var(--c-text-soft);
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--c-border);
+    }
+
+    .meta-strip strong { color: var(--c-purple-deep); font-weight: 600; }
+
+    section.block { margin: 4rem 0; }
+
+    section.block > h2 {
+      font-family: var(--f-display);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      color: var(--c-purple-deep);
+      margin: 0 0 1rem;
+    }
+
+    .why p { max-width: 38em; }
+
+    /* Two-column "is / isn't" */
+    .columns {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    @media (min-width: 720px) {
+      .columns { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    .column {
+      background: var(--c-ice);
+      border: 1px solid var(--c-mint);
+      border-radius: 0.75rem;
+      padding: 1.5rem 1.75rem;
+    }
+
+    .column h3 {
+      font-family: var(--f-display);
+      margin: 0 0 0.75rem;
+      font-size: 1.15rem;
+      color: var(--c-purple-deep);
+    }
+
+    .column ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    .column li { margin: 0.5rem 0; }
+
+    .column.crossed { background: #FFF7F7; border-color: var(--c-melon); }
+    .column.crossed h3 { color: #B0464A; }
+
+    /* Open questions list */
+    .questions ol {
+      counter-reset: q;
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+    }
+    .questions li {
+      counter-increment: q;
+      padding: 1.25rem 1.25rem 1.25rem 4rem;
+      border: 1px solid var(--c-border);
+      border-radius: 0.6rem;
+      margin: 0.75rem 0;
+      position: relative;
+      background: var(--c-bg);
+    }
+    .questions li::before {
+      content: "Q" counter(q);
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      font-family: var(--f-mono);
+      font-size: 0.78rem;
+      color: var(--c-purple);
+      background: var(--c-mint);
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.3rem;
+      font-weight: 600;
+    }
+
+    /* Mood block */
+    .mood {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    @media (min-width: 720px) { .mood { grid-template-columns: 1fr 1fr; } }
+
+    .swatches { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .swatch {
+      width: 5rem; height: 5rem;
+      border-radius: 0.6rem;
+      border: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      align-items: flex-end;
+      padding: 0.5rem;
+      font-family: var(--f-mono);
+      font-size: 0.65rem;
+      color: rgba(0,0,0,0.6);
+    }
+
+    .type-sample {
+      border: 1px solid var(--c-border);
+      border-radius: 0.6rem;
+      padding: 1.5rem;
+    }
+    .type-sample .display {
+      font-family: var(--f-display);
+      font-size: 2.25rem;
+      color: var(--c-purple-deep);
+      line-height: 1;
+      margin: 0 0 0.5rem;
+    }
+    .type-sample .body {
+      font-family: var(--f-body);
+      font-size: 0.95rem;
+      color: var(--c-text);
+      margin: 0;
+    }
+
+    /* Footer */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--c-border);
+      font-family: var(--f-mono);
+      font-size: 0.85rem;
+    }
+    .links a {
+      color: var(--c-purple-deep);
+      text-decoration: none;
+      border-bottom: 2px solid var(--c-mint);
+    }
+    .links a:hover { border-bottom-color: var(--c-purple); }
+
+    /* Decorative wave at top */
+    .wave-decor {
+      width: 100%;
+      height: 2.5rem;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="frame">
+
+    <svg class="wave-decor" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 10 Q25 0 50 10 T100 10 T150 10 T200 10" fill="none" stroke="#FDB6B8" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+
+    <header class="hero">
+      <span class="kicker">Feature overview · spec phase</span>
+      <h1 class="title">Portfolio <em>Refresh</em></h1>
+      <p class="lede">
+        davebeazer.dev hasn't had its canonical content touched in years. The April Fools build was the first change since the rebuild. This is the second — and the bigger one. A quieter, more deliberate surface that reflects who the project is now.
+      </p>
+      <div class="meta-strip">
+        <span><strong>Status:</strong> spec</span>
+        <span><strong>Owner:</strong> Dave</span>
+        <span><strong>Branch:</strong> tbd</span>
+        <span><strong>Started:</strong> 2026-04-27</span>
+      </div>
+    </header>
+
+    <section class="block why">
+      <h2>The why</h2>
+      <p>
+        The current page names specific employers and clients. That doesn't reflect the direction any more — work is described by <em>kind</em>, not by <em>brand</em>. Beyond the copy, the structure itself is due a re-think: a static "about me" doesn't suit someone whose work lives mostly in projects.
+      </p>
+      <p>
+        The replacement keeps the calm surface of the existing site and reuses the same hues and typography. It's an evolution, not a redesign — that comes later (or doesn't), as a separate question.
+      </p>
+    </section>
+
+    <section class="block">
+      <h2>What it keeps · what it changes</h2>
+      <div class="columns">
+        <div class="column">
+          <h3>Keeps</h3>
+          <ul>
+            <li>Calm surface — no popups, no banners, no urgency.</li>
+            <li>Mint / purple / melon palette and the hand-drawn waves.</li>
+            <li>One-page spine with depth that grows behind clicks.</li>
+            <li>Loads instantly on patchy mobile.</li>
+            <li>Paytone One headings, Inter body.</li>
+          </ul>
+        </div>
+        <div class="column crossed">
+          <h3>Changes</h3>
+          <ul>
+            <li>No named clients or employers in copy.</li>
+            <li>"About me" prose replaced by dynamic project facets.</li>
+            <li>Tagline refreshed without the "for organisations including…" tail.</li>
+            <li>Skills and approach blocks audited — keep what still rings true, drop what doesn't.</li>
+            <li>Contact list audited and pruned.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="block questions">
+      <h2>Open questions</h2>
+      <p style="max-width:38em;color:var(--c-text-soft);margin:0 0 0.5rem;">Surfaced visibly. The answers will land as the work proceeds.</p>
+      <ol>
+        <li><strong>What are the dynamic facets?</strong> Project cards that surface different work each visit? Cards that pull from the wiki? Live data from a project? No answer yet.</li>
+        <li><strong>Does the redesign-retro PoC fit anywhere?</strong> It was a visual experiment, parked. It may donate specific elements but isn't the canonical direction.</li>
+        <li><strong>Is "no one-pager" actually true?</strong> Or is the one-pager fine if the depth lives behind clicks rather than scrolls?</li>
+        <li><strong>What replaces the PL/Pexip line specifically?</strong> Need a verbal model for describing work without brands.</li>
+        <li><strong>Where does the wiki feed in?</strong> Could project cards be generated from feature specs? The spec→portfolio pipeline could be its own facet.</li>
+      </ol>
+    </section>
+
+    <section class="block">
+      <h2>Mood</h2>
+      <p style="max-width:38em;color:var(--c-text-soft);margin:0 0 0.5rem;">The visual vocabulary the refresh inherits.</p>
+      <div class="mood">
+        <div>
+          <div class="swatches">
+            <div class="swatch" style="background:#C2F0CC">mint</div>
+            <div class="swatch" style="background:#C285D3">purple</div>
+            <div class="swatch" style="background:#FDB6B8">melon</div>
+            <div class="swatch" style="background:#E6F4F1">ice</div>
+            <div class="swatch" style="background:#642975;color:rgba(255,255,255,0.85)">deep</div>
+          </div>
+        </div>
+        <div class="type-sample">
+          <p class="display">Calm</p>
+          <p class="body">
+            Inter body, sized for comfortable reading on phones, tablets, and laptops. British spelling. Plain words ahead of jargon. Self-deprecating without being insecure. Doesn't oversell.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="links" aria-label="Related">
+      <a href="../../wiki/brand.md">↗ Brand</a>
+      <a href="../../project/vision.md">↗ Vision</a>
+      <a href="../../wiki/design-system.md">↗ Design System</a>
+      <a href="./spec.md">↗ Working spec</a>
+      <a href="../../../static/index.html" target="_blank" rel="noopener">↗ Live site</a>
+    </nav>
+
+  </div>
+
+</body>
+</html>

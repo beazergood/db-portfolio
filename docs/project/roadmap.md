@@ -10,18 +10,20 @@ lastUpdated: 2026-04-27
 
 ## Now
 
-- **wiki-bootstrap** (this branch) — establish `docs/` structure, viewer, and slash commands so future work is documented as it lands.
+- **wiki-bootstrap** (this branch) — establish `docs/` structure, viewer, vision, brand, and the first feature dual-doc pair.
+- **portfolio-refresh-2026** (spec) — content rewrite of davebeazer.dev. Strip named clients; replace about-me prose with dynamic project facets. Design questions open. See [feature spec](../features/portfolio-refresh-2026/spec.md).
 
 ## Next (planned, not started)
 
-- **lolz subdomain** — Vercel domain alias from `lolz.davebeazer.dev` to the `april-fools-2026` branch. Add DNS CNAME at the registrar. Confirm the prank loads independently of production.
+- **VitePress migration** — replace the interim no-build viewer with VitePress to align with `scraps`, `premier-league-docs`, and `enable-platform`. Same content, different rendering layer.
+- **lolz subdomain** — Vercel domain alias from `lolz.davebeazer.dev` to the `april-fools-2026` branch. Add DNS CNAME at the registrar.
 - **Retire legacy trees** — once everything worth referencing has been pulled out, delete `/src/` and `/dwjb-api/` so the repo only contains what's deployed.
-- **Backfill feature specs** — write `features/april-fools-2026/spec.md` and `features/redesign-retro/spec.md` from existing context, including a stakeholder-friendly `overview.html` for each per the living-spec principle.
+- **April Fools 2026 retrospective overview** — write `features/april-fools-2026/overview.html` to complete that feature pair (only the spec exists today).
 
 ## Soon-ish
 
-- **redesign-retro full pass** — hero PoC is committed. Needs the rest of the page (about, approach, skills, work, contact) translated into the retro idiom, then a side-by-side review against the live site before deciding to merge.
 - **`og-image` per project** — small generated social cards so each project shares with its own preview, not the homepage screenshot.
+- **redesign-retro full pass** — only if the visual experiment proves to fit the canonical direction. Hero PoC parked otherwise.
 
 ## Parked
 

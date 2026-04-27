@@ -9,6 +9,7 @@ const MANIFEST = [
     pages: [
       { title: "Catalogue", path: "wiki/index.md" },
       { title: "Architecture", path: "wiki/architecture.md" },
+      { title: "Brand", path: "wiki/brand.md" },
       { title: "Design System", path: "wiki/design-system.md" },
       { title: "Decisions", path: "wiki/decisions.md" },
       { title: "Ideas", path: "wiki/ideas.md" },
@@ -18,6 +19,7 @@ const MANIFEST = [
   {
     section: "Project",
     pages: [
+      { title: "Vision", path: "project/vision.md" },
       { title: "Spec", path: "project/spec.md" },
       { title: "Roadmap", path: "project/roadmap.md" },
     ],
@@ -25,8 +27,10 @@ const MANIFEST = [
   {
     section: "Features",
     pages: [
+      { title: "Portfolio Refresh 2026 — spec", path: "features/portfolio-refresh-2026/spec.md" },
+      { title: "Portfolio Refresh 2026 — overview", path: "features/portfolio-refresh-2026/overview.html" },
       { title: "April Fools 2026", path: "features/april-fools-2026/spec.md" },
-      { title: "Redesign Retro", path: "features/redesign-retro/spec.md" },
+      { title: "Redesign Retro (parked)", path: "features/redesign-retro/spec.md" },
     ],
   },
   {
