@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>db-portfolio · wiki</title>
+  <meta name="description" content="Living wiki for the davebeazer.dev portfolio site.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Paytone+One&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="docs-header">
+  <a href="#wiki/index" class="docs-logo">
+    <span class="docs-logo__mark">db</span>
+    <span class="docs-logo__text">portfolio · wiki</span>
+  </a>
+  <div class="docs-header__meta">
+    <a href="../" class="docs-header__link">↗ live site</a>
+    <a href="https://github.com/beazergood/db-portfolio" class="docs-header__link" target="_blank" rel="noopener">↗ github</a>
+  </div>
+</header>
+
+<div class="docs-layout">
+
+  <aside class="docs-sidebar" aria-label="Wiki navigation">
+    <button class="docs-sidebar__toggle" aria-expanded="false" aria-controls="docs-nav">
+      ☰ Pages
+    </button>
+    <nav id="docs-nav" class="docs-nav"></nav>
+  </aside>
+
+  <main class="docs-content">
+    <article id="content" class="docs-article">
+      <p class="docs-loading">Loading…</p>
+    </article>
+  </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"></script>
+<script src="viewer.js"></script>
+
+</body>
+</html>
