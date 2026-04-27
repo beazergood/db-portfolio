@@ -54,6 +54,14 @@
 
 ## Session Notes
 
+### 2026-04-27 — chat-hero 2026-native upgrade
+
+End-to-end modernisation of the PoC: ES modules + JSON module imports for the answer data, a `<chat-entry>` custom element (light DOM) for per-entry rendering, View Transitions API for the theme cross-fade, native CSS nesting, `:has()`-driven state for hero hide / seen prompts / completion message (CSS owns the state — the DOM IS the state), container-type on `.main`, `100dvh` for mobile-keyboard safety. Controller shrunk; separation of concerns sharpened (data → JSON, render → custom element, control → script, state → CSS). Visible behaviour identical; smoother theme cross-fade where the browser supports View Transitions. Decisions log captured "2026-native stack" as the default pattern for this repo's static work.
+
+### 2026-04-27 — chat-hero accumulating thread
+
+Evolved the PoC: the chat now persists the visitor's path. Each prompt asked at most once; clicking a seen prompt scrolls back with a highlight; follow-ups scoped to the most recent entry only; completion CTA reveals when all five have been asked. URL hash captures the path in order so a curated `…/#work,care` link reconstructs that exact thread.
+
 ### 2026-04-27 — chat-hero PoC
 
 Built the proof of the chat-driven direction at `static/chat-hero/`. Dark-default with a working light toggle, 5 hand-authored answers, typed-input keyword matching with an honest fallback, follow-up prompts per answer, hash routing, progressive-enhancement noscript fallback. ~935 lines across `index.html`, `styles.css`, `script.js`. View at `http://localhost:8080/chat-hero/`.
