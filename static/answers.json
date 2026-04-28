@@ -2,22 +2,22 @@
   "work": {
     "label": "What kind of work do you do?",
     "tags": ["work", "do", "kind", "build", "specialise", "specialize", "offer"],
-    "followups": ["show", "tools", "care"]
+    "followups": ["approach", "tools", "care"]
   },
   "available": {
     "label": "Are you available?",
     "tags": ["available", "availability", "free", "capacity", "hire", "hiring", "when"],
     "followups": ["why", "tools", "work"]
   },
-  "show": {
-    "label": "Show me something you’ve built.",
-    "tags": ["show", "something", "built", "project", "projects", "examples", "example", "portfolio"],
-    "followups": ["tools", "care", "work"]
+  "approach": {
+    "label": "What does a first week look like?",
+    "tags": ["approach", "week", "first", "start", "begin", "onboard", "onboarding", "how", "process", "join", "team", "kickoff"],
+    "followups": ["work", "care", "available"]
   },
   "care": {
     "label": "What do you care about?",
     "tags": ["care", "value", "values", "principle", "principles", "matter", "philosophy", "believe"],
-    "followups": ["why", "tools", "show"]
+    "followups": ["why", "tools", "approach"]
   },
   "why": {
     "label": "Why hire a contractor?",
@@ -27,7 +27,7 @@
   "tools": {
     "label": "What are you working with?",
     "tags": ["tools", "working", "with", "use", "using", "stack", "currently", "into", "lately", "kit", "setup", "tech"],
-    "followups": ["work", "care", "show"]
+    "followups": ["work", "care", "approach"]
   },
   "_miss": {
     "label": "",

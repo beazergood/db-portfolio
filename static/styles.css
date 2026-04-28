@@ -351,7 +351,7 @@ body.is-enhanced:has(chat-entry) .hero { display: none; }
 body.is-enhanced {
   &:has(chat-entry[q="work"])      .prompt[data-q="work"],
   &:has(chat-entry[q="available"]) .prompt[data-q="available"],
-  &:has(chat-entry[q="show"])      .prompt[data-q="show"],
+  &:has(chat-entry[q="approach"])  .prompt[data-q="approach"],
   &:has(chat-entry[q="care"])      .prompt[data-q="care"],
   &:has(chat-entry[q="why"])       .prompt[data-q="why"],
   &:has(chat-entry[q="tools"])     .prompt[data-q="tools"] {
@@ -500,7 +500,45 @@ chat-entry {
   &:not(:last-of-type) .entry__followups { display: none; }
 }
 
-/* ---------- In-answer widgets: end-to-end flow line & tool chips ---------- */
+/* ---------- In-answer widgets: flow line, numbered steps, tool chips ---------- */
+
+/* Numbered steps — used in the "first week" answer. Mint-circled counters
+   in mono, body text in regular Inter. Gives the prose a visual rhythm
+   without dropping the calm register. */
+.entry__steps {
+  list-style: none;
+  margin: 1.25rem 0;
+  padding: 0;
+  counter-reset: step;
+}
+
+.entry__steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 0.15rem 0 0.15rem 2.6rem;
+  margin: 0.65rem 0;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.entry__steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.05rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--c-bg-soft);
+  border: 1px solid var(--c-border-strong);
+  color: var(--c-accent-mint);
+  font-family: var(--f-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
 
 /* Single-line "Frontend → API → Infra" used in the "What kind of work?" answer.
    The prose already explains end-to-end — the flow line just punctuates it. */

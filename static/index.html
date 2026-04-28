@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Paytone+One&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=6">
 
   <!-- Set theme before first paint to avoid FOUC. Default is dark; light is opt-in. -->
   <script>
@@ -94,7 +94,7 @@
       <ul class="prompts__list">
         <li><button class="prompt" type="button" data-q="work">What kind of work?</button></li>
         <li><button class="prompt" type="button" data-q="available">Are you available?</button></li>
-        <li><button class="prompt" type="button" data-q="show">Show me something.</button></li>
+        <li><button class="prompt" type="button" data-q="approach">First week?</button></li>
         <li><button class="prompt" type="button" data-q="care">What do you care about?</button></li>
         <li><button class="prompt" type="button" data-q="why">Why a contractor?</button></li>
         <li><button class="prompt" type="button" data-q="tools">What are you working with?</button></li>
@@ -130,50 +130,40 @@
     <section class="fallback" id="fallback" aria-label="All answers">
       <article class="fallback__item" data-answer="work">
         <h3>What kind of work do you do?</h3>
-        <p>I build things on the web. End-to-end &mdash; frontend, API, infrastructure when it matters. Recent work has spanned organisation-wide platforms that cross multiple teams and departments, design systems that other teams build on every day, and media tooling for capturing, organising, and exploring photo and video at scale. The thread: complex domains made simple to use.</p>
+        <p>I build things on the web. End-to-end &mdash; frontend, API, infrastructure when it matters. Recent work has spanned platforms that run across whole organisations, design systems other teams build on, and tools for working with photo and video at scale. The thread: complex domains made simple to use.</p>
         <p class="entry__flow" aria-label="End-to-end: frontend, API, infrastructure">Frontend &rarr; API &rarr; Infra</p>
       </article>
 
       <article class="fallback__item" data-answer="available">
         <h3>Are you available?</h3>
-        <p>For interesting work, typically <span data-live="quarter">Q3 2026</span> onwards &mdash; one engagement at a time, no agencies in between. If you're wondering whether your project counts as interesting, the test is: would I tell a friend what I'm working on? If yes, get in touch.</p>
+        <p>From <span data-live="quarter">Q3 2026</span>. No middlemen. I pick work I'd want to talk about. If yours sounds like that, get in touch.</p>
       </article>
 
-      <article class="fallback__item" data-answer="show">
-        <h3>Show me something you've built.</h3>
-        <p>I can't pin down a single screenshot &mdash; the work is rarely public. A platform that runs across every part of a single organisation. A design system that other teams build on every day. A photo-and-video tool for capturing and exploring large media archives. They look different. They needed someone who could pick up the domain, the stack, and the constraints, and own it end to end.</p>
-        <figure class="answer__visual" aria-hidden="true">
-          <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid meet">
-            <rect x="2" y="2" width="316" height="176" rx="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <rect x="2" y="2" width="316" height="22" fill="currentColor" opacity="0.12"/>
-            <circle cx="14" cy="13" r="3" fill="currentColor" opacity="0.5"/>
-            <circle cx="26" cy="13" r="3" fill="currentColor" opacity="0.5"/>
-            <circle cx="38" cy="13" r="3" fill="currentColor" opacity="0.5"/>
-            <rect x="20" y="40"  width="80"  height="8" rx="2" fill="currentColor" opacity="0.7"/>
-            <rect x="20" y="56"  width="120" height="6" rx="2" fill="currentColor" opacity="0.35"/>
-            <rect x="20" y="68"  width="100" height="6" rx="2" fill="currentColor" opacity="0.35"/>
-            <rect x="20" y="92"  width="280" height="68" rx="4" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
-            <polyline points="30,148 60,130 90,138 120,118 150,124 180,108 210,118 240,98 270,110 290,100"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <figcaption>Composite of recent UI surfaces &mdash; abstracted; the work isn't public.</figcaption>
-        </figure>
+      <article class="fallback__item" data-answer="approach">
+        <h3>What does a first week look like?</h3>
+        <p>Trust gets built by the loop closing, not by the diagnosis. The goal in week one is to be useful fast &mdash; not to redesign everything from a position of confidence I haven't earned yet.</p>
+        <ol class="entry__steps">
+          <li>Read the codebase. Don't touch it.</li>
+          <li>Talk to the team &mdash; what's working, what hurts, what's about to break.</li>
+          <li>Find one small thing and ship it by Friday.</li>
+        </ol>
+        <p>From week two: ship things that actually matter.</p>
       </article>
 
       <article class="fallback__item" data-answer="care">
         <h3>What do you care about?</h3>
-        <p>Code that works. Interfaces that feel right on the worst phone, the worst connection. Picking the boring tool when boring is correct &mdash; and the right tool when it isn't. Not over-engineering. Teams that ship.</p>
+        <p>Software that doesn't get in the way of the people using it. Interfaces that feel right on a flaky phone with one bar of signal. Picking the boring tool when boring is correct, and recognising when it isn't. Teams that ship more than they polish.</p>
       </article>
 
       <article class="fallback__item" data-answer="why">
         <h3>Why hire a contractor?</h3>
-        <p>You don't always need to. If you've got the bandwidth, the domain knowledge, and the time to onboard a permanent hire, hire permanent. A contractor is for when you have a real piece of work, a real deadline, and you want someone who can land in week one and ship in week two. That's the whole pitch.</p>
+        <p>Often you shouldn't. If you've got the bandwidth to bring someone permanent on properly, do that. A contractor makes sense when you have a real piece of work, a real deadline, and need someone who can land in week one and ship in week two. That's the only honest pitch.</p>
       </article>
 
       <article class="fallback__item" data-answer="tools">
         <h3>What are you working with?</h3>
-        <p>Lately: turning over how good interfaces age. Three years out, are they still legible? Five years out, is the code still kind to its maintainer? It's the question that decides whether a stack choice was the right one.</p>
-        <p>Day to day: Angular and TypeScript on the front, NestJS and Postgres on the back. I try a new editor every couple of years and end up back in VS Code with too many keybindings.</p>
+        <p>Lately: thinking about how the choices I make today will look in three years. Not "is this maintainable" &mdash; "is the paradigm still the right one for the problem".</p>
+        <p>Day to day though: Angular and TypeScript on the front, NestJS and Postgres on the back, Azure or AWS depending on the project. I try a new editor every couple of years and end up back in VS Code with too many keybindings.</p>
         <ul class="chips" aria-label="Tools I use day to day">
           <li class="chip">Angular</li>
           <li class="chip">TypeScript</li>
@@ -196,6 +186,6 @@
     </p>
   </footer>
 
-  <script type="module" src="script.js?v=4"></script>
+  <script type="module" src="script.js?v=5"></script>
 </body>
 </html>
