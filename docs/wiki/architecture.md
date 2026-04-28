@@ -1,29 +1,43 @@
 ---
 layout: doc
 title: db-portfolio Architecture
-lastUpdated: 2026-04-27
+lastUpdated: 2026-04-28
 ---
 
 # Architecture
 
-A single-page personal portfolio for Dave Beazer (contract software engineer) at [davebeazer.dev](https://www.davebeazer.dev/). Mid-2026 the project completed a rebuild from Next.js + Strapi to a no-framework static site.
+A single-page personal portfolio for Dave Beazer (contract software engineer) at [davebeazer.dev](https://www.davebeazer.dev/). The canonical surface is a chat-driven UI — visitors interact with prompts and typed input rather than scrolling sectioned content. See [features/portfolio-refresh-2026/spec.md](../features/portfolio-refresh-2026/spec.md).
 
 ## Layout
 
 ```
 db-portfolio/
-├── static/                  ← the live site (active)
-│   ├── index.html           single-page portfolio
-│   ├── styles.css           hand-written CSS, mobile-first
-│   ├── script.js            ~85 lines vanilla JS
-│   ├── images/              photos, baked into the deploy
-│   └── redesign-retro/      parked PoC for the next visual direction
-├── src/                     ← legacy Next.js (retained for reference)
-├── dwjb-api/                ← legacy Strapi CMS (no longer needed)
-├── public/                  ← shared assets used by both old and new
-├── docs/                    ← this wiki
-└── vercel.json              { outputDirectory: "static" }
+├── static/                       ← the live site (active)
+│   ├── index.html                chat-driven canonical surface
+│   ├── styles.css                hand-written CSS with native nesting
+│   ├── script.js                 ES-module controller (~250 lines)
+│   ├── chat-entry.js             <chat-entry> custom element (light DOM)
+│   ├── answers.json              the curated answer data
+│   └── images/                   photos baked into the deploy
+├── src/                          ← legacy Next.js (retained for reference)
+├── dwjb-api/                     ← legacy Strapi CMS (no longer used)
+├── public/                       ← shared assets from the legacy era
+├── docs/                         ← this wiki + per-feature specs
+├── scripts/dev.js                npm-run-dev orchestrator (no deps)
+└── vercel.json                   { outputDirectory: "static" }
 ```
+
+## The chat-hero stack (canonical)
+
+The live page is built with platform-native primitives — no build step, no framework, no bundler:
+
+- **HTML** — `static/index.html`. Hero (name + role + cursor prompt + wave backdrop), thread container, suggested-prompt list, input row, noscript fallback section.
+- **`<chat-entry>` Web Component** — light-DOM custom element, defined in `chat-entry.js`. Renders a right-aligned user bubble + an assistant card (body + follow-ups). Imports answers as a JSON module (`with { type: 'json' }`).
+- **Controller** — `script.js`, ES module. Hash routing, theme persistence, `/`-to-focus, esc-to-clear, sticky input.
+- **Styles** — `styles.css`. Native CSS nesting, OKLCH colour, container queries, View Transitions for theme cross-fade. Hero hide / seen-prompt state / completion CTA all `:has()`-driven (declarative state — the DOM IS the state).
+- **Cache-busting** — subresources are referenced as `?v=N`. Bump on each behaviour-affecting change to defend against dev-time HTTP cache. Production Vercel handles invalidation transparently via etags.
+
+Single source of truth for answer body content: the noscript `<section class="fallback">` in `index.html`. The custom element extracts from it at hydration; noscript visitors see the same content as a stacked semantic page.
 
 ## Deploy model
 
@@ -36,10 +50,12 @@ db-portfolio/
 
 | Branch | Purpose |
 |---|---|
-| `main` | What's live at davebeazer.dev. Static-site rebuild as of `508d409`. |
+| `main` | What's live at davebeazer.dev. Chat-driven canonical site. |
 | `april-fools-2026` | The 2026 prank build (theme switcher, fake testimonials, popup chaos). Earmarked for `lolz.davebeazer.dev`. |
-| `redesign-retro` | Parked hero PoC for an 8-bit-with-2026-spin redesign. Commit `cf6f4aa`. |
-| `wiki-bootstrap` | This branch — adopting the scraps-style living wiki. |
+| `redesign-retro` | Parked hero PoC for an 8-bit-with-2026-spin redesign. Commit `cf6f4aa`. Kept-for-nostalgia. |
+| `wiki-bootstrap` | Merged to `main`. The living-wiki bootstrap branch. |
+
+**Branch protection note:** `main` has a "must be made through a pull request" rule that we currently bypass on every push (admin override). Direct-push is faster for solo work; PR-only would force a final glance before each change. Decision still open — see [roadmap](../project/roadmap.md).
 
 ## What the migration removed
 

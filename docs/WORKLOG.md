@@ -5,24 +5,31 @@
 
 ---
 
-## Current Status (2026-04-27)
+## Current Status (2026-04-28)
 
 ### What's Built & Working
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Static no-framework site | Live | `main` branch, served at davebeazer.dev via Vercel |
-| Vercel deploy | Live | `outputDirectory: static`, no build step |
-| April Fools 2026 build | Shipped (one day) | Preserved on `april-fools-2026` branch |
-| Wiki + viewer | Bootstrapping | This work — `wiki-bootstrap` branch |
+| Chat-driven canonical site | **Live** | `main` → davebeazer.dev. `static/index.html` is the chat. No sub-routes |
+| Living wiki | Live | `docs/` browseable at `:8081`. Six slash commands available |
+| `<chat-entry>` Web Component | Live | Right-aligned user bubble + assistant card; light DOM |
+| Theme-color sync | Live | iOS Safari URL bar follows active theme |
+| Sticky input on mobile | Live | + auto-refocus, slash-to-focus, esc-to-clear |
+| Wave hero backdrop | Live | Theme-aware: full in light, dimmed in dark |
+| April Fools 2026 build | Shipped one day | Preserved on `april-fools-2026` branch |
 
-### What's WIP
+### Open / next
 
-| Feature | Branch | State |
-|---------|--------|-------|
-| Living wiki | `wiki-bootstrap` | Scaffolding `docs/` structure + browser viewer |
-| Retro redesign | `redesign-retro` | Hero PoC committed (`cf6f4aa`); rest of page unwritten |
-| `lolz.davebeazer.dev` subdomain | n/a | Pending Vercel domain config |
+| Item | State |
+|---|---|
+| PWA install (`manifest.json` + apple-touch-icon) | Open — would give full mobile chrome control on iOS |
+| `lolz.davebeazer.dev` subdomain | Pending Vercel domain config |
+| Real-device mobile pass | Pending — need iPhone + Android smoke test |
+| VitePress migration of the wiki viewer | Deferred |
+| Retire legacy `/src/` and `/dwjb-api/` | Pending |
+| Branch-protection workflow decision (PR-only vs direct-push) | Open |
+| Real-LLM hatch (v2) | Roadmap |
 
 ### What Needs Testing
 
@@ -53,6 +60,20 @@
 ---
 
 ## Session Notes
+
+### 2026-04-28 — chat bubbles, input quick wins, hero polish, ship
+
+Three commits over the day plus a wrap-up:
+
+1. **Hero polish (`ce074e3`)** — role tagline ("Contract software engineer.") in italic Inter under the gradient name; the wavy coast backdrop returns as a full-bleed hero element, theme-aware (full saturation in light, dimmed/desaturated in dark via `[data-theme="dark"]` selector). Cache-bust on `styles.css?v=3`.
+
+2. **Chat bubbles + input quick wins (`4f497de`)** — each chat-entry now visually splits into a right-aligned user bubble (purple, asymmetric corners, max-width 80%) and the existing assistant card. The mono "asked" label is gone; position is the signal. Input gets sticky-on-mobile, auto-refocus after submit, `/`-anywhere to focus the field, `Esc` to clear, and a subtle `<kbd>/</kbd>` hint inside when blurred.
+
+3. **Tier diagram → flow line (`c8429e1`)** — the Frontend / API / Infra tile diagram with hover-reveal looked like skeleton boxes, especially on mobile where there's no hover. Replaced with a single mint-mono `Frontend → API → Infra` line that pulls its weight on first sight. Net `-90` LOC; a rare commit that *removes* visual weight.
+
+**Lesson captured:** if a visual element needs interaction to be informative, it probably shouldn't be a visual element. Trust the prose; punctuate with one tight visual beat.
+
+**Branch-protection note:** every push to `main` reports "Bypassed rule violations: Changes must be made through a pull request." We're admin-overriding. Decision on whether to keep direct-push or move to PR-only is still open.
 
 ### 2026-04-27 — chat-hero 2026-native upgrade
 

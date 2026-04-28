@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: db-portfolio Wiki
-lastUpdated: 2026-04-27
+lastUpdated: 2026-04-28
 ---
 
 # db-portfolio Wiki — Catalogue
@@ -24,11 +24,13 @@ The living memory of [davebeazer.dev](https://www.davebeazer.dev/). LLM-owned, r
 
 > What's actively in flight. Refreshed at session end.
 
-- **vision + brand captured** — first pass at the canvas's north-star and posture. See [vision.md](../project/vision.md) and [brand.md](./brand.md). Both pages are starting-frames; will grow.
-- **portfolio-refresh-2026** — *direction crystallised*: chat-driven UI surface, anti-section, anti-template. The current static site is the antithesis. North star [dcurt.is](https://dcurt.is/). Progressive enhancement; pre-curated answers (not real-LLM for v1). See [features/portfolio-refresh-2026/spec.md](../features/portfolio-refresh-2026/spec.md) and the [overview](../features/portfolio-refresh-2026/overview.html).
-- **wiki-bootstrap** — adopting the scraps-style living wiki here. This page and its siblings are the first artefact. (this branch)
-- **redesign-retro** — hero proof-of-concept committed (`cf6f4aa`); 2026-spin 8-bit aesthetic. Parked as a *visual* experiment that may donate elements; not the canonical direction.
-- **lolz subdomain** — `lolz.davebeazer.dev` earmarked to host the April Fools build so it remains rediscoverable. Vercel domain config pending.
+- *(no live threads at the moment — the canvas is in a steady state; reach for the [roadmap](../project/roadmap.md) for what's queued next)*
+
+## Recently shipped
+
+- **portfolio-refresh-2026 (v1)** — chat-driven canonical site live at davebeazer.dev. Six curated answers, right-aligned user bubbles + assistant card model, dark-default theme with light toggle, iOS Safari chrome syncing, hero with role tagline + wave backdrop, sticky input on mobile, slash-to-focus, typed input becomes part of the transcript. Replaces the legacy sectioned site entirely. See [features/portfolio-refresh-2026/spec.md](../features/portfolio-refresh-2026/spec.md) and the [overview](../features/portfolio-refresh-2026/overview.html).
+- **wiki-bootstrap** — `docs/` structure, browser viewer, vision, brand, decisions, the first feature dual-doc pair, and the canvas paradigm captured. Merged to `main`.
+- **vision + brand** — first pass at the canvas's north-star and posture. Compass-not-contract framing. See [vision.md](../project/vision.md) and [brand.md](./brand.md).
 
 ## Concepts
 
@@ -45,16 +47,17 @@ The living memory of [davebeazer.dev](https://www.davebeazer.dev/). LLM-owned, r
 | [Decisions](./decisions.md) | Date / decision / rationale table for every architectural call |
 | [Ideas](./ideas.md) | Captured but not-yet-planned ideas. Append-only |
 
-## Threads (in flight)
+## Threads
 
 | Thread | Status | One-line |
 |---|---|---|
-| portfolio-refresh-2026 | spec | Strip named clients; replace about-me with dynamic facets. Design questions open |
-| wiki-bootstrap | shipping | First-pass scaffold + browser viewer + vision/brand pages. This branch |
-| vitepress-migration | deferred | Replace the no-build viewer with VitePress to align with scraps / pl-docs / enable-platform |
-| redesign-retro | parked (visual exp.) | Hero PoC built; visual experiment, may donate elements to portfolio-refresh |
+| portfolio-refresh-2026 | **shipped v1** | Chat-driven site live at davebeazer.dev. Iteration ongoing as taste/copy refines |
+| wiki-bootstrap | shipped | Living wiki + viewer in `docs/`; merged to `main` |
+| vitepress-migration | deferred | Replace the no-build viewer with VitePress to align with `enable-platform` |
+| pwa-install | open | Set up `manifest.json` + `apple-touch-icon` so Add-to-Home-Screen gives full chrome control on iOS (status bar themed, bottom toolbar gone) |
+| redesign-retro | parked | 8-bit experiment; not the path. Kept-for-nostalgia |
 | lolz-subdomain | pending | Vercel domain alias to `april-fools-2026` branch |
-| static-migration | mostly shipped | Static site live on `main`; legacy `/src/` and `/dwjb-api/` still on disk pending tidy |
+| legacy-tidy | pending | Delete `/src/` and `/dwjb-api/` once nothing worth referencing remains |
 
 ## Parked
 

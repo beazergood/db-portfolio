@@ -1,8 +1,8 @@
 ---
 layout: doc
 title: Portfolio Refresh 2026 — Spec
-status: spec
-lastUpdated: 2026-04-27
+status: shipped (v1, 2026-04-28)
+lastUpdated: 2026-04-28
 ---
 
 # Portfolio Refresh 2026
@@ -53,34 +53,46 @@ A contractor whose site demonstrates the paradigm shift is providing a portfolio
 - **Same palette and typography as the current site.** Continuity.
 - **2-minute visit, full impression.** Visitors who don't dig deeper still leave with a clear feel for who I am.
 
-## PoC
+## What shipped
 
-A first proof at `static/chat-hero/` (committed on `wiki-bootstrap`). Dark-default with a working light toggle, 5 hand-authored answers, typed-input keyword matching with an honest fallback, follow-up prompts per answer, hash routing, progressive-enhancement noscript fallback. View at `http://localhost:8080/chat-hero/`. Not wired into `static/index.html` yet — production main still serves the old sectioned site.
+v1 is **live at davebeazer.dev** as of 2026-04-28. The chat-hero replaced the legacy sectioned site entirely — `static/index.html` is now the chat. No sub-routes; the chat is the site.
 
-## Open questions
+What landed:
 
-- **Entry affordance** — blank chat box, or seeded with 3–4 suggested prompts as visible entry points? *Strong instinct: suggested prompts visible as buttons, with the input box present too. Explicit invitation, not blank-page anxiety.*
-- **Suggested prompts** — what are they? Drafting:
-  - *What kind of work do you do?*
-  - *Are you available?*
-  - *Show me something you've built.*
-  - *What do you care about?*
-  Could include something more provocative (*Why hire a contractor?*).
-- **Answer composition** — streamed text? Card with image? Text + small fact + one image? Mixed media. Has to feel rich, not like wall-of-text returned from a backend.
-- **Follow-up affordance** — after an answer, do inline next-prompts appear? Is the input box always sticky? How does a "conversation" thread visually?
-- **Noscript fallback** — what does the single-page version actually look like? It's effectively the page that the rest of this spec replaces. May be the place where the calm-pastoral feel is allowed to live, since it's the fallback for the visitor who doesn't engage.
-- **Performance budget** — first paint < 1s, suggested-prompt buttons interactive immediately. Hydrate the chat layer afterwards.
-- **Real-LLM hatch (v2)** — if it lands later, where does it live? A "ask anything" affordance below the curated set? Cost-gated? Worth thinking through but not solving now.
+- Six hand-authored answers — *what kind of work, are you available, show me something, what do you care about, why a contractor, what are you working with*. Each renders prose plus an optional in-answer widget (flow line, dynamic quarter, tool chips).
+- **Right-aligned user bubbles + assistant cards** — each turn reads as a real chat exchange, not a Q&A list. The user's literal typed phrase shows up in the bubble; the canonical label shows up when they clicked a suggested prompt.
+- **Typed input** — input is keyword-matched against the answers' tags. Match → answer card with the user's literal phrase as the bubble. Miss → an honest "I haven't got an answer for that one yet" with all unanswered prompts as inline suggestions.
+- **Path persists** — every prompt asked at most once. URL hash captures the path (e.g. `#work,available,care`) so a curated link reconstructs that thread on load. Completion CTA surfaces once all six are asked.
+- **Dark default, light toggle** — choice persists. iOS Safari URL bar follows the active theme via `<meta name="theme-color">`. Theme cross-fade uses View Transitions API.
+- **Hero** — name in gradient, italic role tagline ("Contract software engineer."), wavy coast backdrop (theme-aware: full in light, dimmed in dark), prompt with blinking cursor.
+- **Input quick wins** — sticky on mobile, auto-refocus after submit, `/` to focus from anywhere, `Esc` to clear, `<kbd>/</kbd>` hint badge inside the field when blurred.
+- **Progressive enhancement** — full content readable without JS via the noscript fallback section. JS layer adds the interactive flow.
+- **2026-native stack** — `<script type="module">`, JSON modules (`with { type: 'json' }`), `<chat-entry>` light-DOM Web Component, CSS nesting, `:has()`-driven state, container queries.
 
-## Acceptance
+What was *deliberately* dropped between PoC and v1:
 
-- [ ] No traditional `<section>` stack. Single focused surface.
-- [ ] Works without JS — the answers are server-rendered as fallback.
-- [ ] First paint < 1s on a throttled connection.
-- [ ] No named clients or employers anywhere in any answer.
-- [ ] Lighthouse a11y ≥ 95.
-- [ ] At least one outside reviewer experiences the chat interaction before merge to `main`.
-- [ ] A visitor who spends 2 minutes leaves with a clear feel for who I am.
+- The Frontend / API / Infra **tier diagram** — empty boxes with hover-reveal didn't communicate at first sight (especially on mobile). Replaced with a single mint-mono `Frontend → API → Infra` flow line that pulls its weight on first read.
+- The floating "I haven't got an answer for that" **nudge** — folded into the inline `_miss` chat-entry instead, so the transcript stays coherent.
+
+## How v1 answered the open questions
+
+- **Entry affordance** — *resolved*: six suggested prompts + a typed-input field. Both visible. Explicit invitation, no blank-page anxiety.
+- **Suggested prompts** — *resolved*: *what kind of work · are you available · show me something · what do you care about · why a contractor · what are you working with*. Six total; bench/tools added as the personal-adjacent prompt.
+- **Answer composition** — *resolved*: prose plus optional inline widgets (mint-mono flow line, dynamic quarter, tool chips, abstract device-frame SVG). Rich enough to feel composed, restrained enough to stay calm.
+- **Follow-up affordance** — *resolved*: inline follow-up buttons on the most-recent entry only (older entries' followups hide via `:not(:last-of-type)`). Input is sticky on mobile.
+- **Noscript fallback** — *resolved*: the noscript fallback section IS the source of truth for answer body content; the chat-entry component extracts from it at hydration. Single source.
+- **Performance budget** — *open*: not measured. Worth a Lighthouse run.
+- **Real-LLM hatch (v2)** — *parked*: roadmap entry for cost-gated "ask anything" affordance below the curated prompts.
+
+## Acceptance (v1)
+
+- [x] No traditional `<section>` stack. Single focused surface.
+- [x] Works without JS — the answers are server-rendered as fallback.
+- [x] No named clients or employers anywhere in any answer.
+- [ ] First paint < 1s on a throttled connection — *not measured yet*.
+- [ ] Lighthouse a11y ≥ 95 — *not measured yet*.
+- [ ] At least one outside reviewer experiences the chat interaction — *bypassed in pursuit of speed; worth doing post-ship*.
+- [~] A visitor who spends 2 minutes leaves with a clear feel for who I am — *subjective; needs real-visitor feedback*.
 
 ## Related
 
