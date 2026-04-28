@@ -126,17 +126,7 @@ function matchInput(text) {
 
 document.addEventListener('click', (e) => {
   const btn = e.target.closest('.prompt');
-  if (btn?.dataset.q) {
-    ask(btn.dataset.q);
-    return;
-  }
-
-  // Tier expand/collapse (the end-to-end stack diagram)
-  const tier = e.target.closest('.tier');
-  if (tier) {
-    const expanded = tier.getAttribute('aria-expanded') === 'true';
-    tier.setAttribute('aria-expanded', String(!expanded));
-  }
+  if (btn?.dataset.q) ask(btn.dataset.q);
 });
 
 $form.addEventListener('submit', (e) => {

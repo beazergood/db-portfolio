@@ -500,82 +500,17 @@ chat-entry {
   &:not(:last-of-type) .entry__followups { display: none; }
 }
 
-/* ---------- In-answer widgets: tier diagram & tool chips ---------- */
+/* ---------- In-answer widgets: end-to-end flow line & tool chips ---------- */
 
-/* Tiers — the "Frontend → API → Infra" interactive diagram in the work answer.
-   Mobile: stacked. Desktop (container >= 540px): horizontal. */
-
-.tiers {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin: 1.5rem 0 0;
-}
-
-@container main (min-width: 540px) {
-  .tiers { flex-direction: row; }
-}
-
-.tier {
-  flex: 1;
-  appearance: none;
-  border: 1px solid var(--c-border-strong);
-  border-radius: var(--radius-sm);
-  padding: 0.85rem 1rem;
-  background: var(--c-bg-elev);
-  color: var(--c-fg);
-  text-align: left;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  min-height: 2.75rem;
-  transition:
-    border-color var(--t-fast) var(--ease),
-    background var(--t-fast) var(--ease);
-
-  &:hover { border-color: var(--c-accent); }
-
-  & .tier__name {
-    font-family: var(--f-mono);
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--c-accent-mint);
-  }
-
-  & .tier__detail {
-    font-family: var(--f-body);
-    font-size: 0.85rem;
-    color: var(--c-fg-soft);
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition:
-      max-height var(--t-med) var(--ease),
-      opacity var(--t-fast) var(--ease);
-  }
-
-  /* Reveal detail on hover, keyboard focus, or tap-toggled aria-expanded */
-  &:hover .tier__detail,
-  &:focus-visible .tier__detail,
-  &[aria-expanded="true"] .tier__detail {
-    max-height: 4rem;
-    opacity: 1;
-  }
-}
-
-.tier-arrow {
-  display: grid;
-  place-items: center;
+/* Single-line "Frontend → API → Infra" used in the "What kind of work?" answer.
+   The prose already explains end-to-end — the flow line just punctuates it. */
+.entry__flow {
+  margin: 1.25rem 0 0;
   font-family: var(--f-mono);
-  font-size: 1rem;
-  color: var(--c-fg-faint);
-  transform: rotate(90deg);  /* down arrow when stacked on mobile */
-}
-
-@container main (min-width: 540px) {
-  .tier-arrow { transform: none; }
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-accent-mint);
 }
 
 /* Chips — small tool badges in the bench answer. */
