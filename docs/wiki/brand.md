@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: db-portfolio Brand
-lastUpdated: 2026-04-27
+lastUpdated: 2026-04-29
 ---
 
 # Brand — Posture, Voice, Style
@@ -24,8 +24,13 @@ lastUpdated: 2026-04-27
 - British spelling.
 - Plain language. No jargon if a normal word will do.
 - Self-deprecating without being insecure.
-- Doesn't oversell.
+- **Doesn't oversell — and doesn't over-claim.** Don't invent constraints that aren't actually true (e.g. "one engagement at a time" was caught and removed because Dave can in fact juggle). Specificity is fine; fabrication isn't.
+- **Warm over punchy.** When choosing between registers, lean warm. The brand is closer to a peer-to-peer Slack DM than a manifesto. Punchy-declarative is often a step too far.
 - **No craft-romance vocabulary.** Words like *rig*, *bench*, *workshop*, *artisan*, *maker* don't fit. Prefer plain alternatives — *tools*, *using*, *day to day*, *building*. Dave sees himself as a developer who cobbles things together, not a craftsperson at a workbench.
+- **No "fitness test" framing.** Don't make visitors pass something before they reach out — "if your project sounds interesting" or "if you're a good fit" puts a filter between them and the door. Keep the door open.
+- **Paradigm > maintenance** when reflecting on craft. The interesting durability question is "is the paradigm still right" — not "is the code still maintainable". Reach for the higher-order framing.
+- **Tool philosophy over personal habit claims.** When closing a tools answer, prefer commentary on *why these tools* over a personal tic ("I keep going back to X"). Personal habits are easy to invent and read as filler; tool philosophy is harder to fake.
+- **Don't ask questions that can't be answered honestly.** If a prompt invites a non-answer or evasion (the original "show me something you've built" hit this — most of his work isn't public), replace the prompt. The chat surface should never put Dave in a corner.
 
 ## What we are
 
